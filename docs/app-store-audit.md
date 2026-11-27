@@ -2,23 +2,17 @@
 
 An agent skill for auditing iOS and iPadOS releases against current official Apple requirements. It examines release evidence, checks relevant Apple documentation during each audit, and separates confirmed issues from missing verification.
 
-## Install locally
+## Install
 
-From the parent skills folder:
+From your project, install directly from GitHub:
 
 ```bash
-npx skills add . --skill app-store-audit
+npx skills add tudorturcanu/ios-skills --skill app-store-audit
 ```
 
 Select your coding agent when prompted. Add `-g` to install across projects. A browser/search tool is needed to verify current Apple requirements; without one, the audit explicitly marks currency unverified.
 
-Once this repository is hosted, replace `OWNER/REPOSITORY` below with its actual GitHub path:
-
-```bash
-npx skills add OWNER/REPOSITORY --skill app-store-audit
-```
-
-No npm package publication is required: `skills` discovers the `SKILL.md` in this repository.
+When installing from a local checkout, replace `tudorturcanu/ios-skills` with `.` or the checkout path. No npm package publication is required: `skills` discovers the `SKILL.md` in this repository.
 
 ## Use
 

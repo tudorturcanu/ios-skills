@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    'app-store-audit', 'ios-memory-growth',
+    'app-store-audit', 'ios-memory-growth', 'iphone-duo-design',
     'ios-accessibility-audit', 'ios-crash-triage', 'ios-deeplink-doctor',
     'ios-launch-profiler', 'ios-localization-audit', 'ios-offline-sync-review',
     'ios-permission-flow-tester', 'storekit-entitlement-debugger',
@@ -24,11 +24,11 @@ def validate(root=ROOT):
         folder = root / name
         try:
             text = (folder / 'SKILL.md').read_text()
-            match = re.match(r'^---\nname: ([a-z0-9-]+)\ndescription: (.+)\n---\n\n(.+)', text, re.S)
+            match = re.match(r'^---\nname: ([a-z0-9-]+)\ndescription: ([^\n]+)\n(?:.*?\n)?---\n\n(.+)', text, re.S)
             if not match:
                 raise ValueError('Invalid frontmatter or missing body')
             declared, description, body = match.groups()
-            if name not in {'app-store-audit', 'ios-memory-growth'} or description.startswith('"'):
+            if name not in {'app-store-audit', 'ios-memory-growth', 'iphone-duo-design'} or description.startswith('"'):
                 description = json.loads(description)
             if declared != name or len(name) > 64:
                 raise ValueError('Name does not match folder or exceeds 64 characters')
@@ -38,7 +38,7 @@ def validate(root=ROOT):
                 raise ValueError('Description contains angle brackets')
             if re.search(r'\[TODO:|TBD|PLACEHOLDER', body):
                 raise ValueError('Unfinished scaffold')
-            if name != 'ios-memory-growth':
+            if name not in {'ios-memory-growth', 'iphone-duo-design'}:
                 metadata = (folder / 'agents' / 'openai.yaml').read_text().splitlines()
                 if metadata[0] != 'interface:':
                     raise ValueError('Missing UI interface')

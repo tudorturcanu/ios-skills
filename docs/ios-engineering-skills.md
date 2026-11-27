@@ -4,25 +4,25 @@ Ten focused agent skills for diagnosing, fixing, and verifying iOS behavior. Eac
 
 ## Install
 
-From the parent skills folder, inspect available skills:
+Inspect available skills from GitHub:
 
 ```sh
-npx skills add . --list
+npx skills add tudorturcanu/ios-skills --list
 ```
 
 Install the collection for Codex in your current project:
 
 ```sh
-npx skills add . --skill '*' --agent codex
+npx skills add tudorturcanu/ios-skills --skill '*' --agent codex
 ```
 
 Or select one:
 
 ```sh
-npx skills add . --skill ios-deeplink-doctor --agent codex
+npx skills add tudorturcanu/ios-skills --skill ios-deeplink-doctor --agent codex
 ```
 
-Use an absolute path to this repository when installing from another project. Add `--global` only if you want installation across projects. After publishing to GitHub, replace `.` with the actual `owner/repository`; no npm package publication is required. See the [Skills CLI](https://github.com/vercel-labs/skills) for current requirements and options.
+Add `--global` only if you want installation across projects; no npm package publication is required. When installing from a local checkout, replace `tudorturcanu/ios-skills` with `.` or the checkout path. See the [Skills CLI](https://github.com/vercel-labs/skills) for current requirements and options.
 
 ## Skills
 
