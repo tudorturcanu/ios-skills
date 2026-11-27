@@ -1,0 +1,1 @@
+Please do a read-only source review of the project in this directory, focused on why the home screen widget's data may be stale or inconsistent with the app. Do not build or run anything and do not modify any files. Report your findings with file and line evidence, state clearly what you could not verify from the source alone, and say what you would change (if anything).

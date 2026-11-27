@@ -1,0 +1,25 @@
+{"app_name":"Trailhead","bundleID":"example.trailhead","app_version":"4.2.1","build_version":"618","os_version":"iPhone OS 17.4 (21E219)","incident_id":"3F9E8D77-5A10-4C2B-8E61-0A9B8C7D6E5F","timestamp":"2026-11-09 19:02:12.00 +0100"}
+{
+  "procName": "Trailhead",
+  "exception": {"type": "EXC_BAD_ACCESS", "codes": "0x0000000000000001, 0x0000000000000010", "signal": "SIGSEGV", "subtype": "KERN_INVALID_ADDRESS at 0x0000000000000010"},
+  "termination": {"namespace": "SIGNAL", "code": 11, "indicator": "Segmentation fault: 11"},
+  "faultingThread": 0,
+  "usedImages": [
+    {"source": "P", "arch": "arm64", "base": 4339253248, "size": 1146880, "uuid": "9A8B7C6D-5555-4666-8777-0123456789AB", "path": "/private/var/containers/Bundle/Application/X/Trailhead.app/Trailhead", "name": "Trailhead"},
+    {"source": "P", "arch": "arm64e", "base": 6900000000, "size": 9000000, "uuid": "CAFE0001-AAAA-4BBB-8CCC-DDDD00001111", "path": "/System/Library/Frameworks/MapKit.framework/MapKit", "name": "MapKit"},
+    {"source": "P", "arch": "arm64e", "base": 7000000000, "size": 4000000, "uuid": "CAFE0002-AAAA-4BBB-8CCC-DDDD00002222", "path": "/usr/lib/system/libobjc.A.dylib", "name": "libobjc.A.dylib"}
+  ],
+  "threads": [
+    {
+      "id": 4559901, "triggered": true, "queue": "com.apple.main-thread",
+      "frames": [
+        {"imageIndex": 2, "imageOffset": 20412, "symbol": "objc_release"},
+        {"imageIndex": 1, "imageOffset": 3340288},
+        {"imageIndex": 1, "imageOffset": 3338120},
+        {"imageIndex": 0, "imageOffset": 412876},
+        {"imageIndex": 0, "imageOffset": 90112}
+      ]
+    }
+  ],
+  "lastExceptionBacktrace": []
+}

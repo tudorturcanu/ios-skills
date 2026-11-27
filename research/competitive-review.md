@@ -29,7 +29,7 @@ Three independent, standard-library, read-only helpers now provide structured ev
 3. Compare against relevant competitor skills only on their overlapping scope. A general SwiftUI skill should not be marked down for not specializing in server-backed entitlement recovery.
 4. Repeat on held-out cases before claiming improvement. Record unsuccessful and inconclusive runs as well as wins. Popularity and a small synthetic test suite cannot establish “best.”
 
-The full ten-skill collection is still an early implementation. The initial structural validation was necessary but insufficient; the first localization agent comparison is now complete and found no correctness advantage. See [results](../evals/localization-01/RESULTS.md); broader comparisons remain outstanding.
+The full thirteen-skill collection (ten at the time of the earlier evaluations below) is still an early implementation. The initial structural validation was necessary but insufficient; the first localization agent comparison is now complete and found no correctness advantage. See [results](../evals/localization-01/RESULTS.md); broader comparisons remain outstanding.
 
 ## Executable follow-up
 
@@ -70,3 +70,11 @@ A [local StoreKit investigation](../evals/storekit-lifecycle-01/RESULTS.md) expo
 The final probe recorded 12 of 13 booleans true; verification-error injection into a cached entitlement did not produce an unverified result, so neither failure handling nor recovery was exercised. XCTest failed and its wrapper timed out. Nine attempts, including setup failures, remain frozen and indexed. The skill gained explicit guidance on transition preconditions and failure-injection evidence; the investigation does not establish incremental agent value or a fully passing StoreKit test suite.
 
 A tenth attempt used an app-facing fresh purchase under verification injection, with recovery constrained to the same transaction ID. It stalled without a completed probe result; the new checks remain unexercised. This exposed a diagnostic gap in the probe itself: it saved observations only at completion. The current implementation checkpoints prior observations at each phase and preserves partial evidence separately. Swift type checking passed; runtime interruption behavior for this checkpoint revision remains unverified. Two evidence regressions reject recovery without an observed failure or with a different transaction ID.
+
+## Held-out offline-sync comparison
+
+The first run of the [evaluation protocol](../evals/PROTOCOL.md) compared the offline-sync skill with a no-skill baseline on a held-out defect fixture and a clean control. Both conditions found every real defect with no false positives; the blind grading round scored the baseline 12/12 and the skill 11/12 (one judgment-dependent criterion), so the result is **no measured advantage**; see [results](../evals/offline-sync-02/RESULTS.md) for limits (one run per condition, not fully blind, previous skill version not compared). This repeats the pattern from the deeplink and localization comparisons and points toward harder fixtures and evidence-collecting tools as the place a skill can add value.
+
+## Held-out comparison of all 13 skills
+
+The [protocol](../evals/PROTOCOL.md) was applied to every skill: a seeded-defect fixture and a clean control each, reviewed with and without the skill (52 reviews), graded per criterion on scrubbed, relabeled reports. Pooled score: 146/153 with the skill and 146/153 without; defect detection was at ceiling for both, and three single-criterion differences in the skill's favour are within noise. See [results](../evals/heldout/RESULTS.md). The evidence-gathering helpers were not exercised by these source-review tasks, so this says nothing yet about their value.

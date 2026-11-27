@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "timing_interpretation": true,
+   "fix_direction": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "CatalogStore.init() does the full catalog load synchronously on the main thread",
+   "specific_evidence": "CatalogStore.swift:13-20; 6,200 records and 2.15 MB ... 52,000 records and 18.4 MB; 478 vs 2,212 ms",
+   "timing_interpretation": "excluding the first launch after install; consistent with this but does not prove it",
+   "fix_direction": "Move the catalog load off the main thread and out of init ... .task",
+   "no_overclaim": "two-point model labeled illustrative; numbers from file",
+   "honest_unverified": "No trace exists; real catalog.json is not provided; frame granularity"
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "timing_interpretation": true,
+   "fix_direction": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "blocking synchronous read+decode+sort in a @StateObject initializer",
+   "specific_evidence": "CatalogStore.swift:15-17; 6,200 records / 2.15 MB; 52,000 / 18.4 MB; medians 475 vs 2199",
+   "timing_interpretation": "kept them out of the medians; correlation ... not proof",
+   "fix_direction": "initialize CatalogStore empty and cheap, then load in an async task",
+   "no_overclaim": "Do not apply before measuring; no promised savings",
+   "honest_unverified": "Nobody has an Instruments trace; catalog.json not provided; frame-count precision"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "no_invented_numbers": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "Build 143's CatalogStore already defers and offloads the catalog work",
+   "notes_residual_unverified": "timings do not show that the user waits less for a usable list; Needs a trace",
+   "no_unfounded_rewrite": "Do not ship on these numbers alone... If time-to-list is still ~2 s, then",
+   "no_invented_numbers": "numbers quoted from file; hypotheses labeled unmeasured"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "no_invented_numbers": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "Keep the 143 approach ... I see no defect in it",
+   "notes_residual_unverified": "does not show that the time until the user sees trails has improved; Instruments trace",
+   "no_unfounded_rewrite": "If time-to-content is still around 2 s after a trace, reduce it",
+   "no_invented_numbers": "1.5-2 s labeled a guess from the 142 numbers"
+  }
+ }
+}

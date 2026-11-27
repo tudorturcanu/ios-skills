@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "All three icon-only buttons already have explicit accessibility labels (CartRow.swift:22, :32, :41)",
+   "notes_residual_unverified": "What I could not verify... VoiceOver output... asset catalog... Localization beyond English",
+   "no_unfounded_rewrite": "findings rated medium with a priority list of changes, not labeled optional",
+   "evidence_for_clean_verdict": "frame(minWidth: 44, minHeight: 44) ... (CartRow.swift:20, 30, 39)"
+  }
+ },
+ "B": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": false,
+   "no_unfounded_rewrite": false,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "Each button has an explicit accessibilityLabel ... (CartRow.swift:22, 32, 41)",
+   "notes_residual_unverified": "unverified list omits localization of new strings in other languages",
+   "no_unfounded_rewrite": "Recommended changes (smallest first) with 'high-severity touch risk', not labeled optional",
+   "evidence_for_clean_verdict": "labels present in Localizable.xcstrings:6,7,9; line refs throughout"
+  }
+ },
+ "C": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true,
+   "no_noise": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "image-only buttons with no accessibility label",
+   "specific_evidence": "CartRow.swift:18-21 Image(\"ic_minus\") ... Everything else uses plain Text",
+   "correct_fix": "add a localized label to each button ... add the matching keys to Localizable.xcstrings",
+   "no_overclaim": "VoiceOver most likely announces something like 'ic minus, button'",
+   "honest_unverified": "What I could not verify from source ... Accessibility Inspector",
+   "no_noise": "Not verifiable from source. Test at AX5"
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true,
+   "no_noise": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "three icon-only row buttons have no accessible name",
+   "specific_evidence": "L18-21 Image(\"ic_minus\") ... The rest of the screen uses Text",
+   "correct_fix": "accessibilityLabel with item name ... add the keys to Localizable.xcstrings",
+   "no_overclaim": "The likely spoken output is something like 'ic minus, button'",
+   "honest_unverified": "Could not verify from source alone ... Accessibility Inspector audit",
+   "no_noise": "Frames use minWidth/minHeight ... Low/needs verification"
+  }
+ }
+}

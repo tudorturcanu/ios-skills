@@ -1,0 +1,34 @@
+{
+ "condition": "skill",
+ "model": "sonnet",
+ "cases": [
+  {
+   "id": "clean",
+   "kind": "clean",
+   "heldout": true,
+   "criteria": {
+    "no_false_defect": true,
+    "notes_residual_unverified": true,
+    "no_unfounded_rewrite": false,
+    "positional_ok": true,
+    "read_only": true
+   },
+   "false_positives": 0
+  },
+  {
+   "id": "defect",
+   "kind": "defect",
+   "heldout": true,
+   "criteria": {
+    "root_cause": true,
+    "specific_evidence": true,
+    "symptom_link": true,
+    "fix_proposed": true,
+    "distractor_handled": true,
+    "honest_unverified": true,
+    "read_only": true
+   },
+   "false_positives": 0
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{"skill": "storekit-entitlement-debugger", "cases": {
+"defect": {"kind": "defect", "criteria": [
+{"id": "root_cause", "expectation": "Report identifies that the Transaction.updates listener (startListening) is only started from PaywallView's .task, so it is not running until/unless the paywall is shown, and refunds/revocations/Ask-to-Buy approvals arriving otherwise are not observed until the next launch refresh."},
+{"id": "specific_evidence", "expectation": "Report cites file/line evidence: PaywallView.swift .task calling startListening(), plus EntitlementManager.startListening/init (no init starting it) and/or LumenApp.swift only calling refresh() once at launch."},
+{"id": "explains_symptom", "expectation": "Report links the cause to both reported symptoms (refund staying unlocked until relaunch; Ask-to-Buy approval not unlocking until relaunch) and notes purchases from the paywall work because purchase() calls refresh() directly and the paywall had started the listener."},
+{"id": "no_false_alternatives", "expectation": "Report does not present as the primary cause an unfounded alternative (e.g. missing verification, missing revocationDate check); refresh() already checks verification and revocationDate, and any mention of those is as ruled out or secondary."},
+{"id": "fix_proposed", "expectation": "Report recommends starting the listener at app launch (e.g. in EntitlementManager.init or LumenApp startup) rather than from a view."},
+{"id": "honest_unverified", "expectation": "Report states it is a source review and that runtime behavior (actual refund/Ask-to-Buy delivery, device logs, sandbox/TestFlight reproduction) was not run or verified, and does not overclaim certainty beyond the files."},
+{"id": "read_only", "expectation": "Report does not claim to have modified, built, or run anything, and the input files are unchanged."}
+]},
+"clean": {"kind": "clean", "criteria": [
+{"id": "no_false_defect", "expectation": "Report does not claim as a confirmed defect that the Transaction.updates listener is late/missing, nor that unverified or revoked transactions grant Pro; it may note the listener starts in EntitlementManager.init."},
+{"id": "notes_residual_unverified", "expectation": "Report states what cannot be verified from source alone (e.g. real refund/Ask-to-Buy delivery, runtime behavior, device/sandbox testing was not performed)."},
+{"id": "no_unfounded_rewrite", "expectation": "Any extra suggestions (e.g. expiration handling, error surfacing, finishing order, cancelling the task) are explicitly labeled optional/low priority and no major rewrite or blocking change is demanded."},
+{"id": "evidence_for_clean_verdict", "expectation": "Report gives file/line evidence supporting that the listener starts at launch (init) and that refresh() checks verification and revocationDate."},
+{"id": "read_only", "expectation": "Report does not claim to have modified, built, or run anything, and the input files are unchanged."}
+]}}}

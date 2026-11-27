@@ -1,0 +1,8 @@
+# dSYM manifest for archive Trailhead 4.2.1 (618)
+# Output of: dwarfdump --uuid Trailhead.app.dSYM (arm64)
+UUID: 5D4C3B2A-9999-4AAA-8BBB-FEDCBA987654 (arm64) Trailhead.app.dSYM/Contents/Resources/DWARF/Trailhead
+
+# Note from release engineer: the 4.2.1 archive was re-signed and re-uploaded
+# on 2026-11-08; the dSYM above is from the original archive.
+# Frames in the app image beyond the symbol-less offsets cannot be mapped to source
+# without the dSYM that matches the shipped binary.

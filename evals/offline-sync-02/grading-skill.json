@@ -1,0 +1,35 @@
+{
+ "condition": "skill",
+ "model": "sonnet",
+ "cases": [
+  {
+   "id": "defect",
+   "kind": "defect",
+   "heldout": true,
+   "criteria": {
+    "ambiguous_ack": true,
+    "no_idempotency_identity": true,
+    "server_contract_required": true,
+    "no_exactly_once_claim": true,
+    "test_gap": true,
+    "honest_unverified": true,
+    "read_only": true
+   },
+   "false_positives": 0
+  },
+  {
+   "id": "clean",
+   "kind": "clean",
+   "heldout": true,
+   "criteria": {
+    "no_false_duplicate_defect": true,
+    "contract_dependency_noted": true,
+    "honest_unverified": true,
+    "no_unfounded_rewrite": false,
+    "read_only": true
+   },
+   "false_positives": 0
+  }
+ ],
+ "grading": "second round, scrubbed and relabeled reports; supersedes unblinded first round"
+}

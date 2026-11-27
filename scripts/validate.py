@@ -38,18 +38,17 @@ def validate(root=ROOT):
                 raise ValueError('Description contains angle brackets')
             if re.search(r'\[TODO:|TBD|PLACEHOLDER', body):
                 raise ValueError('Unfinished scaffold')
-            if name not in {'ios-memory-growth', 'iphone-duo-design'}:
-                metadata = (folder / 'agents' / 'openai.yaml').read_text().splitlines()
-                if metadata[0] != 'interface:':
-                    raise ValueError('Missing UI interface')
-                interface = {}
-                for line in metadata[1:]:
-                    key, value = line.strip().split(': ', 1)
-                    interface[key] = json.loads(value)
-                if not 25 <= len(interface['short_description']) <= 64:
-                    raise ValueError('UI description must be 25–64 characters')
-                if '$' + name not in interface['default_prompt']:
-                    raise ValueError('Default prompt must invoke this skill')
+            metadata = (folder / 'agents' / 'openai.yaml').read_text().splitlines()
+            if metadata[0] != 'interface:':
+                raise ValueError('Missing UI interface')
+            interface = {}
+            for line in metadata[1:]:
+                key, value = line.strip().split(': ', 1)
+                interface[key] = json.loads(value)
+            if not 25 <= len(interface['short_description']) <= 64:
+                raise ValueError('UI description must be 25–64 characters')
+            if '$' + name not in interface['default_prompt']:
+                raise ValueError('Default prompt must invoke this skill')
             for markdown in folder.rglob('*.md'):
                 for target in re.findall(r'\]\(([^)]+)\)', markdown.read_text()):
                     if '://' not in target and not target.startswith('#'):

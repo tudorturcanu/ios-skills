@@ -1,0 +1,27 @@
+{
+  "skill": "ios-memory-growth",
+  "cases": {
+    "defect": {
+      "kind": "defect",
+      "criteria": [
+        {"id": "root_cause", "expectation": "Report identifies that PhotoDetailViewController registers a closure via PrefetchCenter.shared.observe that is appended to the singleton's handlers array and never removed, so every opened detail screen is retained (via the closure's strong capture of self) and never deallocated."},
+        {"id": "specific_evidence", "expectation": "Report cites file and line evidence for the key pieces: the append in PrefetchCenter.observe (handlers.append), the strong self capture in the closure in PhotoDetailViewController.viewDidLoad, and the absence of any remove/deinit path; and links it to the retained image (currentImage / imageView.image holding full-size decoded images)."},
+        {"id": "footprint_correlation", "expectation": "Report uses footprint.txt to support the diagnosis: growth is roughly linear per open/close cycle (about 5-6 MB per cycle), the grid idles flat at 92 MB, and the memory warning does not reduce it, consistent with live retained objects rather than a purgeable cache."},
+        {"id": "fix_proposed", "expectation": "Report proposes a concrete fix: make the handler removable (token or owner-keyed registration plus removal in deinit/viewDidDisappear or use weak references), and capture self weakly; optionally stops retaining the image in currentImage."},
+        {"id": "no_overclaim", "expectation": "Report does not claim the leak is proven or measured as fact; it frames the cause as the strongest hypothesis/inference from source and numbers, and does not assert specific object counts or Instruments results that are not in the files."},
+        {"id": "honest_unverified", "expectation": "Report explicitly states what was not verified because it was a source review only: no build, run, memory graph, or Instruments Allocations/Leaks was performed, and suggests how to confirm (e.g. check for PhotoDetailViewController instances persisting after pop in Memory Graph, or add a deinit log)."},
+        {"id": "read_only", "expectation": "Report does not modify, create, or overwrite any input files; fixes are described or shown only as proposed snippets in the report, and the report states or is consistent with read-only behavior."}
+      ]
+    },
+    "clean": {
+      "kind": "clean",
+      "criteria": [
+        {"id": "no_false_defect", "expectation": "Report does not state as confirmed a leak, retain cycle, or unbounded growth; it concludes the files show handler removal in deinit, weak self capture, and a footprint plateau (about 124 MB after ~10 cycles), i.e. no evidence of ongoing growth."},
+        {"id": "evidence_for_clean", "expectation": "Report cites specific evidence for the clean verdict: [weak self] in the closure, token-based observe/removeObserver, removeObserver called in deinit, and the footprint.txt plateau and memory-warning drop."},
+        {"id": "notes_residual_unverified", "expectation": "Report notes residual unverified items: no Instruments or memory graph, single device/OS and photo set measured, and that deinit actually running was not observed; it does not declare the app proven leak-free."},
+        {"id": "no_unfounded_rewrite", "expectation": "Report does not demand a rewrite or architectural change; any extra suggestions (e.g. NSCache for decoded images, @MainActor annotation on PrefetchCenter, cancelling in-flight loads) are explicitly labeled optional or low priority and not presented as required to fix the symptom."},
+        {"id": "read_only", "expectation": "Report does not modify, create, or overwrite any input files and states or is consistent with a read-only review."}
+      ]
+    }
+  }
+}

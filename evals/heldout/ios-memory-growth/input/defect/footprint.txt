@@ -1,0 +1,14 @@
+Folio footprint (MB), release build, iPhone 13, iOS 17.5
+Each cycle = open detail, full image visible, tap Back. Same 12 photos, repeated.
+Reading taken at the grid screen after each batch.
+
+cycles   footprint_MB
+0        92
+5        118
+10       141
+20       190
+40       287
+80       481
+
+Notes: grid screen alone (no detail opened) idles at 92 MB for 10 minutes.
+Memory warning simulated at 80 cycles: footprint 479 MB (no meaningful drop).

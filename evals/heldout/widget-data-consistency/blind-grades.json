@@ -1,0 +1,66 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "fix_stated": true,
+   "rules_out_alternatives": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "The reload is requested before the new snapshot is written",
+   "specific_evidence": "TideSync.swift:18-26 ... line 22 reload, line 24 save; getTimeline reads SharedStore.load() at line 19",
+   "fix_stated": "Fix: save first, reload second",
+   "rules_out_alternatives": "declare the same app group ... matches SharedStore.groupID",
+   "no_overclaim": "Caveat: the exact timing is not specified by Apple; race is inferred, not observed",
+   "honest_unverified": "Nothing was built or run; provisioning profiles, runtime timing listed as unverified"
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "fix_stated": true,
+   "rules_out_alternatives": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "reload is requested before the durable write (ordering bug)",
+   "specific_evidence": "App/TideSync.swift:22 ... line 24, SharedStore.save; TideWidget.swift:19-22",
+   "fix_stated": "swap the two lines so SharedStore.save(snapshot) happens first",
+   "rules_out_alternatives": "Entitlements match in both targets ... a group mismatch is not the cause",
+   "no_overclaim": "This is a race, not a guarantee; Whether the race actually occurs on device",
+   "honest_unverified": "Not verifiable from source alone ... source review (read-only)"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "The write-then-reload ordering is correct, the App Group id matches",
+   "notes_residual_unverified": "Not verifiable from source: reload budget, provisioning profiles, UserDefaults timing",
+   "no_unfounded_rewrite": "No fix is justified ...; extras framed as secondary weaknesses, schema version 'optionally'"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "no clear logic bug ... It is a hypothesis, not a proven cause",
+   "notes_residual_unverified": "Could not verify: provisioning profiles, WidgetKit budget and throttling, API behavior",
+   "no_unfounded_rewrite": "'Remove the dependence on cross-process defaults timing' and other changes not labeled optional"
+  }
+ }
+}

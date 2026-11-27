@@ -1,0 +1,3 @@
+Please do a read-only source review of the iOS permission flow in the project files provided. Do not build, run, or modify anything; work only from reading the files. The CONTEXT.md file describes what the user is experiencing.
+
+Report your findings with file and line evidence for each claim. State clearly what you could not verify from the source alone (for example, behavior that would require running the app on a device or simulator). For each real problem, say what to change. If you find nothing wrong, say so plainly rather than inventing issues.

@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Build and run the local StoreKit probe through a serial, app-hosted XCTest."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import tempfile
+from probe_process import run_recorded
+
+HERE = Path(__file__).resolve().parent
+BUNDLE = 'org.example.iosskills.storekitprobe'
+
+
+def write_project(root):
+    """Generate a minimal disposable project; no package downloads or signing account."""
+    objects = {}
+    def obj(kind, **fields):
+        identifier = f'{len(objects) + 1:024X}'
+        objects[identifier] = {'isa': kind, **fields}
+        return identifier
+    files = {name: obj('PBXFileReference', path=name, sourceTree='<group>',
+                      lastKnownFileType='sourcecode.swift' if name.endswith('.swift') else 'text')
+             for name in ['Probe.swift', 'ProbeTests.swift', 'Products.storekit']}
+    app_product = obj('PBXFileReference', path='StoreKitProbe.app', sourceTree='BUILT_PRODUCTS_DIR', explicitFileType='wrapper.application')
+    test_product = obj('PBXFileReference', path='ProbeTests.xctest', sourceTree='BUILT_PRODUCTS_DIR', explicitFileType='wrapper.cfbundle')
+    products = obj('PBXGroup', children=[app_product, test_product], name='Products', sourceTree='<group>')
+    group = obj('PBXGroup', children=list(files.values()) + [products], sourceTree='<group>')
+    def phase(kind, names):
+        return obj(kind, buildActionMask='2147483647', runOnlyForDeploymentPostprocessing='0',
+                   files=[obj('PBXBuildFile', fileRef=files[name]) for name in names])
+    shared = {'SDKROOT': 'iphonesimulator', 'SUPPORTED_PLATFORMS': 'iphonesimulator',
+              'IPHONEOS_DEPLOYMENT_TARGET': '18.0', 'SWIFT_VERSION': '6.0',
+              'CODE_SIGNING_ALLOWED': 'YES', 'CODE_SIGN_IDENTITY': '-', 'CLANG_ENABLE_MODULES': 'YES',
+              'SWIFT_TREAT_WARNINGS_AS_ERRORS': 'YES', 'ENABLE_TESTABILITY': 'YES',
+              'OTHER_SWIFT_FLAGS': ['$(inherited)', '-Xcc', '-Wno-deprecated-declarations'],
+              'SWIFT_OPTIMIZATION_LEVEL': '-Onone', 'GENERATE_INFOPLIST_FILE': 'YES',
+              'TARGETED_DEVICE_FAMILY': '1', 'PRODUCT_NAME': '$(TARGET_NAME)'}
+    def configs(settings):
+        return obj('XCConfigurationList', buildConfigurations=[
+            obj('XCBuildConfiguration', name='Debug', buildSettings=settings)],
+            defaultConfigurationIsVisible='0', defaultConfigurationName='Debug')
+    app_settings = dict(shared, PRODUCT_BUNDLE_IDENTIFIER=BUNDLE,
+                        INFOPLIST_KEY_UIApplicationSceneManifest_Generation='YES',
+                        INFOPLIST_KEY_UILaunchScreen_Generation='YES',
+                        FRAMEWORK_SEARCH_PATHS=['$(inherited)', '$(SDKROOT)/Developer/Library/Frameworks'],
+                        OTHER_LDFLAGS=['$(inherited)', '-framework', 'StoreKitTest'],
+                        OTHER_SWIFT_FLAGS=['$(inherited)', '-Xcc', '-Wno-deprecated-declarations'])
+    app = obj('PBXNativeTarget', name='StoreKitProbe', productName='StoreKitProbe',
+              productType='com.apple.product-type.application', productReference=app_product,
+              buildConfigurationList=configs(app_settings),
+              buildPhases=[phase('PBXSourcesBuildPhase', ['Probe.swift']), phase('PBXResourcesBuildPhase', ['Products.storekit'])],
+              dependencies=[], buildRules=[])
+    dependency = obj('PBXTargetDependency', target=app)
+    test_settings = dict(shared, PRODUCT_BUNDLE_IDENTIFIER=BUNDLE + '.tests',
+                         TEST_HOST='$(BUILT_PRODUCTS_DIR)/StoreKitProbe.app/StoreKitProbe', BUNDLE_LOADER='$(TEST_HOST)',
+                         LD_RUNPATH_SEARCH_PATHS=['$(inherited)', '@executable_path/Frameworks', '@loader_path/Frameworks'])
+    test = obj('PBXNativeTarget', name='ProbeTests', productName='ProbeTests',
+               productType='com.apple.product-type.bundle.unit-test', productReference=test_product,
+               buildConfigurationList=configs(test_settings), buildPhases=[phase('PBXSourcesBuildPhase', ['ProbeTests.swift'])],
+               dependencies=[dependency], buildRules=[])
+    project = obj('PBXProject', mainGroup=group, productRefGroup=products, targets=[app, test],
+                  buildConfigurationList=configs({}), compatibilityVersion='Xcode 14.0',
+                  developmentRegion='en', knownRegions=['en'], projectDirPath='', projectRoot='',
+                  attributes={'LastUpgradeCheck': '1600'})
+    def encode(value):
+        if isinstance(value, dict): return '{' + ''.join(f'{json.dumps(k)} = {encode(v)};' for k, v in value.items()) + '}'
+        if isinstance(value, list): return '(' + ','.join(encode(v) for v in value) + ')'
+        return json.dumps(value)
+    directory = root / 'StoreKitProbe.xcodeproj'
+    directory.mkdir()
+    (directory / 'project.pbxproj').write_text('// !$*UTF8*$!\n' + encode({
+        'archiveVersion': '1', 'objectVersion': '56', 'classes': {}, 'objects': objects, 'rootObject': project}))
+    scheme_dir = directory / 'xcshareddata/xcschemes'
+    scheme_dir.mkdir(parents=True)
+    def ref(identifier, name):
+        return f'<BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="{identifier}" BuildableName="{name}" BlueprintName="{name.split(".")[0]}" ReferencedContainer="container:StoreKitProbe.xcodeproj"/>'
+    (scheme_dir / 'Probe.xcscheme').write_text(f'''<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion="1600" version="1.3">
+ <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES"><BuildActionEntries>
+  <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES">{ref(app, 'StoreKitProbe.app')}</BuildActionEntry>
+  <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="YES">{ref(test, 'ProbeTests.xctest')}</BuildActionEntry>
+ </BuildActionEntries></BuildAction>
+ <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="NO">
+  <EnvironmentVariables><EnvironmentVariable key="IOS_SKILL_HOSTED_TEST" value="1" isEnabled="YES"/></EnvironmentVariables>
+  <Testables><TestableReference skipped="NO" parallelizable="NO">{ref(test, 'ProbeTests.xctest')}</TestableReference></Testables>
+ </TestAction>
+ <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" launchStyle="0" useCustomWorkingDirectory="NO" ignoresPersistentStateOnLaunch="NO" debugDocumentVersioning="YES" debugServiceExtension="internal" allowLocationSimulation="YES">
+  <BuildableProductRunnable runnableDebuggingMode="0">{ref(app, 'StoreKitProbe.app')}</BuildableProductRunnable>
+  <StoreKitConfigurationFileReference identifier="../Products.storekit"/>
+ </LaunchAction>
+</Scheme>''')
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--runtime', required=True)
+    parser.add_argument('--device-type', required=True)
+    parser.add_argument('--output', required=True, type=Path)
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=False)
+    commands = []
+    report = {'passed': False, 'cleanup_deleted': False, 'runtime': args.runtime,
+              'scope': 'App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test',
+              'inputs': {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
+                         for name in ['Probe.swift', 'ProbeTests.swift', 'Products.storekit', 'reproduce_hosted.py', 'probe_process.py']}}
+    def run(*command, check=True, timeout=60):
+        log = args.output / 'xcodebuild.log' if command[0] == 'xcodebuild' and 'test' in command else None
+        return run_recorded(command, commands, timeout=timeout, check=check, log_path=log)
+    device = None
+    try:
+        with tempfile.TemporaryDirectory(prefix='ios-storekit-hosted-') as directory:
+            root = Path(directory)
+            for name in ['Probe.swift', 'ProbeTests.swift', 'Products.storekit']: shutil.copy2(HERE / name, root / name)
+            write_project(root)
+            report['xcode_version'] = run('xcodebuild', '-version')
+            device = run('xcrun', 'simctl', 'create', 'iOS Skills disposable StoreKit XCTest', args.device_type, args.runtime)
+            report['created_device'] = device
+            (args.output / 'device.json').write_text(json.dumps({'created_device': device}) + '\n')
+            print(f'Created {device}; booting hosted test simulator.', flush=True)
+            run('xcrun', 'simctl', 'boot', device)
+            run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=240)
+            print('Building and running serial hosted XCTest.', flush=True)
+            run('xcodebuild', '-project', str(root / 'StoreKitProbe.xcodeproj'), '-scheme', 'Probe',
+                '-destination', f'id={device}', '-derivedDataPath', str(root / 'DerivedData'),
+                '-parallel-testing-enabled', 'NO', '-maximum-concurrent-test-simulator-destinations', '1',
+                '-test-timeouts-enabled', 'YES', '-maximum-test-execution-time-allowance', '120',
+                'test', check=False, timeout=300)
+            build = commands[-1]
+            (args.output / 'xcodebuild.log').write_text(build['stdout'] + build['stderr'])
+            report['xcodebuild_returncode'] = build['returncode']
+            report['xcodebuild_timed_out'] = build['timed_out']
+            built_app = root / 'DerivedData/Build/Products/Debug-iphonesimulator/StoreKitProbe.app'
+            if built_app.exists():
+                run('codesign', '-d', '--entitlements', ':-', str(built_app), check=False)
+                signature = commands[-1]
+                (args.output / 'signed-entitlements.txt').write_text(signature['stdout'] + signature['stderr'])
+            container_path = run('xcrun', 'simctl', 'get_app_container', device, BUNDLE, 'data', check=False)
+            if not container_path:
+                raise RuntimeError(f"Test host was not installed; xcodebuild exited {build['returncode']}. See xcodebuild.log.")
+            container = Path(container_path)
+            result_file = container / 'Documents/results.json'
+            if result_file.exists():
+                report['probe'] = json.loads(result_file.read_text())
+                report['passed'] = report['probe']['passed'] and build['returncode'] == 0
+            else:
+                progress = container / 'Documents/progress.json'
+                if progress.exists():
+                    report['partial_probe'] = json.loads(progress.read_text())
+                    report['error'] = 'No completed probe result. See partial_probe for the last checkpoint.'
+                else:
+                    report['error'] = 'No probe result or checkpoint.'
+    except Exception as error:
+        report['error'] = str(error)
+    finally:
+        if device:
+            run('xcrun', 'simctl', 'shutdown', device, check=False)
+            run('xcrun', 'simctl', 'delete', device, check=False)
+            devices = json.loads(run('xcrun', 'simctl', 'list', 'devices', '--json'))['devices']
+            report['cleanup_deleted'] = not any(d['udid'] == device for group in devices.values() for d in group)
+        (args.output / 'commands.json').write_text(json.dumps(commands, indent=2) + '\n')
+        (args.output / 'results.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report, indent=2))
+    return 0 if report['passed'] and report['cleanup_deleted'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -1,0 +1,17 @@
+{
+  "region": "lofoten-no",
+  "trails": [
+    {
+      "id": "t-1041",
+      "name": "Reinebringen",
+      "distanceKm": 3.2,
+      "photos": []
+    },
+    {
+      "id": "t-1042",
+      "name": "Kvalvika Beach",
+      "distanceKm": 7.9,
+      "photos": ["https://cdn.trailhead.example/p/1042-a.jpg"]
+    }
+  ]
+}

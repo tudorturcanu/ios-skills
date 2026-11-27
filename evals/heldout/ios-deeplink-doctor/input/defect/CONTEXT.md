@@ -1,0 +1,17 @@
+# Trailmix deep link report
+
+Trailmix is a recipe app (bundle id `com.trailmix.app`, Apple Team ID `K7P2QD9XM4`).
+Marketing sends share links like `https://links.trailmix.example/recipes/42`.
+
+Symptom (QA, iPhone, iOS 17, fresh install from TestFlight, app installed before tapping):
+- Tapping that link in Notes or Messages opens Safari on the web page instead of the app.
+- The custom scheme `trailmix://recipes/42` opens the app and shows recipe 42 correctly.
+- Long-pressing the link in Messages shows "Open in Safari" as the default.
+
+Documented facts about the deployment:
+- The AASA file in `apple-app-site-association.json` is served as-is from
+  `https://links.trailmix.example/.well-known/apple-app-site-association`
+  with Content-Type application/json, HTTP 200, no redirects.
+- The Associated Domains capability is enabled for the target and the
+  provisioning profile includes it.
+- Only the files in this folder are available for review.

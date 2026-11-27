@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "interaction": "Open and dismiss the photo picker (synthetic numbers for checking interpretation only)",
+  "samples": [
+    {"cycle": 1, "settled": true, "footprint_bytes": 41000000,
+     "counts": {"PickerModel": 1, "PickerCoordinator": 1, "ThumbnailCacheEntry": 24, "PickerRowView": 0}},
+    {"cycle": 2, "settled": true, "footprint_bytes": 43500000,
+     "counts": {"PickerModel": 2, "PickerCoordinator": 2, "ThumbnailCacheEntry": 48, "PickerRowView": 0}},
+    {"cycle": 3, "settled": false, "footprint_bytes": 47000000,
+     "counts": {"PickerModel": 4, "PickerCoordinator": 3, "ThumbnailCacheEntry": 60, "PickerRowView": 12}},
+    {"cycle": 3, "settled": true, "footprint_bytes": 45000000,
+     "counts": {"PickerModel": 3, "PickerCoordinator": 3, "ThumbnailCacheEntry": 64, "PickerRowView": 0}},
+    {"cycle": 4, "settled": true, "footprint_bytes": 46600000,
+     "counts": {"PickerModel": 4, "PickerCoordinator": 4, "ThumbnailCacheEntry": 64, "PickerRowView": 0}},
+    {"cycle": 5, "settled": true, "footprint_bytes": 48100000,
+     "counts": {"PickerModel": 5, "PickerCoordinator": 5, "ThumbnailCacheEntry": 64, "PickerRowView": 0}}
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "symptom_link": true,
+   "fix_proposed": true,
+   "distractor_handled": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "defines only `one` ... and `other`; missing few and many",
+   "specific_evidence": "xcstrings lines 43-60 quoted values; CartView.swift call site cited",
+   "symptom_link": "2 reads '2 \u0442\u043e\u0432\u0430\u0440\u043e\u0432' (should be '\u0442\u043e\u0432\u0430\u0440\u0430')",
+   "fix_proposed": "add `few` and `many`",
+   "distractor_handled": "positional placeholders ... not a bug / are fine",
+   "honest_unverified": "source only; build, simulator, translator input not verified"
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "symptom_link": true,
+   "fix_proposed": true,
+   "distractor_handled": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "defines only `one` ... and `other`; missing few and many",
+   "specific_evidence": "xcstrings lines 43-60 quoted values; CartView.swift call site cited",
+   "symptom_link": "2 reads '2 \u0442\u043e\u0432\u0430\u0440\u043e\u0432' (should be '\u0442\u043e\u0432\u0430\u0440\u0430')",
+   "fix_proposed": "add `few` and `many`",
+   "distractor_handled": "positional placeholders ... not a bug / are fine",
+   "honest_unverified": "source only; build, simulator, translator input not verified"
+  }
+ },
+ "A": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "positional_ok": true,
+   "read_only": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "All four categories are present / correct for all four CLDR categories",
+   "notes_residual_unverified": "What I could not verify: rendering, layout, translation quality",
+   "no_unfounded_rewrite": "key renaming listed as priority change (not optional) based on unconfirmed theory",
+   "positional_ok": "valid and is not a problem",
+   "read_only": "nothing built or run"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "positional_ok": true,
+   "read_only": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "All four categories are present / correct for all four CLDR categories",
+   "notes_residual_unverified": "What I could not verify: rendering, layout, translation quality",
+   "no_unfounded_rewrite": "key renaming listed as priority change (not optional) based on unconfirmed theory",
+   "positional_ok": "valid and is not a problem",
+   "read_only": "nothing built or run"
+  }
+ }
+}

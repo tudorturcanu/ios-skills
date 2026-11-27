@@ -1,0 +1,14 @@
+{
+  "identifier": "lumen-config",
+  "settings": { "_failTransactionsEnabled": false },
+  "subscriptionGroups": [
+    {
+      "id": "21400001",
+      "name": "pro",
+      "subscriptions": [
+        { "productID": "com.lumen.pro.monthly", "displayPrice": "4.99", "recurringSubscriptionPeriod": "P1M", "familyShareable": true },
+        { "productID": "com.lumen.pro.yearly", "displayPrice": "39.99", "recurringSubscriptionPeriod": "P1Y", "familyShareable": true }
+      ]
+    }
+  ]
+}

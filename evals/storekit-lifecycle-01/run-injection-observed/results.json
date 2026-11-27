@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-2",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "d9b050bf45cbe224fdbd54d46e7a14613a70174998fae840c5202e071f08d429",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "ece55ed729fc86e2a380d222ee97b74b184b7fda0eb7bf3230af8494a024fa29",
+    "probe_process.py": "c9f8b48e0b3c1e8e246b676e24fd1f9695907fef91fc70f716a8ba5868628380"
+  },
+  "xcode_version": "Xcode 27.2\nBuild version 27B52",
+  "created_device": "E350B6C9-86B0-4C3A-9F91-4769FF5A770B",
+  "xcodebuild_returncode": 0,
+  "xcodebuild_timed_out": false,
+  "probe": {
+    "checks": {
+      "cached_entitlement_unaffected_by_injection": true,
+      "consumable_absent_from_current_entitlements": true,
+      "consumable_in_unfinished_before_finish": true,
+      "consumable_is_local_xcode_transaction": true,
+      "finish_does_not_remove_nonconsumable": true,
+      "finished_consumable_leaves_unfinished": true,
+      "fresh_purchase_returned_within_bound": true,
+      "grow_only_negative_control_detected": true,
+      "initial_empty": true,
+      "injected_new_transaction_hidden_from_history": true,
+      "injected_same_id_visible_verified_after_reset": true,
+      "injected_session_purchase_returned": true,
+      "local_products_loaded": true,
+      "purchase_entitles": true,
+      "purchase_is_local_xcode_transaction": true,
+      "refund_removes_entitlement": true,
+      "synthetic_complete_empty_snapshot_revokes": true,
+      "synthetic_incomplete_snapshot_changes_nothing": true,
+      "synthetic_unverified_does_not_revoke": true,
+      "synthetic_unverified_never_grants": true,
+      "verification_injection_readback": true,
+      "verified_after_injection_reset": true
+    },
+    "environment": "local StoreKitTest",
+    "observations": [
+      {
+        "phase": "initial",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "environment": "Xcode",
+        "phase": "purchase_result",
+        "product_id": "org.example.iosskills.premium",
+        "transaction_id": 0
+      },
+      {
+        "attempts": 2,
+        "phase": "purchased_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 1,
+        "phase": "finished_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 49,
+        "phase": "unverified_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 1,
+        "phase": "verification_recovered",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 2,
+        "phase": "after_refund",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "environment": "Xcode",
+        "phase": "consumable_result",
+        "product_id": "org.example.iosskills.coins",
+        "transaction_id": 1
+      },
+      {
+        "phase": "unfinished_consumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "after": [],
+        "before": [
+          1
+        ],
+        "phase": "consumable_unfinished_ids",
+        "transaction_id": 1
+      },
+      {
+        "phase": "injected_session_purchase",
+        "returned_type": "Transaction",
+        "transaction_id": 2
+      },
+      {
+        "all": "absent",
+        "latest": "absent",
+        "phase": "injected_history_readback",
+        "transaction_id": 2
+      },
+      {
+        "phase": "injected_recovery",
+        "transaction_id": 2,
+        "verified_same_id": true
+      },
+      {
+        "matches_invalid_signature": true,
+        "phase": "verification_injection_readback"
+      },
+      {
+        "environment": "Xcode",
+        "phase": "fresh_purchase",
+        "transaction_id": 2,
+        "verification": "verified"
+      },
+      {
+        "environment": "Xcode",
+        "phase": "fresh_verification_recovery",
+        "transaction_id": 2,
+        "verified_same_id": true
+      }
+    ],
+    "os": "27.2",
+    "passed": true
+  }
+}

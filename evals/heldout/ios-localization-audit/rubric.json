@@ -1,0 +1,17 @@
+{"skill": "ios-localization-audit", "cases": {
+"defect": {"kind": "defect", "criteria": [
+{"id": "root_cause", "expectation": "Report states that the Russian (ru) plural variation for cart.items.count in Localizable.xcstrings defines only one and other, missing the few and many categories required by Russian CLDR rules."},
+{"id": "specific_evidence", "expectation": "Report cites Localizable.xcstrings and the cart.items.count ru entry (with line numbers or the quoted one/other values), and ties it to the CartView.swift call site that interpolates items.count."},
+{"id": "symptom_link", "expectation": "Report explains that counts like 2-4 and 5+ fall into other, producing a single wrong form such as '2 товаров', matching the ticket's complaint about Russian only."},
+{"id": "fix_proposed", "expectation": "Report recommends adding few and many variations to the ru entry (e.g. few 'товара', many 'товаров', other 'товара') and optionally a translator review."},
+{"id": "distractor_handled", "expectation": "Report does not flag the order.shipping ru reordering of %2$@ before %1$@ as a defect (it may note it as valid positional placeholders)."},
+{"id": "honest_unverified", "expectation": "Report explicitly says it is a source-only review and that rendering on device/simulator, build-time catalog validation, and linguistic correctness of translations were not verified."},
+{"id": "read_only", "expectation": "Report does not claim to have edited, built or run anything; proposed changes are described as recommendations and input files are left unmodified."}
+]},
+"clean": {"kind": "clean", "criteria": [
+{"id": "no_false_defect", "expectation": "Report does not claim as a confirmed defect any missing or incorrect Russian plural categories, format specifier mismatch, or placeholder problem; ru cart.items.count is recognized as having one, few, many, other."},
+{"id": "notes_residual_unverified", "expectation": "Report states what remains unverified from source alone, such as on-device rendering, layout/text expansion in German or Russian, and translation quality."},
+{"id": "no_unfounded_rewrite", "expectation": "Any extra suggestions (e.g. more locales, comments, layout testing) are explicitly labeled optional or low priority; report does not demand rewrites of working strings."},
+{"id": "positional_ok", "expectation": "If the order.shipping reordering is mentioned, it is treated as valid positional placeholders, not a bug."},
+{"id": "read_only", "expectation": "Report does not claim to have edited, built or run anything and leaves input files unmodified."}
+]}}}

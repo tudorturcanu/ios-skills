@@ -1,0 +1,27 @@
+{
+  "skill": "swiftdata-migration-checker",
+  "cases": {
+    "defect": {
+      "kind": "defect",
+      "criteria": [
+        {"id": "root_cause", "expectation": "Report identifies that SchemaV1.Hike.distance was renamed to SchemaV2.Hike.distanceKm but the V1->V2 stage is a plain lightweight migration with no originalName mapping and no custom stage copying values, so existing distances are dropped and distanceKm takes its default of 0."},
+        {"id": "specific_evidence", "expectation": "Report cites file and line evidence from at least SchemaV2.swift (distanceKm declared without @Attribute(originalName:)) and HikeMigrationPlan.swift (MigrationStage.lightweight for v1ToV2, including the comment claiming it is enough)."},
+        {"id": "test_gap", "expectation": "Report notes that Tests/HikeMigrationTests.swift only uses an in-memory SchemaV2 store with freshly inserted data and never opens a V1-seeded store, so it cannot detect the value loss; this also explains why fresh installs and green tests hid the bug."},
+        {"id": "actionable_fix", "expectation": "Report proposes a concrete change: either @Attribute(originalName: \"distance\") on the renamed property or a custom MigrationStage that copies old values, plus a test that seeds an on-disk V1 store, migrates, and asserts distanceKm equals the seeded value."},
+        {"id": "no_overclaim", "expectation": "Report presents the cause as strongly indicated by the source but does not claim to have reproduced the data loss or observed the 0.0 km result at runtime; wording such as 'based on source' or 'would' is used where appropriate."},
+        {"id": "honest_unverified", "expectation": "Report explicitly distinguishes source review from actions not performed (building, running tests, migrating a real or sample V1 store) and lists what remains unverified, e.g. actual SwiftData behavior on a real upgrade."},
+        {"id": "read_only", "expectation": "Report does not claim to have edited, created, or deleted any input file, and any fixes are presented as proposals only."}
+      ]
+    },
+    "clean": {
+      "kind": "clean",
+      "criteria": [
+        {"id": "no_false_defect", "expectation": "Report does not state as a confirmed defect that distance values are lost or reset in the V1->V2 migration; it acknowledges the custom stage copies legacyDistance into distanceKm and that the test seeds a V1 store and asserts the value."},
+        {"id": "notes_residual_unverified", "expectation": "Report states that nothing was built or run, so the migration and test passing at runtime (e.g. the custom stage with originalName and didMigrate behaving as intended) remains unverified."},
+        {"id": "no_unfounded_rewrite", "expectation": "Any extra suggestions (e.g. more test cases, removing legacyDistance in a later version, error handling) are explicitly labeled optional, low priority, or nice-to-have, and the report does not demand a rewrite of the migration."},
+        {"id": "evidence_for_clean_verdict", "expectation": "Report cites file and line evidence for why the migration looks correct (e.g. HikeMigrationPlan.swift custom stage, SchemaV2.swift originalName attribute, test in HikeMigrationTests.swift)."},
+        {"id": "read_only", "expectation": "Report does not claim to have edited, created, or deleted any input file; any suggestions are proposals only."}
+      ]
+    }
+  }
+}

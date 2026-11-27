@@ -1,0 +1,74 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "data_correlation": true,
+   "concrete_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "unguarded `trail.photos[0]` on an empty array in makeRow",
+   "specific_evidence": "EXC_BREAKPOINT / SIGTRAP; 'Fatal error: Index out of range'; subscript line 31 vs crash line 29 noted",
+   "data_correlation": "t-1041 'Reinebringen' has \"photos\": []",
+   "concrete_fix": "use trail.photos.first, make thumbnail optional with placeholder",
+   "no_overclaim": "'Most likely cause'; can't confirm user's payload matches sample",
+   "honest_unverified": "'I did not build or run anything'; unsymbolicated; actual server response unconfirmed"
+  }
+ },
+ "C": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "data_correlation": true,
+   "concrete_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "makeRow indexes trail.photos[0] without checking",
+   "specific_evidence": "EXC_BREAKPOINT/SIGTRAP, ASI 'Index out of range', makeRow frame, line 29 vs 31 discrepancy",
+   "data_correlation": "trail t-1041 'Reinebringen' has \"photos\": []",
+   "concrete_fix": "use trail.photos.first and make TrailRow.thumbnail optional (placeholder)",
+   "no_overclaim": "'Most likely cause'; 'This is inference'",
+   "honest_unverified": "'Not verified, by design'; UUIDs not matched to dSYM; 'Suggested verification (not run)'"
+  }
+ },
+ "B": {
+  "criteria": {
+   "no_false_defect": true,
+   "unverifiable_cause": true,
+   "notes_residual_unverified": false,
+   "no_unfounded_rewrite": true,
+   "read_only": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "'trail.photos.first is optional and safe on an empty array'",
+   "unverifiable_cause": "UUID 9A8B7C6D vs 5D4C3B2A differ; EXC_BAD_ACCESS objc_release/MapKit",
+   "notes_residual_unverified": "lists needed dSYM, Zombie/ASan, but never states nothing was built or run",
+   "no_unfounded_rewrite": "'Optional hardening, unrelated to this crash'",
+   "read_only": "no claim of edits"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "unverifiable_cause": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "read_only": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "'takes trail.photos.first ... empty photos record is a red herring'",
+   "unverifiable_cause": "UUIDs 9A8B7C6D vs 5D4C3B2A do not match; objc_release/MapKit",
+   "notes_residual_unverified": "'No symbolication, build or run was done'; lists dSYM, Zombie Objects needed",
+   "no_unfounded_rewrite": "'Nothing in TrailListViewModel.swift ... should be changed'",
+   "read_only": "no claim of edits"
+  }
+ }
+}

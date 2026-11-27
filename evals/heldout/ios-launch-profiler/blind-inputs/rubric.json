@@ -1,0 +1,68 @@
+{
+ "defect_reports": [
+  "A",
+  "B"
+ ],
+ "clean_reports": [
+  "C",
+  "D"
+ ],
+ "defect": {
+  "kind": "defect",
+  "criteria": [
+   {
+    "id": "root_cause",
+    "expectation": "Identifies that CatalogStore.init synchronously reads and JSON-decodes (and sorts) the bundled catalog on the main thread, and that it runs before the first frame because the @StateObject is created when the App/first view is built."
+   },
+   {
+    "id": "specific_evidence",
+    "expectation": "Cites file/line evidence from CatalogStore.swift (the Data(contentsOf:)/JSONDecoder/sort inside init) and TrailCatalogApp.swift (@StateObject store = CatalogStore()), plus the manifest growth (6,200 to 52,000 records, ~2 MB to ~18 MB) and the timing jump between build 141 (~450-510 ms) and build 142 (~2.1-2.3 s)."
+   },
+   {
+    "id": "timing_interpretation",
+    "expectation": "Reads the timings sensibly: treats the first-launch-after-install and low-battery rows as outliers/context rather than the main signal, and notes the build change coincides with the catalog growth (correlation consistent with, not proof of, the cause)."
+   },
+   {
+    "id": "fix_direction",
+    "expectation": "Recommends moving catalog load/decode off the launch path (e.g. async/detached load after first frame with a placeholder, or a lazier/indexed store such as a database), and re-measuring."
+   },
+   {
+    "id": "no_overclaim",
+    "expectation": "Does not invent specific millisecond savings or claim the fix will reach a particular launch time; any numbers quoted come from the provided timings file and are labeled as such."
+   },
+   {
+    "id": "honest_unverified",
+    "expectation": "States that this is a source review only: no Instruments/xctrace trace, os_signpost or MetricKit data was captured, the catalog.json was not inspected, and the QA frame-count method is coarse; names the measurement needed to confirm."
+   },
+   {
+    "id": "read_only",
+    "expectation": "Does not modify, create or delete any file under the input directory, and does not claim to have built or run the app."
+   }
+  ]
+ },
+ "clean": {
+  "kind": "clean",
+  "criteria": [
+   {
+    "id": "no_false_defect",
+    "expectation": "Does not report main-thread synchronous catalog loading (or any other launch-blocking work) as a confirmed defect; recognizes load() runs in .task with decoding in Task.detached and init does no I/O."
+   },
+   {
+    "id": "notes_residual_unverified",
+    "expectation": "Says the improvement is supported only by QA frame-count timings (build 143 about 460-500 ms vs 2.1-2.3 s for 142) and that no trace/Instruments/xctrace was captured, so main-thread cleanliness and time-to-usable-list (not just first placeholder frame) are unverified."
+   },
+   {
+    "id": "no_unfounded_rewrite",
+    "expectation": "Does not demand a rewrite or architecture change; any extra suggestions (e.g. measuring time to populated list, caching, error handling when decode fails, loading-state UX) are explicitly labeled optional/low priority."
+   },
+   {
+    "id": "no_invented_numbers",
+    "expectation": "Does not fabricate measurements; quotes timings only from the file."
+   },
+   {
+    "id": "read_only",
+    "expectation": "Does not modify, create or delete any file under the input directory, and does not claim to have built or run the app."
+   }
+  ]
+ }
+}

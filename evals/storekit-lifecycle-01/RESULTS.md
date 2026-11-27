@@ -60,3 +60,27 @@ PYTHONDONTWRITEBYTECODE=1 python3 evals/storekit-lifecycle-01/reproduce_hosted.p
 This creates and deletes its own simulator, uses two synthetic local products, and needs no App Store account. The retained outcome is a **nonzero exit**, not a green suite. Runtime changes may produce a different result; keep new evidence separate. The older standalone `reproduce.py` is retained for investigation and has no successful end-to-end run here.
 
 Relevant primary contracts: [current entitlements](https://developer.apple.com/documentation/storekit/transaction/currententitlements), [SKTestSession](https://developer.apple.com/documentation/storekittest/sktestsession), and [configuring local StoreKit testing](https://developer.apple.com/documentation/xcode/setting-up-storekit-testing-in-xcode). The observed failure to inject an error into a cached entitlement does not establish an SDK defect or the behavior of a fresh purchase verification.
+
+## Bounded fresh purchase (eleventh attempt, iOS 27.2)
+
+The fresh-purchase call now runs under a 20-second bound (`boundedPurchase` in `Probe.swift`), so a stall is recorded as evidence instead of ending the run without a result. On iOS 27.2 the run completed with a nonzero exit: `product.purchase(confirmIn:)` with an injected `.invalidSignature` verification error did not return within 20 seconds (`fresh_purchase_returned_within_bound` is false). The three dependent checks (`fresh_purchase_is_unverified`, `fresh_same_id_verification_recovers`, `unverified_is_not_an_empty_snapshot`) are therefore false because their precondition was never observed, not because recovery failed. The other 13 checks were true, and the simulator was deleted. Retained in [run-bounded-purchase](run-bounded-purchase/results.json).
+
+This is the first run with a completed result, and it narrows the open question: injected verification failure on a fresh purchase stalls in this configuration. It does not show whether that is an SDK behavior, a test-host limitation, or a probe defect, and it still leaves verification-failure handling and recovery unexercised.
+
+## Injection behavior observed, unverified handling tested synthetically (twelfth attempt, iOS 27.2)
+
+This run completed with exit 0, 22 of 22 checks true, and the simulator deleted ([run-injection-observed](run-injection-observed/results.json)). It also changes what the probe claims. Across all paths tried, `SKTestSession` verification injection (`.invalidSignature`) never produced an `.unverified` result:
+
+- **Cached entitlement:** an already-purchased nonconsumable stayed verified for 45 polling attempts while injection was set (`cached_entitlement_unaffected_by_injection`).
+- **New transaction via the test session:** `buyProduct` returned transaction 2, but it was absent from both `Transaction.latest(for:)` and `Transaction.all` while injection was set, and appeared verified with the same ID once injection was cleared (`injected_new_transaction_hidden_from_history`, `injected_same_id_visible_verified_after_reset`).
+- **App-facing `Product.purchase`:** in this ordering it returned a verified result for transaction 2 despite injection. In the earlier ordering, without the test-session purchase before it, the same call did not return within 20 seconds. The outcome depends on prior state, so neither is a stable negative result.
+
+The earlier `fresh_purchase_is_unverified`, `fresh_same_id_verification_recovers`, and `unverified_is_not_an_empty_snapshot` checks were removed because their precondition cannot be produced here; the retained earlier runs still record them as false. The practical consequence for the skill: an empty or missing snapshot during a verification problem is not revocation evidence, which is the hazard the skill already warns about.
+
+Unverified handling is covered only by four synthetic checks on `reconcileEntitlements` (unverified never grants, never revokes, only a complete empty snapshot revokes, an incomplete snapshot changes nothing). These test the decision rule on hand-built inputs, not StoreKit output, and not any app's own code. Whether real unverified results (for example a tampered signature on a device or sandbox) are handled correctly remains untested.
+
+## Updates stream under injection, and run-to-run variance (thirteenth attempt, iOS 27.2)
+
+This run added a `Transaction.updates` listener started before injection, to test the one path not yet tried. With `.invalidSignature` set, `buyProduct` returned transaction 2 and the listener received **no entries within 5 seconds**; the transaction was again absent from `latest` and `all`. So none of cached entitlements, history, the updates stream, or the app-facing purchase produced an `.unverified` result in this environment ([run-updates-stream](run-updates-stream/results.json)).
+
+The run completed with a nonzero exit: 20 of 22 checks true. `fresh_purchase_returned_within_bound` was false (the app-facing purchase did not return within 20 seconds, as in the earlier stall) and `injected_same_id_visible_verified_after_reset` was false (the transaction was not seen verified within 5 seconds of clearing injection). The previous run, without the listener, passed 22 of 22. The probe is therefore **not stable run to run**; whether the listener caused the difference or it is ordinary variance was not isolated. The headline claim stays as in the previous section: injection hides or stalls rather than flagging unverified, and unverified handling is exercised only on synthetic inputs.

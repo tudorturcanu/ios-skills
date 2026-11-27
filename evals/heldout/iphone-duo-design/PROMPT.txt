@@ -1,0 +1,1 @@
+Please do a read-only source review of the project files in the input directory. Do not build, run, or modify anything. The CONTEXT.md describes what the user is seeing. Report your findings with file and line evidence, state what you could not verify from the source alone, and say what should change.

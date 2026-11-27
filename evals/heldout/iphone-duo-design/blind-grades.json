@@ -1,0 +1,74 @@
+{
+ "A": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_cited": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "wraps everything in a GeometryReader ... should re-run layout; launch-screen suspect hedged as 'not confirmable'",
+   "notes_residual_unverified": "What I could not verify from source alone ... I did not build or run anything",
+   "no_unfounded_rewrite": "'Replace the whole branch with NavigationSplitView' presented as recommended change, not optional",
+   "evidence_cited": "RootView.swift:8-10 wraps everything in a GeometryReader"
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "once_at_creation": true,
+   "specific_evidence": true,
+   "plist_secondary": true,
+   "fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "UIScreen.main ... value does not change after fold or unfold",
+   "once_at_creation": "private let is evaluated once per RootView instance ... Relaunching re-evaluates the flag",
+   "specific_evidence": "RootView.swift:7-8 with useTwoColumns declaration",
+   "plist_secondary": "UIRequiresFullScreen = true (Info.plist:11-12) ... should be dropped, listed as secondary",
+   "fix": "NavigationSplitView or horizontalSizeClass; remove UIRequiresFullScreen",
+   "no_overclaim": "The fix is expected, not observed",
+   "honest_unverified": "Could not verify ... I did not build or run anything"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_cited": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "RootView does adapt to width changes; No use of UIScreen.main",
+   "notes_residual_unverified": "What could not be verified ... Nothing was built or run",
+   "no_unfounded_rewrite": "'What should change: Replace the GeometryReader + HStack/NavigationStack switch with NavigationSplitView' not labeled optional",
+   "evidence_cited": "RootView.swift:8-10 GeometryReader { proxy in ... proxy.size.width > 600 }"
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "once_at_creation": true,
+   "specific_evidence": true,
+   "plist_secondary": true,
+   "fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "Layout chosen once from UIScreen.main.bounds",
+   "once_at_creation": "stored let initialised when RootView is created ... Relaunch re-creates RootView",
+   "specific_evidence": "RootView.swift:7-8 quoted",
+   "plist_secondary": "UIRequiresFullScreen = true opts out of resizing (Info.plist:11-12); 'likely cause' but cannot confirm",
+   "fix": "NavigationSplitView/size class/GeometryReader; remove UIRequiresFullScreen",
+   "no_overclaim": "I cannot confirm exactly how the Duo treats this key",
+   "honest_unverified": "Could not verify from source alone ... Nothing was built or run"
+  }
+ }
+}

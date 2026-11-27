@@ -1,0 +1,26 @@
+{"app_name":"Trailhead","bundleID":"example.trailhead","app_version":"4.2.0","build_version":"612","os_version":"iPhone OS 17.4 (21E219)","incident_id":"7C1D2A55-0B1E-4B3E-9A55-1F2A3B4C5D6E","timestamp":"2026-11-02 08:14:31.00 +0100"}
+{
+  "procName": "Trailhead",
+  "exception": {"type": "EXC_BREAKPOINT", "codes": "0x0000000000000001, 0x00000001029a4c18", "signal": "SIGTRAP"},
+  "termination": {"namespace": "SIGNAL", "code": 5, "indicator": "Trace/BPT trap: 5"},
+  "triggered": true,
+  "faultingThread": 0,
+  "usedImages": [
+    {"source": "P", "arch": "arm64", "base": 4339253248, "size": 1146880, "uuid": "A1B2C3D4-1111-4222-8333-AAAABBBBCCCC", "path": "/private/var/containers/Bundle/Application/X/Trailhead.app/Trailhead", "name": "Trailhead"},
+    {"source": "P", "arch": "arm64e", "base": 7000000000, "size": 4000000, "uuid": "E5F6A7B8-2222-4333-9444-DDDDEEEEFFFF", "path": "/usr/lib/swift/libswiftCore.dylib", "name": "libswiftCore.dylib"}
+  ],
+  "threads": [
+    {
+      "id": 4551213, "triggered": true, "queue": "com.apple.main-thread",
+      "frames": [
+        {"imageIndex": 1, "imageOffset": 1830584, "symbol": "_assertionFailure(_:_:file:line:flags:)"},
+        {"imageIndex": 0, "imageOffset": 183320, "symbol": "TrailListViewModel.makeRow(for:)", "sourceFile": "TrailListViewModel.swift", "sourceLine": 29},
+        {"imageIndex": 0, "imageOffset": 182100, "symbol": "closure #1 in TrailListViewModel.load(from:)", "sourceFile": "TrailListViewModel.swift", "sourceLine": 24},
+        {"imageIndex": 0, "imageOffset": 181004, "symbol": "TrailListViewModel.load(from:)", "sourceFile": "TrailListViewModel.swift", "sourceLine": 24},
+        {"imageIndex": 0, "imageOffset": 90112, "symbol": "NearbyTrailsViewController.viewDidLoad()"}
+      ]
+    }
+  ],
+  "lastExceptionBacktrace": [],
+  "asi": {"libswiftCore.dylib": ["Fatal error: Index out of range"]}
+}

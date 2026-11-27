@@ -1,0 +1,66 @@
+{
+ "A": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "\"I found no defect in the supplied source that explains the reported symptom\"",
+   "notes_residual_unverified": "\"Could not verify from source alone\"; \"Nothing was built or run\"",
+   "no_unfounded_rewrite": "\"No change is required in the permission logic\"; \"Optionally implement notes 1-4\""
+  }
+ },
+ "B": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "\"The permission flow in this revised build reads correctly\"",
+   "notes_residual_unverified": "\"Things I could not verify from source alone\"; \"Nothing was built or run\"",
+   "no_unfounded_rewrite": "\"Minor, non-causal observations (optional)\"; \"Nothing required in the provided files\""
+  }
+ },
+ "C": {
+  "criteria": {
+   "root_cause": true,
+   "missing_refresh": true,
+   "specific_evidence": true,
+   "symptom_link": true,
+   "actionable_fix": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "\"loadState() first checks defaults.object(forKey: cacheKey)... returns map(cached) immediately\"",
+   "missing_refresh": "\"There is no locationManagerDidChangeAuthorization(_:)\"",
+   "specific_evidence": "lines 15-19, 23-31 and NearbyView lines 14-22 \"Location is off\" banner",
+   "symptom_link": "\"Reinstall clears UserDefaults\"; fresh install has no cache so the live status is used",
+   "actionable_fix": "\"Remove the UserDefaults cache entirely\" and add the delegate method",
+   "honest_unverified": "\"Not verifiable without a device or simulator\"; \"Nothing was built, run or modified\""
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "missing_refresh": true,
+   "specific_evidence": true,
+   "symptom_link": true,
+   "actionable_fix": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "\"writes it to UserDefaults under trailnear.cachedAuthStatus... Every later launch returns the cached value\"",
+   "missing_refresh": "\"no locationManagerDidChangeAuthorization(_:)\"; no scenePhase refresh",
+   "specific_evidence": "LocationPermissionManager lines 21-31 and NearbyView lines 14-22 .denied branch",
+   "symptom_link": "\"force-quitting does not help, and why only deleting the app... does\"; fresh-install prompt works",
+   "actionable_fix": "\"Remove the UserDefaults cache entirely\" and implement the delegate callback",
+   "honest_unverified": "\"Not verifiable from source\" section: runtime behavior, Settings round trip"
+  }
+ }
+}

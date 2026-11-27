@@ -1,0 +1,34 @@
+{
+ "condition": "no-skill",
+ "model": "sonnet",
+ "cases": [
+  {
+   "id": "defect",
+   "kind": "defect",
+   "heldout": true,
+   "criteria": {
+    "root_cause": true,
+    "specific_evidence": true,
+    "data_correlation": true,
+    "concrete_fix": true,
+    "no_overclaim": true,
+    "honest_unverified": true,
+    "read_only": true
+   },
+   "false_positives": 0
+  },
+  {
+   "id": "clean",
+   "kind": "clean",
+   "heldout": true,
+   "criteria": {
+    "no_false_defect": true,
+    "unverifiable_cause": true,
+    "notes_residual_unverified": false,
+    "no_unfounded_rewrite": true,
+    "read_only": true
+   },
+   "false_positives": 0
+  }
+ ]
+}

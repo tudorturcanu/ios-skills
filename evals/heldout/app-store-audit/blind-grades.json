@@ -1,0 +1,62 @@
+{
+ "A": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "\"Pass (source)\" for both CA92.1 and C617.1; \"no blockers found in inspected scope\"",
+   "notes_residual_unverified": "\"Remaining verification\": archive/validation, Connect privacy answers, screenshots, manifest bundling (C-05)",
+   "no_unfounded_rewrite": "ASA-003 \"Optional engineering improvement, not a requirement\"; ASA-004 \"Optional guidance\""
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "\"no NSPrivacyAccessedAPICategoryFileTimestamp entry\" matches ITMS-91053",
+   "specific_evidence": "ReceiptStore.swift:26-27, 32-33; PrivacyInfo.xcprivacy:11-21 only UserDefaults CA92.1",
+   "correct_fix": "add second entry with C617.1, Documents directory fit; keeps UserDefaults",
+   "no_overclaim": "\"from memory\", \"confirm ... before applying\"; notes email may list more categories; no UserDefaults flag",
+   "honest_unverified": "\"Verification gaps\": email text, xcprivacy in target, no archive, Connect, runtime"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "\"No blocking privacy-manifest or metadata problem\"; both APIs declared \"Correct\"",
+   "notes_residual_unverified": "\"Could not verify\": manifest in target/archive, nutrition labels, screenshots, signing",
+   "no_unfounded_rewrite": "findings labeled \"Low\" / \"Informational\"; \"Keep C617.1 and CA92.1 as is\""
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "\"declares only the UserDefaults ... code also uses file timestamp APIs\" explains ITMS-91053",
+   "specific_evidence": "PrivacyInfo.xcprivacy:11-21; ReceiptStore.swift:26 and 32-33",
+   "correct_fix": "add FileTimestamp / C617.1 \"Keep the UserDefaults / CA92.1 entry\"",
+   "no_overclaim": "\"other code, which I cannot see, may use more\"; UserDefaults entry called correct",
+   "honest_unverified": "\"Could not verify\": target membership, full email, other source, Connect items, device behavior"
+  }
+ }
+}

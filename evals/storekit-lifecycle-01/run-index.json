@@ -78,5 +78,32 @@
       "reproduce_hosted.py": "run-fresh-verification/runner.txt",
       "probe_process.py": "run-fresh-verification/process.txt"
     }
+  },
+  "run-bounded-purchase": {
+    "inputs": {
+      "Probe.swift": "run-bounded-purchase/source.txt",
+      "ProbeTests.swift": "run-bounded-purchase/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-bounded-purchase/runner.txt",
+      "probe_process.py": "run-bounded-purchase/process.txt"
+    }
+  },
+  "run-injection-observed": {
+    "inputs": {
+      "Probe.swift": "run-injection-observed/source.txt",
+      "ProbeTests.swift": "run-injection-observed/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-injection-observed/runner.txt",
+      "probe_process.py": "run-injection-observed/process.txt"
+    }
+  },
+  "run-updates-stream": {
+    "inputs": {
+      "Probe.swift": "run-updates-stream/source.txt",
+      "ProbeTests.swift": "run-updates-stream/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-updates-stream/runner.txt",
+      "probe_process.py": "run-updates-stream/process.txt"
+    }
   }
 }

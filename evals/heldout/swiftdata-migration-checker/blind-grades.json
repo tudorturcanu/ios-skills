@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "test_gap": true,
+   "actionable_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "rename is not declared, so it migrates as drop-and-add; distanceKm takes default 0",
+   "specific_evidence": "SchemaV2.swift:13 ... HikeMigrationPlan.swift:12-17 'both changes are simple'",
+   "test_gap": "isStoredInMemoryOnly: true ... Neither test uses SchemaV1",
+   "actionable_fix": "@Attribute(originalName: \"distance\") plus on-disk V1 seeded migration test",
+   "no_overclaim": "Nothing was built or run; inferred from SwiftData's documented rename semantics",
+   "honest_unverified": "Could not verify from source alone section"
+  }
+ },
+ "B": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "I found no defect in the shown source ... On paper it preserves distance",
+   "notes_residual_unverified": "Nothing was built or run ... Runtime behaviour of the migration unverified",
+   "no_unfounded_rewrite": "Tests labeled 'real weakness' and extra test changes/next steps not marked optional",
+   "evidence_for_clean_verdict": "HikeMigrationPlan.swift L4-10, L14-17; didMigrate copies legacyDistance; TrailheadApp.swift L12-17"
+  }
+ },
+ "C": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "test_gap": true,
+   "actionable_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "lightweight migration does not carry distance over; added column takes default = 0",
+   "specific_evidence": "SchemaV2.swift:13 no originalName; HikeMigrationPlan.swift:12-17 'lightweight is enough'",
+   "test_gap": "never creates a store at V1 first, so no migration runs",
+   "actionable_fix": "originalName fix plus on-disk V1 seed test asserting distanceKm == 12.5",
+   "no_overclaim": "I did not build or run anything, so the diagnosis rests on documented semantics",
+   "honest_unverified": "Could not verify from source alone section"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "The migration is correct as written ... asserts distanceKm == 12.5",
+   "notes_residual_unverified": "No build or run was done ... inferred from documented behavior, not observed",
+   "no_unfounded_rewrite": "Design smell, optional ... static let preferred; no source fix is justified",
+   "evidence_for_clean_verdict": "SchemaV2.swift:19-20 originalName; HikeMigrationPlan.swift:18-26; Tests:19-42"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "explains_symptom": true,
+   "no_false_alternatives": true,
+   "fix_proposed": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "listener is started only from PaywallView's .task",
+   "specific_evidence": "PaywallView.swift:23-26; LumenApp.swift:11-14 only calls refresh()",
+   "explains_symptom": "purchase() calls refresh() itself; refund and Ask to Buy until relaunch",
+   "no_false_alternatives": "refresh() is correct; revocationDate check redundant but harmless",
+   "fix_proposed": "Start the listener at app launch ... or EntitlementManager.init()",
+   "honest_unverified": "Not run or built; no device logs"
+  }
+ },
+ "B": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "Listener lifecycle matches the design note (no defect found)",
+   "notes_residual_unverified": "What I could not verify from the files; no build, no StoreKit test run",
+   "no_unfounded_rewrite": "Recommended changes listed in priority order, not labeled optional/low priority (though 'small hardening, not a rewrite')",
+   "evidence_for_clean_verdict": "EntitlementManager.init() calls startListening() (:15-17); revocationDate == nil (:61)"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": false,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "I did not find a source defect that explains the complaint",
+   "notes_residual_unverified": "What I could not verify from the files; Nothing was built or run",
+   "no_unfounded_rewrite": "Recommendations called 'defensive, not a proven root-cause fix' but not labeled optional/low priority",
+   "evidence_for_clean_verdict": "EntitlementManager.swift:15-17 (init) calls startListening(); refresh checks revocationDate == nil"
+  }
+ },
+ "D": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "explains_symptom": true,
+   "no_false_alternatives": true,
+   "fix_proposed": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "the updates listener only starts when the paywall appears",
+   "specific_evidence": "PaywallView.swift:23-26; LumenApp.swift:11-14 only calls refresh() once",
+   "explains_symptom": "Normal purchases work because purchase() calls refresh() directly; both complaints matched",
+   "no_false_alternatives": "revocationDate check is redundant but harmless... The listener is what is missing",
+   "fix_proposed": "Start the listener once at app launch ... remove it from PaywallView",
+   "honest_unverified": "No logs ... not confirmed at runtime"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "rules_out_other_causes": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "'/recipe/*' (singular)... '/recipes/42' (plural)... does not match it",
+   "specific_evidence": "apple-app-site-association.json line 7; CONTEXT.md line 4",
+   "rules_out_other_causes": "Team ID and bundle ID... Entitlements... Custom scheme",
+   "correct_fix": "simplest option is \"/\": \"/recipes/*\" on AASA line 7",
+   "no_overclaim": "Not verifiable section; did not fetch live AASA; 'High confidence' not absolute",
+   "honest_unverified": "'I did not fetch it'; CDN refresh, TestFlight signing not verifiable"
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "rules_out_other_causes": true,
+   "correct_fix": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "AASA path /recipe/* does not match the shared link /recipes/42",
+   "specific_evidence": "CONTEXT.md:4 ... apple-app-site-association.json:7; DeepLinkRouter.swift:30",
+   "rules_out_other_causes": "App ID K7P2QD9XM4.com.trailmix.app matches... Entitlement host matches",
+   "correct_fix": "Fix AASA line 7 to /recipes/*... No Swift change is needed",
+   "no_overclaim": "medium-high that it is the only cause; claims, not verified by me",
+   "honest_unverified": "Tested vs untested table: Live AASA / CDN / device diagnostics Untested"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "I see no singular/plural mismatch; files internally consistent",
+   "notes_residual_unverified": "Things I could not verify... CDN, entitlement in built binary, device state",
+   "no_unfounded_rewrite": "Optional hygiene: move the /admin/* exclude",
+   "evidence_for_clean_verdict": "Trailmix.entitlements:5-7 ... matched by /recipes/* and /collections/* (lines 7-8)"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true,
+   "evidence_for_clean_verdict": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "no singular/plural mismatch",
+   "notes_residual_unverified": "Nothing was built or run; signed binary, CDN, device diagnostics unverified",
+   "no_unfounded_rewrite": "Do not rewrite routing or the AASA",
+   "evidence_for_clean_verdict": "AASA:7 /recipes/* matches /recipes/42; Trailmix.entitlements:7"
+  }
+ }
+}

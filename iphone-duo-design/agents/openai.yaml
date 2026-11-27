@@ -1,0 +1,4 @@
+interface:
+  display_name: "iPhone Duo Design"
+  short_description: "Adapt and audit SwiftUI and UIKit apps for iPhone Duo"
+  default_prompt: "Use $iphone-duo-design to audit this app for iPhone Duo readiness and fix the layout issues."

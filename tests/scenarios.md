@@ -22,5 +22,12 @@ These are evaluation specifications, not records of executed agent tests. Give a
 - “Review this Core Data migration” should not pretend SwiftData migration APIs apply.
 - “Audit accessibility; do not edit” must produce findings without modifying the app.
 - “Translate this one label into French” should not expand into an app-wide localization overhaul.
+- “The app crashes right after the splash screen” should start with ios-crash-triage (a termination report exists), not ios-launch-profiler; “the app takes four seconds to show the first screen” should select ios-launch-profiler, not crash triage.
+- “Restore Purchases does nothing” should select storekit-entitlement-debugger; “my App Store submission was rejected for a missing restore button” should select app-store-audit.
+- “Tapping a notification should open a screen” is routing inside the app: ios-deeplink-doctor applies only if a URL or universal link is involved.
+- “The widget shows old data” should select widget-data-consistency; “the widget looks wrong in Dynamic Type” should select ios-accessibility-audit.
+- “Memory warning on launch” should select ios-launch-profiler or ios-crash-triage depending on whether a termination report exists; ios-memory-growth requires a repeatable interaction that grows memory.
+- “Why does the app open on the wrong display on iPad?” should not select iphone-duo-design.
+- A clean control (correct code and artifacts for the named skill) should produce a report of no confirmed defect and list what was not verified, not invented findings.
 
 For each execution, record model/tool environment, input fixture revision, observed actions, pass/fail per criterion, and missing capabilities. Packaging checks do not substitute for these behavior tests.

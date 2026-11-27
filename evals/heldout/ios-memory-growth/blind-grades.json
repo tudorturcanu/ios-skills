@@ -1,0 +1,70 @@
+{
+ "A": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "footprint_correlation": true,
+   "fix_proposed": true,
+   "no_overclaim": false,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "Every PhotoDetailViewController ever pushed is kept alive ... by PrefetchCenter.shared",
+   "specific_evidence": "PrefetchCenter.swift:14-16 observe only appends; PhotoDetailViewController.swift:23-27 no [weak self]; holds currentImage",
+   "footprint_correlation": "grid alone idles flat at 92 MB ... no meaningful drop (479 MB)",
+   "fix_proposed": "observe should return a token ... remove it in deinit ... Add [weak self]",
+   "no_overclaim": "Verdict states flatly 'There is a leak.' as fact, though later hedges instance count",
+   "honest_unverified": "Confirmation that the VC instances are really leaked ... I have not seen it; Verification after the fix (not run here)"
+  }
+ },
+ "B": {
+  "criteria": {
+   "root_cause": true,
+   "specific_evidence": true,
+   "footprint_correlation": true,
+   "fix_proposed": true,
+   "no_overclaim": true,
+   "honest_unverified": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "root_cause": "retained forever by the PrefetchCenter.shared singleton through a never-removed, strongly self-capturing handler",
+   "specific_evidence": "PrefetchCenter.swift:10 and 14-16 observe only appends; no deinit; self.currentImage = image; self.imageView.image",
+   "footprint_correlation": "about 4.8-5.2 MB per cycle ... grid alone idles flat at 92 MB ... memory warning gave no drop",
+   "fix_proposed": "token-returning registration ... capture [weak self] and unregister in deinit",
+   "no_overclaim": "I could not confirm the retention ... retention path is inferred from the code and not observed",
+   "honest_unverified": "There is no trace or memory graph ... Allocations generations and a memory graph would show"
+  }
+ },
+ "C": {
+  "criteria": {
+   "no_false_defect": true,
+   "evidence_for_clean": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "No ownership defect found ... footprint data shows a plateau",
+   "evidence_for_clean": "closure captures [weak self]; deinit removes the token via removeObserver; fell to 108 MB",
+   "notes_residual_unverified": "Whether PhotoDetailViewController instances actually reach count 0 ... needs memory graph; one device, OS and photo set",
+   "no_unfounded_rewrite": "Nothing is required for a leak. Optional low-risk hardening"
+  }
+ },
+ "D": {
+  "criteria": {
+   "no_false_defect": true,
+   "evidence_for_clean": true,
+   "notes_residual_unverified": true,
+   "no_unfounded_rewrite": true
+  },
+  "false_positives": 0,
+  "evidence": {
+   "no_false_defect": "No leak found in the provided files ... then stays flat",
+   "evidence_for_clean": "token stored in observerToken; removes that token in deinit; [weak self]; drops the footprint to 108 MB",
+   "notes_residual_unverified": "nothing here proves it ... Only one device (iPhone 13), one OS (17.5) and one photo set",
+   "no_unfounded_rewrite": "Nothing is required ... Optional hardening"
+  }
+ }
+}

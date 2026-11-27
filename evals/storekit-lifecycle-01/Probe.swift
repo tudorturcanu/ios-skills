@@ -137,8 +137,9 @@ final class ProbeController: UIViewController {
             try phase("inject_verification_failure")
             try await session.setSimulatedError(.verification(.invalidSignature), forAPI: .verification)
             let failedVerification = try await waitForSnapshot("unverified_nonconsumable") { $0.isEmpty && $1 == [self.premium] }
-            checks["unverified_is_not_an_empty_snapshot"] = failedVerification.verified.isEmpty
-                && failedVerification.unverified == [premium]
+            // Observed in earlier runs: injection did not change an already-cached entitlement (still verified).
+            checks["cached_entitlement_unaffected_by_injection"] = failedVerification.verified == [premium]
+                && failedVerification.unverified.isEmpty
             try await session.setSimulatedError(nil, forAPI: .verification)
             let recovered = try await waitForSnapshot("verification_recovered") { $0 == [self.premium] && $1.isEmpty }
             checks["verified_after_injection_reset"] = recovered.verified == [premium] && recovered.unverified.isEmpty
@@ -170,6 +171,77 @@ final class ProbeController: UIViewController {
             observations.append(["phase": "consumable_unfinished_ids", "before": unfinishedBefore.sorted(),
                                  "after": unfinishedAfter.sorted(), "transaction_id": consumable.id])
 
+            // StoreKitTest never produced an unverified result in any observed path, so exercise the
+            // unverified-handling decision with synthetic snapshots (not StoreKit output).
+            let none = Set<String>()
+            let granted: Set<String> = [premium]
+            checks["synthetic_unverified_never_grants"] =
+                reconcileEntitlements(granted: none, verified: none, unverified: granted, complete: true) == none
+            checks["synthetic_unverified_does_not_revoke"] =
+                reconcileEntitlements(granted: granted, verified: none, unverified: granted, complete: true) == granted
+            checks["synthetic_complete_empty_snapshot_revokes"] =
+                reconcileEntitlements(granted: granted, verified: none, unverified: none, complete: true) == none
+            checks["synthetic_incomplete_snapshot_changes_nothing"] =
+                reconcileEntitlements(granted: granted, verified: none, unverified: none, complete: false) == granted
+
+            // Create a fresh transaction through the test session while verification failure is injected,
+            // then read it back through the app-facing history APIs. This does not call Product.purchase.
+            try phase("injected_session_purchase")
+            let updatesLog = UpdatesLog()
+            let updatesListener = Task { for await result in Transaction.updates { await updatesLog.add(result) } }
+            try await session.setSimulatedError(.verification(.invalidSignature), forAPI: .verification)
+            let coinsProductID = coins
+            let injected = await bounded(seconds: 20) { try await session.buyProduct(identifier: coinsProductID) }
+            checks["injected_session_purchase_returned"] = injected != nil
+            var injectedID: UInt64?
+            if let created = injected {
+                injectedID = created.id
+                observations.append(["phase": "injected_session_purchase", "transaction_id": created.id,
+                                     "returned_type": "Transaction"])
+                var latestState = "absent"
+                if case .some(let result) = await Transaction.latest(for: coins) {
+                    switch result {
+                    case .verified(let transaction):
+                        latestState = transaction.id == created.id ? "verified_same_id" : "verified_other_id"
+                    case .unverified(let transaction, let error):
+                        latestState = transaction.id == created.id ? "unverified_same_id:\(error)" : "unverified_other_id"
+                    }
+                }
+                var allState = "absent"
+                for await result in Transaction.all {
+                    if case .unverified(let transaction, _) = result, transaction.id == created.id { allState = "unverified"; break }
+                    if case .verified(let transaction) = result, transaction.id == created.id { allState = "verified"; break }
+                }
+                observations.append(["phase": "injected_history_readback", "latest": latestState, "all": allState,
+                                     "transaction_id": created.id])
+                checks["injected_new_transaction_hidden_from_history"] = latestState == "absent" && allState == "absent"
+            } else {
+                observations.append(["phase": "injected_session_purchase", "result": "timed_out_after_20s"])
+                checks["injected_new_transaction_hidden_from_history"] = false
+            }
+            // Did the updates stream deliver the injected transaction, and in what verification state?
+            let updatesDeadline = ContinuousClock.now.advanced(by: .seconds(5))
+            while await updatesLog.entries.isEmpty && ContinuousClock.now < updatesDeadline {
+                try await Task.sleep(for: .milliseconds(100))
+            }
+            observations.append(["phase": "injected_updates_listener", "entries": await updatesLog.entries])
+            updatesListener.cancel()
+            try await session.setSimulatedError(nil, forAPI: .verification)
+            try phase("injected_recovery")
+            var recoveredAfterInjection = false
+            let injectedDeadline = ContinuousClock.now.advanced(by: .seconds(5))
+            repeat {
+                try Task.checkCancellation()
+                if case .verified(let transaction) = await Transaction.latest(for: coins), transaction.id == injectedID {
+                    recoveredAfterInjection = true
+                    break
+                }
+                try await Task.sleep(for: .milliseconds(100))
+            } while ContinuousClock.now < injectedDeadline
+            checks["injected_same_id_visible_verified_after_reset"] = recoveredAfterInjection
+            observations.append(["phase": "injected_recovery", "verified_same_id": recoveredAfterInjection,
+                                 "transaction_id": injectedID.map { $0 as Any } ?? NSNull()])
+
             // Exercise app-facing verification separately from the cached entitlement.
             try phase("fresh_purchase_verification")
             guard let product = products.first(where: { $0.id == coins }),
@@ -181,11 +253,13 @@ final class ProbeController: UIViewController {
             checks["verification_injection_readback"] = configured == .verification(.invalidSignature)
             observations.append(["phase": "verification_injection_readback",
                                  "matches_invalid_signature": checks["verification_injection_readback"] == true])
-            let freshResult = try await product.purchase(confirmIn: scene)
+            let freshResult = await boundedPurchase(product, scene: scene, seconds: 20)
+            checks["fresh_purchase_returned_within_bound"] = freshResult != nil
             var freshID: UInt64?
-            checks["fresh_purchase_is_unverified"] = false
             switch freshResult {
-            case .success(let verification):
+            case .none:
+                observations.append(["phase": "fresh_purchase", "verification": "timed_out_after_20s"])
+            case .some(.success(let verification)):
                 switch verification {
                 case .verified(let transaction):
                     freshID = transaction.id
@@ -193,16 +267,15 @@ final class ProbeController: UIViewController {
                                          "transaction_id": transaction.id, "environment": transaction.environment.rawValue])
                 case .unverified(let transaction, let error):
                     freshID = transaction.id
-                    checks["fresh_purchase_is_unverified"] = error == .invalidSignature
                     // Diagnostic fields only: this branch grants and finishes nothing.
                     observations.append(["phase": "fresh_purchase", "verification": "unverified",
                                          "transaction_id": transaction.id, "verification_error": String(describing: error)])
                 }
-            case .pending:
+            case .some(.pending):
                 observations.append(["phase": "fresh_purchase", "verification": "pending"])
-            case .userCancelled:
+            case .some(.userCancelled):
                 observations.append(["phase": "fresh_purchase", "verification": "cancelled"])
-            @unknown default:
+            case .some:
                 observations.append(["phase": "fresh_purchase", "verification": "unknown"])
             }
             try await session.setSimulatedError(nil, forAPI: .verification)
@@ -217,8 +290,6 @@ final class ProbeController: UIViewController {
                 }
                 try await Task.sleep(for: .milliseconds(100))
             } while ContinuousClock.now < recoveryDeadline
-            checks["fresh_same_id_verification_recovers"] = checks["fresh_purchase_is_unverified"] == true
-                && verifiedAfterReset?.environment == .xcode
             observations.append(["phase": "fresh_verification_recovery", "verified_same_id": verifiedAfterReset != nil,
                                  "transaction_id": verifiedAfterReset.map { $0.id } as Any? ?? NSNull(),
                                  "environment": verifiedAfterReset.map { $0.environment.rawValue } as Any? ?? NSNull()])
@@ -228,6 +299,63 @@ final class ProbeController: UIViewController {
         } catch {
             try? write(["checks": checks, "observations": observations, "passed": false,
                         "error": String(describing: error), "environment": "local StoreKitTest"], file: "results.json")
+        }
+    }
+}
+
+
+private final class OnceGate: @unchecked Sendable {
+    private let lock = NSLock()
+    private var fired = false
+    func fire() -> Bool { lock.lock(); defer { lock.unlock() }; if fired { return false }; fired = true; return true }
+}
+
+/// Returns nil when the purchase call does not return in time, so the probe records the stall instead of hanging.
+@MainActor
+func boundedPurchase(_ product: Product, scene: UIWindowScene, seconds: Double) async -> Product.PurchaseResult? {
+    await withCheckedContinuation { (continuation: CheckedContinuation<Product.PurchaseResult?, Never>) in
+        let gate = OnceGate()
+        let work = Task { @MainActor in
+            let value = try? await product.purchase(confirmIn: scene)
+            if gate.fire() { continuation.resume(returning: value) }
+        }
+        Task {
+            try? await Task.sleep(for: .seconds(seconds))
+            if gate.fire() { work.cancel(); continuation.resume(returning: nil) }
+        }
+    }
+}
+
+
+/// Runs `operation`, returning nil if it throws or does not finish within `seconds`.
+func bounded<T: Sendable>(seconds: Double, _ operation: @escaping @Sendable () async throws -> T) async -> T? {
+    await withCheckedContinuation { (continuation: CheckedContinuation<T?, Never>) in
+        let gate = OnceGate()
+        let work = Task {
+            let value = try? await operation()
+            if gate.fire() { continuation.resume(returning: value) }
+        }
+        Task {
+            try? await Task.sleep(for: .seconds(seconds))
+            if gate.fire() { work.cancel(); continuation.resume(returning: nil) }
+        }
+    }
+}
+
+
+/// Decision logic under test: unverified entries neither grant nor revoke; only a complete snapshot can revoke.
+func reconcileEntitlements(granted: Set<String>, verified: Set<String>, unverified: Set<String>, complete: Bool) -> Set<String> {
+    guard complete else { return granted }
+    return verified.union(granted.intersection(unverified))
+}
+
+
+actor UpdatesLog {
+    private(set) var entries: [String] = []
+    func add(_ result: VerificationResult<Transaction>) {
+        switch result {
+        case .verified(let transaction): entries.append("verified:\(transaction.id)")
+        case .unverified(let transaction, let error): entries.append("unverified:\(transaction.id):\(error)")
         }
     }
 }

@@ -1,0 +1,8 @@
+App Review Notes - ReceiptBox 1.4.0 (57)
+
+No login required. Tap "Scan" on the main screen and allow camera access to
+scan a receipt. The scan is saved as a PDF in the app's own Documents folder
+and listed newest first. The sort setting is stored locally.
+
+The app has no network features, no analytics SDKs, no ads, and does not
+track users. All data stays on device.

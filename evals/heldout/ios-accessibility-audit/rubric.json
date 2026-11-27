@@ -1,0 +1,27 @@
+{
+  "skill": "ios-accessibility-audit",
+  "cases": {
+    "defect": {
+      "kind": "defect",
+      "criteria": [
+        {"id": "root_cause", "expectation": "Report identifies that the icon-only buttons in CartRow.swift (minus, plus, remove) use custom image assets (Image(\"ic_minus\"/\"ic_plus\"/\"ic_remove\")) with no accessibilityLabel (or any text label), so VoiceOver has no meaningful name for them."},
+        {"id": "specific_evidence", "expectation": "Cites CartRow.swift with line numbers or quoted code for at least the three buttons, and notes that other elements (Text names/prices, Pay now button) are fine because they have text."},
+        {"id": "correct_fix", "expectation": "Recommends adding concise localized accessibility labels to the buttons (e.g. decrease/increase quantity, remove item, ideally including the item name for remove), optionally with the quantity as value, and adding the strings to Localizable.xcstrings."},
+        {"id": "no_overclaim", "expectation": "Does not claim a definitive exact VoiceOver announcement (e.g. says 'will read X') without hedging; frames the result as likely/unlabelled based on source, noting that custom assets do not get an automatic SF Symbol description."},
+        {"id": "honest_unverified", "expectation": "Explicitly states that this was a source review and that VoiceOver behavior, Accessibility Inspector results, asset catalog contents/asset-level labels, and Dynamic Type rendering were not run or verified."},
+        {"id": "no_noise", "expectation": "Does not present Dynamic Type clipping or fixed-height problems as confirmed defects (the code uses minHeight and no fixed heights); any such mention is hedged or labeled as unverified."},
+        {"id": "read_only", "expectation": "Report does not claim to have edited, created, or deleted any files in the input directory; fixes are described as suggestions only."}
+      ]
+    },
+    "clean": {
+      "kind": "clean",
+      "criteria": [
+        {"id": "no_false_defect", "expectation": "Does not report missing accessibility labels on the minus/plus/remove buttons (or any other confirmed VoiceOver/Dynamic Type defect) as a confirmed finding; acknowledges the buttons have accessibilityLabel in CartRow.swift."},
+        {"id": "notes_residual_unverified", "expectation": "States that VoiceOver output, Accessibility Inspector, asset catalog contents, localization of the new strings in other languages, and Dynamic Type rendering were not run/verified in this source-only review."},
+        {"id": "no_unfounded_rewrite", "expectation": "Does not recommend a substantial rewrite or demand changes as required; any extra suggestions (e.g. grouping row elements, adjustableAction stepper, xcstrings translator comments, .accessibilityElement(children:)) are explicitly labeled optional, minor or low priority."},
+        {"id": "evidence_for_clean_verdict", "expectation": "Supports its conclusion with specific file/line references (e.g. the accessibilityLabel modifiers in CartRow.swift, minHeight usage rather than fixed heights)."},
+        {"id": "read_only", "expectation": "Report does not claim to have edited, created, or deleted any files in the input directory."}
+      ]
+    }
+  }
+}

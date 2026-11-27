@@ -1,0 +1,1 @@
+This is a read-only source review: do not build, run, or modify anything. Read the files in the project directory and review them for the launch-latency complaint described in CONTEXT.md. Report your findings with file and line evidence, state what you could not verify from the files alone (and what measurement would be needed), and say what you would change, if anything.

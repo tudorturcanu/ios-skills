@@ -1,0 +1,8 @@
+{
+  "file": "catalog.json",
+  "note": "Bundled in the app target as a resource; decoded as [Trail].",
+  "history": [
+    { "build": 141, "version": "1.7", "records": 6200,  "size_bytes": 2150000 },
+    { "build": 142, "version": "1.8", "records": 52000, "size_bytes": 18400000 }
+  ]
+}

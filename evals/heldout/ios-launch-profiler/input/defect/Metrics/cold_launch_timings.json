@@ -1,0 +1,16 @@
+{
+  "device": "iPhone 12", "os": "17.5",
+  "method": "screen recording, frame count from tap to first rendered list frame",
+  "unit": "ms",
+  "launches": [
+    { "build": 141, "ms": 470 }, { "build": 141, "ms": 455 },
+    { "build": 141, "ms": 512 }, { "build": 141, "ms": 480 },
+    { "build": 141, "ms": 1380, "note": "first launch after install" },
+    { "build": 141, "ms": 462 }, { "build": 141, "ms": 491 },
+    { "build": 142, "ms": 2210 }, { "build": 142, "ms": 2145 },
+    { "build": 142, "ms": 2302 }, { "build": 142, "ms": 2188 },
+    { "build": 142, "ms": 3650, "note": "first launch after install" },
+    { "build": 142, "ms": 2250 }, { "build": 142, "ms": 2176 },
+    { "build": 142, "ms": 2890, "note": "low battery mode on" }
+  ]
+}

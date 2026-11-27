@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Memory Growth"
+  short_description: "Find why memory rises across repeated iOS interactions"
+  default_prompt: "Use $ios-memory-growth to investigate memory that keeps growing after I open and dismiss a picker."
