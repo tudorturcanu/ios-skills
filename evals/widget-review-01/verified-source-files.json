@@ -1,0 +1,13 @@
+{
+  "IceCubesAppWidgetsExtension/LatestPostsWidget/LatestPostsWidget.swift": "a606de3e466a7387487384dbb4899c87cc06c0036f9d63c3a3bd2ca10edfe854",
+  "IceCubesAppWidgetsExtension/LatestPostsWidget/LatestPostsWidgetConfiguration.swift": "a89d281a6bae7615e6ae30dca8f47521185122a949c62e4776a388ae41c1e1e0",
+  "IceCubesAppWidgetsExtension/Shared/SharedUtils.swift": "2ff4f70f9f5b7d0cd87231bcf655394d9a0370c16b099c64352be31a01bbf3d3",
+  "IceCubesAppWidgetsExtension/Shared/PostsWidgetView.swift": "c0caae45e987b5963cd286497cafe3d891249f25710604e89442f50baf90d823",
+  "IceCubesAppIntents/AppAccountEntity.swift": "d9e3529ca020b1b4c477c9181ba5f97bc7d08b07d82fa5774abdb0d9f90a9d53",
+  "Packages/AppAccount/Sources/AppAccount/AppAccountsManager.swift": "4d9e4d41e5f81fbc38974d190629748d17308519a7581e44018d6f9c4817b134",
+  "Packages/AppAccount/Sources/AppAccount/AppAccount.swift": "137209ee79c286702e97d3c259bce6dd8402eeacaa8ede26576df7faed1af23e",
+  "IceCubesAppIntents/TimelineFilterEntity.swift": "9ee1af8f8601c25f94f9ee633d49ee463b40bf6cfba45de63208ccb4f790bc3c",
+  "IceCubesApp/App/Tabs/Settings/SettingsTab.swift": "864c244105f85ba878f64723de9c98b9510eea62379688223bc6823040918ddf",
+  "IceCubesApp/App/Tabs/Settings/AccountSettingView.swift": "22a41829e190011b51030e19dd0cfa7d2323eb3c581f316cd9af4f27fdebe51a",
+  "Packages/Env/Sources/Env/PushNotificationsService.swift": "7435ee6fd9689fcfd6257968ed1facc0c26bbcbbcb5db6c4b05c51476da78176"
+}

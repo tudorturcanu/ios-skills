@@ -1,0 +1,8 @@
+{
+  "evals/localization-01/input/Localizable.xcstrings": "60af8b22506441351b8a14628ac548965388ffc8c4c7bd649e2b2c71fc039a4f",
+  "evals/localization-01/input/Screen.swift": "562fb5f02078e365b2780b701d10a15532a79b62f96c4e2d985e29ba63f5b68b",
+  "evals/localization-01/input/context.txt": "796bac10ac3c8d8db6e06fbf9c56956fe2bb74b44d5678248ca9f0fe60c7dfce",
+  "evals/baselines/ios-localization-audit-v1.md": "a33da2b7fc8f5eec7a0b919e1119dbe6c391b5c34b6ecd4cb0719efc9f62a683",
+  "evals/localization-01/tested-version/catalog_inventory.py": "5016ff47bef1ee7f97d1d3686e6ef6b4bd2ab3b2aca9aa2f7a90a85e6d6ab832",
+  "evals/localization-01/tested-version/instructions.txt": "d52718cf8cc21f5f1225f7a9b6ad13e0f2d1075341427fe18b1531b13f2bd6ff"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Permission Flow Tester"
+  short_description: "iOS Permission Flow Tester workflows"
+  default_prompt: "Use $ios-permission-flow-tester to investigate my app and report evidence, targeted fixes, and verification gaps."

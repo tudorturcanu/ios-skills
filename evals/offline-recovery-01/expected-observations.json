@@ -1,0 +1,7 @@
+[
+  {"name":"all_success","returned_status":"reply2","attempted":["root","reply1","reply2"],"acknowledged":["root","reply1","reply2"],"reply_parents":["root","reply1"],"draft_insertions":[]},
+  {"name":"root_failure","returned_status":null,"attempted":["root"],"acknowledged":[],"reply_parents":[],"draft_insertions":["Root text"]},
+  {"name":"first_reply_failure","returned_status":null,"attempted":["root","reply1"],"acknowledged":["root"],"reply_parents":["root"],"draft_insertions":["Root text"]},
+  {"name":"second_reply_failure","returned_status":null,"attempted":["root","reply1","reply2"],"acknowledged":["root","reply1"],"reply_parents":["root","reply1"],"draft_insertions":["Root text"]},
+  {"name":"blank_root_failure","returned_status":null,"attempted":["root"],"acknowledged":[],"reply_parents":[],"draft_insertions":[]}
+]

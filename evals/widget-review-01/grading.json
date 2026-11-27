@@ -1,0 +1,109 @@
+{
+  "method": "Parent source verification, unblinded",
+  "blind_grading": {
+    "status": "failed",
+    "reason": "Independent grading agent returned a workspace-credit error; no blind grade was produced."
+  },
+  "criteria_timing": "Prepared during the independent reviews before final reports, not preregistered before runs.",
+  "conditions": {
+    "focused": {
+      "report_sha256": "3f05d0713ac8a6bed634b9446e464e78ac82be09af86e70f321467a4d99a86d7",
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "id": "optional-image-failure",
+          "passed": true,
+          "rationale": "Both reports trace the throwing image group through the provider catch that empties statuses."
+        },
+        {
+          "id": "status-error-collapse",
+          "passed": true,
+          "rationale": "Both reports identify the loader catch returning [] and distinguish a successful empty response."
+        },
+        {
+          "id": "existing-image-fallback",
+          "passed": true,
+          "rationale": "Both identify the existing Circle fallback and preserve fetched post text."
+        },
+        {
+          "id": "configured-account-semantics",
+          "passed": true,
+          "rationale": "Both explicitly preserve a widget account independently of the foreground account."
+        },
+        {
+          "id": "account-freshness-boundary",
+          "passed": true,
+          "rationale": "Both trace initialization-only durable reads to process-local entity queries and qualify deletion effects."
+        },
+        {
+          "id": "scheduler-honesty",
+          "passed": true,
+          "rationale": "Neither promises an exact deadline or immediate rendered removal; both require runtime observation."
+        },
+        {
+          "id": "scoped-corrections",
+          "passed": true,
+          "rationale": "Corrections address acquisition, identity, and invalidation. Cache proposals introduce extra work; the focused report also offers an unavailable state."
+        },
+        {
+          "id": "evidence-honesty",
+          "passed": true,
+          "rationale": "Both provide source locations and disclose that builds, device tests, and network requests were not run. See RESULTS for the comparator instruction-file discovery error."
+        }
+      ]
+    },
+    "peer": {
+      "report_sha256": "4619762c5a11367c5f443dd2cd22a3cc2e8a0418d0a528b10e4c4bfdb7904d2a",
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "id": "optional-image-failure",
+          "passed": true,
+          "rationale": "Both reports trace the throwing image group through the provider catch that empties statuses."
+        },
+        {
+          "id": "status-error-collapse",
+          "passed": true,
+          "rationale": "Both reports identify the loader catch returning [] and distinguish a successful empty response."
+        },
+        {
+          "id": "existing-image-fallback",
+          "passed": true,
+          "rationale": "Both identify the existing Circle fallback and preserve fetched post text."
+        },
+        {
+          "id": "configured-account-semantics",
+          "passed": true,
+          "rationale": "Both explicitly preserve a widget account independently of the foreground account."
+        },
+        {
+          "id": "account-freshness-boundary",
+          "passed": true,
+          "rationale": "Both trace initialization-only durable reads to process-local entity queries and qualify deletion effects."
+        },
+        {
+          "id": "scheduler-honesty",
+          "passed": true,
+          "rationale": "Neither promises an exact deadline or immediate rendered removal; both require runtime observation."
+        },
+        {
+          "id": "scoped-corrections",
+          "passed": true,
+          "rationale": "Corrections address acquisition, identity, and invalidation. Cache proposals introduce extra work; the focused report also offers an unavailable state."
+        },
+        {
+          "id": "evidence-honesty",
+          "passed": true,
+          "rationale": "Both provide source locations and disclose that builds, device tests, and network requests were not run. See RESULTS for the comparator instruction-file discovery error."
+        }
+      ]
+    }
+  },
+  "limits": [
+    "One app and one run per condition; no no-skill control.",
+    "Scores describe the frozen tested skill, not the later revision.",
+    "Manual scoring is not an independent or blinded assessment."
+  ]
+}

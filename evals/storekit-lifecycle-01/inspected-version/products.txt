@@ -1,0 +1,46 @@
+{
+  "identifier": "A19A4EDD-9C73-485F-88D1-C3B4A3D3B8EE",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "1000001",
+      "localizations": [
+        {
+          "description": "Synthetic test product",
+          "displayName": "Premium",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "org.example.iosskills.premium",
+      "referenceName": "Premium",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "1000002",
+      "localizations": [
+        {
+          "description": "Synthetic test product",
+          "displayName": "Coins",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "org.example.iosskills.coins",
+      "referenceName": "Coins",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA"
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

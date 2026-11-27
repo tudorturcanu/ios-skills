@@ -1,0 +1,61 @@
+{
+  "source_sha256": "64e6af3b37ad836c314de7d701f33b076d319a3ef5e7f9007084d093e366cf3b",
+  "checks": [
+    {
+      "actual": "Rita has 7",
+      "case": "implicit objects and integers",
+      "expected": "Rita has 7",
+      "format": "%@ has %lld",
+      "passed": true
+    },
+    {
+      "actual": "7 for Rita",
+      "case": "positional reordering",
+      "expected": "7 for Rita",
+      "format": "%2$lld for %1$@",
+      "passed": true
+    },
+    {
+      "actual": "Rita / Rita",
+      "case": "repeated positional object",
+      "expected": "Rita / Rita",
+      "format": "%1$@ / %1$@",
+      "passed": true
+    },
+    {
+      "actual": "70%",
+      "case": "literal percent",
+      "expected": "70%",
+      "format": "%1$lld%%",
+      "passed": true
+    },
+    {
+      "actual": "7",
+      "case": "long long q alias",
+      "expected": "7",
+      "format": "%qd",
+      "passed": true
+    },
+    {
+      "actual": "FF",
+      "case": "unsigned hexadecimal presentation",
+      "expected": "FF",
+      "format": "%X",
+      "passed": true
+    },
+    {
+      "actual": "    3.14",
+      "case": "width and precision",
+      "expected": "    3.14",
+      "format": "%1$8.2f",
+      "passed": true
+    },
+    {
+      "actual": "-2",
+      "case": "signed integer",
+      "expected": "-2",
+      "format": "%d",
+      "passed": true
+    }
+  ]
+}

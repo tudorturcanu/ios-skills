@@ -1,0 +1,49 @@
+[
+  {
+    "argv": [
+      "xcrun",
+      "--sdk",
+      "iphonesimulator",
+      "--show-sdk-path"
+    ],
+    "returncode": 0,
+    "stdout": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\n",
+    "stderr": "swift-driver version: 1.168.6 "
+  },
+  {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk",
+      "-target",
+      "arm64-apple-ios18.0-simulator",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks",
+      "-framework",
+      "StoreKitTest",
+      "-Xcc",
+      "-Wno-error=deprecated-declarations",
+      "-swift-version",
+      "6",
+      "-warnings-as-errors",
+      "-parse-as-library",
+      "/Users/tudorturcanu/Documents/ChatGPT/New project/evals/storekit-lifecycle-01/Probe.swift",
+      "-o",
+      "/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-storekit-probe-e521z0w6/StoreKitProbe.app/StoreKitProbe"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "<module-includes>:1:9: note: in file included from <module-includes>:1:\n1 | #import \"Headers/StoreKitTest.h\"\n  |         `- note: in file included from <module-includes>:1:\n2 | \n\n/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks/StoreKitTest.framework/Headers/StoreKitTest.h:14:9: note: in file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks/StoreKitTest.framework/Headers/StoreKitTest.h:14:\n12 | #import <StoreKitTest/SKTestError.h>\n13 | #import <StoreKitTest/SKTestSession.h>\n14 | #import <StoreKitTest/SKTestTransaction.h>\n   |         `- note: in file included from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks/StoreKitTest.framework/Headers/StoreKitTest.h:14:\n15 | \n16 | \n\n/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks/StoreKitTest.framework/Headers/SKTestTransaction.h:34:32: error: 'SKPaymentTransactionState' is deprecated: first deprecated in iOS 18.0 - Use PurchaseResult from Product.purchase(confirmIn:options:).\n32 | @property(nonatomic, readonly) NSDate *purchaseDate;\n33 | \n34 | @property(nonatomic, readonly) SKPaymentTransactionState state;\n   |                                `- error: 'SKPaymentTransactionState' is deprecated: first deprecated in iOS 18.0 - Use PurchaseResult from Product.purchase(confirmIn:options:).\n35 | \n36 | @property(nonatomic, readonly) BOOL pendingPriceIncreaseConsent API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5), visionos(1.0)) NS_SWIFT_NAME(isPendingPriceIncreaseConsent);\n\n/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/System/Library/Frameworks/StoreKit.framework/Headers/SKPaymentTransaction.h:14:28: note: 'SKPaymentTransactionState' has been explicitly marked deprecated here\n12 | @class SKPayment;\n13 | \n14 | typedef NS_ENUM(NSInteger, SKPaymentTransactionState) {\n   |                            `- note: 'SKPaymentTransactionState' has been explicitly marked deprecated here\n15 |     SKPaymentTransactionStatePurchasing,    // Transaction is being added to the server queue.\n16 |     SKPaymentTransactionStatePurchased,     // Transaction is in queue, user has been charged.  Client should complete the transaction.\n\n/Users/tudorturcanu/Documents/ChatGPT/New project/evals/storekit-lifecycle-01/Probe.swift:111:55: error: cannot convert value of type 'Int' to expected argument type 'UInt'\n109 | \n110 |             try phase(\"refund_nonconsumable\")\n111 |             try session.refundTransaction(identifier: Int(purchase.id))\n    |                                                       `- error: cannot convert value of type 'Int' to expected argument type 'UInt'\n112 |             var refunded = await snapshot(\"after_refund\")\n113 |             let deadline = ContinuousClock.now.advanced(by: .seconds(5))\n"
+  }
+]

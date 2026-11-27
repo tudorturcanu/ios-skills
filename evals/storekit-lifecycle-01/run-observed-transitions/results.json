@@ -1,0 +1,107 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "f0eefee2b55738a7ee7745b8cb2c84055fa225fdfc880b8f60d08bdcf57c49b7",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "c815ddb040d5426fd64100c40cdd8dfb647c6ee45bc75dbc6c600e3283ab73e2",
+    "probe_process.py": "c9f8b48e0b3c1e8e246b676e24fd1f9695907fef91fc70f716a8ba5868628380"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "7F0EF153-91F3-4DAD-AFCD-C7625F527342",
+  "xcodebuild_returncode": 124,
+  "xcodebuild_timed_out": true,
+  "probe": {
+    "checks": {
+      "consumable_absent_from_current_entitlements": true,
+      "consumable_in_unfinished_before_finish": true,
+      "consumable_is_local_xcode_transaction": true,
+      "finish_does_not_remove_nonconsumable": true,
+      "finished_consumable_leaves_unfinished": true,
+      "grow_only_negative_control_detected": true,
+      "initial_empty": true,
+      "local_products_loaded": true,
+      "purchase_entitles": true,
+      "purchase_is_local_xcode_transaction": true,
+      "refund_removes_entitlement": true,
+      "unverified_is_not_an_empty_snapshot": false,
+      "verification_recovers": true
+    },
+    "environment": "local StoreKitTest",
+    "observations": [
+      {
+        "phase": "initial",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "environment": "Xcode",
+        "phase": "purchase_result",
+        "product_id": "org.example.iosskills.premium",
+        "transaction_id": 0
+      },
+      {
+        "attempts": 4,
+        "phase": "purchased_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 1,
+        "phase": "finished_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 48,
+        "phase": "unverified_nonconsumable",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 1,
+        "phase": "verification_recovered",
+        "unverified": [],
+        "verified": [
+          "org.example.iosskills.premium"
+        ]
+      },
+      {
+        "attempts": 2,
+        "phase": "after_refund",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "environment": "Xcode",
+        "phase": "consumable_result",
+        "product_id": "org.example.iosskills.coins",
+        "transaction_id": 1
+      },
+      {
+        "phase": "unfinished_consumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "after": [],
+        "before": [
+          1
+        ],
+        "phase": "consumable_unfinished_ids",
+        "transaction_id": 1
+      }
+    ],
+    "os": "27.0",
+    "passed": false
+  }
+}

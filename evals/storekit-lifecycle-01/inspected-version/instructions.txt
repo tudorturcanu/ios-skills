@@ -1,0 +1,36 @@
+---
+name: storekit-entitlement-debugger
+description: "Diagnose and fix StoreKit purchase and entitlement inconsistencies, including restoration, pending purchases, renewal, refund, revocation, and account changes. Use for entitlement lifecycle bugs, not paywall visual design or pricing advice."
+---
+
+# StoreKit Entitlement Debugger
+
+Trace transactions into access decisions; a purchase button returning success is not the entire entitlement lifecycle.
+
+## Map ownership
+
+Identify product types, product IDs, subscription groups, purchase entrypoints, transaction listeners, persistence, and any backend entitlement service. Record which layer is authoritative and how app accounts relate to App Store purchases. Inspect verification results, transaction identifiers, and account association without logging receipts, tokens, or personal data unnecessarily.
+
+Construct a state table for unknown/loading, entitled, not entitled, pending, and recoverable failure. Do not collapse an unavailable network response into a proven loss of access. Identify business rules for grace periods and non-renewing subscriptions explicitly.
+
+## Trace updates
+
+Review initial entitlement reconciliation, long-lived transaction updates, purchase results, foreground refresh, and user-initiated restore. Handle verified and unverified results explicitly; never grant trusted access merely because a transaction object exists. Pending and user-cancelled purchases must not grant a new entitlement. Finish transactions after the appropriate delivery/persistence succeeds, with idempotency for duplicate delivery.
+
+Check that recomputation can remove obsolete access as well as add it. Current entitlements do not provide a consumable balance: inspect a durable, idempotent fulfillment ledger for consumables. For non-renewing subscriptions, evaluate the app's validity rules rather than assuming presence means unexpired access. Avoid routine automatic AppStore.sync calls that may prompt for authentication; reserve explicit restore synchronization for the intended user flow.
+
+Inspect expiration, revocation, upgrade, grace-period and billing-retry handling against the actual product/status semantics. App-account logout and switching must not leak the previous account's cached access. Do not equate app-account identity with the device's store account.
+
+## Verify
+
+Build a StoreKit test matrix covering success, cancellation, pending approval, duplicate updates, restore after reinstall, expiration, refund/revocation, and account changes relevant to this product. Test offline launch and interrupted fulfillment. Separate local StoreKit configuration results from sandbox/server notification evidence. Never claim a backend flow is tested using only local purchase simulation.
+
+Return the entitlement state diagram/table, identified transition failure, scoped fix, and results with test environment and limitations.
+
+## Diagnostic cases
+
+Read [diagnostic cases](references/diagnostic-cases.md) when choosing the next experiment or building a regression test. Use the cases that match the observed failure.
+
+## Reference
+
+Check [currentEntitlements](https://developer.apple.com/documentation/storekit/transaction/currententitlements) and its linked transaction APIs before changing product-specific eligibility rules.

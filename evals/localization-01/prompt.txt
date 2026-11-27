@@ -1,0 +1,1 @@
+Review the supplied screen, catalog, and product context for actionable localization issues. Do not edit the input. Write a concise report with file/key evidence, priority, and checks that could not be performed.

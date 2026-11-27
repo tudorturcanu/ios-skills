@@ -1,0 +1,82 @@
+{
+  "run": {
+    "inputs": {
+      "Probe.swift": "run/source.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce.py": "run/runner.txt"
+    }
+  },
+  "run-active-configuration": {
+    "inputs": {
+      "Probe.swift": "run-active-configuration/source.txt",
+      "ProbeTests.swift": "run-active-configuration/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-active-configuration/runner.txt"
+    }
+  },
+  "run-header-adjustment": {
+    "inputs": {
+      "Probe.swift": "run-header-adjustment/source.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce.py": "run-header-adjustment/runner.txt"
+    }
+  },
+  "run-hosted": {
+    "inputs": {
+      "Probe.swift": "run-hosted/source.txt",
+      "ProbeTests.swift": "run-hosted/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-hosted/runner.txt"
+    }
+  },
+  "run-hosted-shared-flags": {
+    "inputs": {
+      "Probe.swift": "run-hosted-shared-flags/source.txt",
+      "ProbeTests.swift": "run-hosted-shared-flags/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-hosted-shared-flags/runner.txt"
+    }
+  },
+  "run-hosted-signed": {
+    "inputs": {
+      "Probe.swift": "run-hosted-signed/source.txt",
+      "ProbeTests.swift": "run-hosted-signed/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-hosted-signed/runner.txt"
+    }
+  },
+  "run-ios27": {
+    "inputs": {
+      "Probe.swift": "run-ios27/source.txt",
+      "ProbeTests.swift": "run-ios27/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-ios27/runner.txt",
+      "probe_process.py": "run-ios27/process.txt"
+    }
+  },
+  "run-local-session": {
+    "inputs": {
+      "Probe.swift": "run-local-session/source.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce.py": "run-local-session/runner.txt"
+    }
+  },
+  "run-observed-transitions": {
+    "inputs": {
+      "Probe.swift": "run-observed-transitions/source.txt",
+      "ProbeTests.swift": "run-observed-transitions/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-observed-transitions/runner.txt",
+      "probe_process.py": "run-observed-transitions/process.txt"
+    }
+  },
+  "run-fresh-verification": {
+    "inputs": {
+      "Probe.swift": "run-fresh-verification/source.txt",
+      "ProbeTests.swift": "run-fresh-verification/tests.txt",
+      "Products.storekit": "inspected-version/products.txt",
+      "reproduce_hosted.py": "run-fresh-verification/runner.txt",
+      "probe_process.py": "run-fresh-verification/process.txt"
+    }
+  }
+}

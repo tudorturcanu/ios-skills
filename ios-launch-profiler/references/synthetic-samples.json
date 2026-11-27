@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "samples": [
+    {
+      "sample_id": "synthetic-1",
+      "variant": "before",
+      "duration_ms": 100,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-2",
+      "variant": "before",
+      "duration_ms": 120,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-3",
+      "variant": "before",
+      "duration_ms": 110,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-4",
+      "variant": "after",
+      "duration_ms": 70,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-5",
+      "variant": "after",
+      "duration_ms": 90,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-6",
+      "variant": "after",
+      "duration_ms": 80,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-first-frame"
+      }
+    },
+    {
+      "sample_id": "synthetic-7",
+      "variant": "before",
+      "duration_ms": 200,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    },
+    {
+      "sample_id": "synthetic-8",
+      "variant": "before",
+      "duration_ms": 220,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    },
+    {
+      "sample_id": "synthetic-9",
+      "variant": "before",
+      "duration_ms": 210,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    },
+    {
+      "sample_id": "synthetic-10",
+      "variant": "after",
+      "duration_ms": 300,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    },
+    {
+      "sample_id": "synthetic-11",
+      "variant": "after",
+      "duration_ms": 320,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    },
+    {
+      "sample_id": "synthetic-12",
+      "variant": "after",
+      "duration_ms": 310,
+      "conditions": {
+        "device": "synthetic-phone-A",
+        "os": "synthetic-os",
+        "configuration": "Release",
+        "debugger": "detached",
+        "install_state": "existing-install",
+        "data_state": "seed-v1",
+        "network": "offline",
+        "launch_kind": "process-launch",
+        "cache_state": "documented-warm",
+        "instrumentation": "synthetic-fixture",
+        "interval": "start-to-ready"
+      }
+    }
+  ]
+}

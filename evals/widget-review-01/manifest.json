@@ -1,0 +1,16 @@
+{
+  "evals/widget-review-01/RESULTS.md": "7f8f809aa0d1e28f9fae060bf7919122046d2367e38dc0a17fb9ed08b476a8ae",
+  "evals/widget-review-01/blind-mapping.json": "5d586d30257860dac196b565d33edcae140d79f72e4b252471b95976e50d53ec",
+  "evals/widget-review-01/blinded/A.md": "3f05d0713ac8a6bed634b9446e464e78ac82be09af86e70f321467a4d99a86d7",
+  "evals/widget-review-01/blinded/B.md": "4619762c5a11367c5f443dd2cd22a3cc2e8a0418d0a528b10e4c4bfdb7904d2a",
+  "evals/widget-review-01/grading.json": "6da89798bbde65ce8e69b3128b5763403397b5720db4aa2f76d393b1a3b7985e",
+  "evals/widget-review-01/metadata.json": "ce63962eb58621b6a02f1ff062c91ace02690e26fe5ba34bd4f1d10fa5430ebe",
+  "evals/widget-review-01/outputs/focused.md": "3f05d0713ac8a6bed634b9446e464e78ac82be09af86e70f321467a4d99a86d7",
+  "evals/widget-review-01/outputs/peer.md": "4619762c5a11367c5f443dd2cd22a3cc2e8a0418d0a528b10e4c4bfdb7904d2a",
+  "evals/widget-review-01/prompt.txt": "4d8d7cb1c74f9a28d086cbe2a37d82aa27abd71f06725846771354fb91f1fbb7",
+  "evals/widget-review-01/rubric.json": "ed34c93d4079a9f9cc17730e867da365da7bf6201e80b3660961fd9af1d3cae7",
+  "evals/widget-review-01/source-files.json": "39fb5df474afc447d137fb58ccb81554c48b6dc07820f2c1bf73c4d18d86c651",
+  "evals/widget-review-01/tested-version/diagnostic-cases.txt": "20bcf2cf5b1d62cc7f64673f7e66e5ede740661d547fbb9f329975628ec832cc",
+  "evals/widget-review-01/tested-version/instructions.txt": "f25950aa0f4a7cba97ce07fd4509def9145c74df2ab5684b81af20d3e26728be",
+  "evals/widget-review-01/verified-source-files.json": "0c700c0e3e30e218aeda9b29e35370fe8f3c067b4d98a5c4b68c4237542705e9"
+}

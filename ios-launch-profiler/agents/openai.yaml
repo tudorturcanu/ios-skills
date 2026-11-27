@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Launch Profiler"
+  short_description: "iOS Launch Profiler workflows"
+  default_prompt: "Use $ios-launch-profiler to investigate my app and report evidence, targeted fixes, and verification gaps."

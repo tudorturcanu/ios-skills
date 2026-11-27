@@ -1,0 +1,4 @@
+interface:
+  display_name: "Widget Data Consistency"
+  short_description: "Widget Data Consistency workflows"
+  default_prompt: "Use $widget-data-consistency to investigate my app and report evidence, targeted fixes, and verification gaps."

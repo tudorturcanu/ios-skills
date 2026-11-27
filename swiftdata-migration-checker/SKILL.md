@@ -1,0 +1,54 @@
+---
+name: swiftdata-migration-checker
+description: "Review or implement SwiftData schema migrations and verify preservation of existing on-disk data across supported upgrade paths. Use for model evolution or migration failures, not ordinary SwiftData CRUD or unrelated Core Data migrations."
+---
+
+# SwiftData Migration Checker
+
+Treat successful opening of a new empty store as insufficient evidence for a migration.
+
+## Reconstruct shipped schemas
+
+Locate model definitions, VersionedSchema types, SchemaMigrationPlan, ModelContainer configuration, store URLs, and any CloudKit configuration. Establish the actual shipped versions from release source or fixtures; do not reconstruct history by silently editing old schema definitions. Identify every supported upgrade path, including users who skip releases.
+
+Compare stored names, types, optionality, defaults, uniqueness, relationships, inverse definitions, and delete rules. Distinguish a rename from a drop-and-add. Investigate existing duplicates or missing values before introducing stronger constraints. Check current SDK documentation for which transformations are supported; do not assume a default value makes every required-property migration lightweight.
+
+## Design the migration
+
+Choose lightweight or custom stages based on the actual schema difference. Inspect the model types available in each stage callback: do not assume both old and new model types are simultaneously accessible. For transformations needing both representations, evaluate an intermediate schema and explicit backfill. Keep historical schemas stable and wire the migration plan into the container actually used by the app and extensions.
+
+Separate local schema migration from CloudKit schema deployment and sync behavior. If CloudKit is used, verify its model restrictions and deployment workflow separately. Report missing release fixtures as a verification gap, not a reason to fabricate successful migration results.
+
+If migration appears to hang, identify whether the container is still opening or the app is blocked later when fetching or saving. Capture the blocked work and compare supported OS versions before changing the schema. The iOS 27 release notes document a SwiftData deadlock fix involving `@Query`, a background save, and `ModelActor` work. [iOS and iPadOS 27 release notes](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27-release-notes)
+
+## Verify data survival
+
+Use disposable copies of stores produced by each supported old app/schema. Preserve SQLite sidecars consistently; prefer creating a closed fixture store or taking a coherent copy rather than copying a live database file alone. Never delete or reset the user's store to make a migration pass.
+
+For each path, open with the new container, verify semantic values, identities, relationships, counts, constraints, and expected transformations, then close and reopen.
+
+Compare records using stable domain identifiers from the seed or an explicit old-to-new mapping. Check related records by those identifiers and compare exact membership where the relationship matters. For optional or defaulted fields, seed different non-default values so a silent reset, swapped relationship, or duplicate can fail even if the row count stays constant.
+
+Include empty, representative, duplicate, optional/missing, and large data cases relevant to the change. Test a direct upgrade from each supported source version. Record fixture provenance, SDK, OS, and migration path. Exercise failure handling without replacing the original store; define downgrade behavior explicitly rather than promising compatibility.
+
+Return a schema-difference table, implemented stages or review findings, per-path test results, and unresolved risks. Compile against the project's actual SDK; use [fixture checklist](references/fixtures.md) when building migration tests.
+
+## Executable migration probe
+
+When establishing a migration-test workflow, run the bundled [synthetic probe](scripts/run_migration_probe.py) on a Mac with Xcode and Swift 6 support:
+
+```sh
+python3 /absolute/path/to/swiftdata-migration-checker/scripts/run_migration_probe.py
+```
+
+Resolve the script path from this installed skill. It compiles [MigrationProbe.swift](assets/MigrationProbe.swift), creates its own stores, migrates copies in separate processes, and retains results and logs in a new temporary directory. It accepts no existing app-store path. Read [probe scope and adaptation](references/migration-probe.md) before applying the technique to an app.
+
+The example demonstrates rename preservation, relationship checks, direct and staged upgrades, reopening, and a negative control. Its success is not evidence for the user's schema. Historical app-produced fixtures and target-OS tests remain required for that claim. Validate the seed's intended semantic values before comparing migration output; otherwise a malformed fixture can pass unchanged.
+
+## Diagnostic cases
+
+Read [diagnostic cases](references/diagnostic-cases.md) when choosing the next experiment or building a regression test. Use the cases that match the observed failure.
+
+## Reference
+
+Consult [SchemaMigrationPlan](https://developer.apple.com/documentation/swiftdata/schemamigrationplan) and linked MigrationStage and VersionedSchema documentation for API availability and supported migration behavior.

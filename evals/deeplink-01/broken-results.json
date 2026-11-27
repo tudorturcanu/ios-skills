@@ -1,0 +1,140 @@
+{
+  "candidate_sha256": "f2aa53a7f1ea6153c909777b220aae1c2d453bd14d081a1a405422043e67623e",
+  "harness_sha256": "a5dd7e56b2f14e1bd94765900d305ac6c4f02d97cf859fb5d77d8ad74819fb3c",
+  "toolchain": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "compiled": true,
+  "compiler_output": "",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "accept https://shop.example.com/products/A_b-12",
+      "passed": true
+    },
+    {
+      "name": "accept HTTPS://SHOP.EXAMPLE.COM/products/A_b-12",
+      "passed": true
+    },
+    {
+      "name": "accept https://shop.example.com/products/%41_b-12",
+      "passed": true
+    },
+    {
+      "name": "accept https://shop.example.com/products/A_b-12?utm=x#campaign",
+      "passed": true
+    },
+    {
+      "name": "reject http://shop.example.com/products/x",
+      "passed": false
+    },
+    {
+      "name": "reject https://evil.example/products/x",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com.evil/products/x",
+      "passed": false
+    },
+    {
+      "name": "reject https://user@shop.example.com/products/x",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com:443/products/x",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/",
+      "passed": true
+    },
+    {
+      "name": "reject https://shop.example.com/products/x/",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/x/extra",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/a%2Fb",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/a%252Fb",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/%C3%A9",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/products/a.b",
+      "passed": false
+    },
+    {
+      "name": "reject https://shop.example.com/other/x",
+      "passed": true
+    },
+    {
+      "name": "signed out retains without navigating",
+      "passed": true
+    },
+    {
+      "name": "authentication waits for readiness",
+      "passed": true
+    },
+    {
+      "name": "auth first drains",
+      "passed": false
+    },
+    {
+      "name": "callbacks do not replay",
+      "passed": false
+    },
+    {
+      "name": "readiness waits for authentication",
+      "passed": true
+    },
+    {
+      "name": "ready first drains",
+      "passed": false
+    },
+    {
+      "name": "latest valid pending survives invalid link",
+      "passed": false
+    },
+    {
+      "name": "current top deduplicates",
+      "passed": false
+    },
+    {
+      "name": "return to older route allowed",
+      "passed": false
+    },
+    {
+      "name": "cancel discards pending",
+      "passed": true
+    },
+    {
+      "name": "temporary unready does not navigate",
+      "passed": false
+    },
+    {
+      "name": "temporary readiness resumes",
+      "passed": true
+    },
+    {
+      "name": "logout clears history and auth",
+      "passed": false
+    },
+    {
+      "name": "logout clears pending",
+      "passed": false
+    },
+    {
+      "name": "new postlogout link allowed",
+      "passed": false
+    }
+  ],
+  "passed": 11,
+  "total": 32
+}

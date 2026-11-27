@@ -1,0 +1,78 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "745deffa37f71cabf1e044c578d02de9755d7cac397b6ad471cfdf2a83834f3a",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "c815ddb040d5426fd64100c40cdd8dfb647c6ee45bc75dbc6c600e3283ab73e2",
+    "probe_process.py": "c9f8b48e0b3c1e8e246b676e24fd1f9695907fef91fc70f716a8ba5868628380"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "B54A4F2A-3F99-440E-922E-82DF868840DD",
+  "xcodebuild_returncode": 124,
+  "xcodebuild_timed_out": true,
+  "probe": {
+    "checks": {
+      "consumable_absent_from_current_entitlements": true,
+      "consumable_in_unfinished_before_finish": false,
+      "finish_does_not_remove_nonconsumable": false,
+      "finished_consumable_leaves_unfinished": true,
+      "grow_only_negative_control_detected": false,
+      "initial_empty": true,
+      "local_products_loaded": true,
+      "purchase_entitles": false,
+      "refund_removes_entitlement": true,
+      "unverified_is_not_an_empty_snapshot": false,
+      "verification_recovers": false
+    },
+    "environment": "local StoreKitTest",
+    "observations": [
+      {
+        "phase": "initial",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "purchased_nonconsumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "finished_nonconsumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "unverified_nonconsumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "verification_recovered",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "after_refund",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "phase": "unfinished_consumable",
+        "unverified": [],
+        "verified": []
+      },
+      {
+        "after": [],
+        "before": [],
+        "phase": "consumable_unfinished_ids",
+        "transaction_id": 1
+      }
+    ],
+    "os": "27.0",
+    "passed": false
+  }
+}

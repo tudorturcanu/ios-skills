@@ -1,0 +1,61 @@
+{
+  "checked_on": "2026-11-04",
+  "sources": [
+    {
+      "repo": "twostraws/swiftui-agent-skill",
+      "sha": "f2920b63995263f57b3e198674e89a602efba6d2",
+      "skills": [
+        "swiftui-pro/SKILL.md"
+      ]
+    },
+    {
+      "repo": "avdlee/swiftui-agent-skill",
+      "sha": "204dba7c67256a8b707ee3fbc5759a824191974f",
+      "skills": [
+        ".agents/skills/update-swiftui-apis/SKILL.md",
+        "skills/swiftui-expert-skill/SKILL.md"
+      ]
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "sha": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "skills": [
+        "skills/deploy-to-vercel/SKILL.md",
+        "skills/web-design-guidelines/SKILL.md",
+        "skills/writing-guidelines/SKILL.md",
+        "skills/vercel-cli-with-tokens/SKILL.md",
+        "skills/composition-patterns/SKILL.md",
+        "skills/vercel-optimize/SKILL.md",
+        "skills/react-best-practices/SKILL.md",
+        "skills/react-view-transitions/SKILL.md",
+        "skills/react-native-skills/SKILL.md"
+      ]
+    },
+    {
+      "repo": "anthropics/skills",
+      "sha": "ca45fc496a3436251f191354091d557da31c15b5",
+      "skills": [
+        "template/SKILL.md",
+        "skills/theme-factory/SKILL.md",
+        "skills/doc-coauthoring/SKILL.md",
+        "skills/discernment-nudge/SKILL.md",
+        "skills/claude-api/SKILL.md",
+        "skills/xlsx/SKILL.md",
+        "skills/pdf/SKILL.md",
+        "skills/algorithmic-art/SKILL.md",
+        "skills/internal-comms/SKILL.md",
+        "skills/skill-creator/SKILL.md",
+        "skills/canvas-design/SKILL.md",
+        "skills/pptx/SKILL.md",
+        "skills/slack-gif-creator/SKILL.md",
+        "skills/webapp-testing/SKILL.md",
+        "skills/frontend-design/SKILL.md",
+        "skills/mcp-builder/SKILL.md",
+        "skills/brand-guidelines/SKILL.md",
+        "skills/docx/SKILL.md",
+        "skills/academy-guide/SKILL.md",
+        "skills/web-artifacts-builder/SKILL.md"
+      ]
+    }
+  ]
+}

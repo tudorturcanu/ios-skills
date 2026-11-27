@@ -1,0 +1,11 @@
+{
+  "evals/offline-recovery-01/RESULTS.md": "7b31dacbf17c0f78f926fd68085814a84c1d393055decab0700f4e48d9aae9ed",
+  "evals/offline-recovery-01/expected-observations.json": "3e3be99f7af935e7b74680ecaffb298209d73756dd96737ca09fc189a14c2afe",
+  "evals/offline-recovery-01/harness.swift": "6029b8aa6ca93660eabbfa5574f2fcb108d5c28a563021db40e7aa69413133d0",
+  "evals/offline-recovery-01/inspected-version/diagnostic-cases.txt": "02b565e09cbd7aec0c249920a56a7f70030425e98f51f43760f3068cbef8d275",
+  "evals/offline-recovery-01/inspected-version/instructions.txt": "1d21c9cce65e6e39b25fe0acc2ffbfd991515c3dbb054dd371427ff01f1fc886",
+  "evals/offline-recovery-01/reproduce.py": "cc407a1fdb0035dab0f705395cee6f768e51eb772b55b66b5b060eafc1b7f256",
+  "evals/offline-recovery-01/run/results.json": "f33b1d733dbca3f9ca70b1e954afadfadfd5d6b339e81b6f753ce8c56f197670",
+  "evals/offline-recovery-01/run/stdout.json": "bab9cae88ddee405b410739ba6c31bc0eb3fe753260f89bae8742813cf44a66d",
+  "evals/offline-recovery-01/source-files.json": "e2f76f0dbc28376ad3b70774a44d38ae220ecfc11d63931600bb6dfe0a2e6dff"
+}

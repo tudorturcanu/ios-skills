@@ -1,0 +1,8 @@
+{
+  "evals/real-catalog-01/tested-version/original-inventory.txt": "5016ff47bef1ee7f97d1d3686e6ef6b4bd2ab3b2aca9aa2f7a90a85e6d6ab832",
+  "evals/real-catalog-01/tested-version/instructions.txt": "6d32e7f6dcada72be0750f39f4bd8ef67e54f4a9da365ea193964a0e10a7f74b",
+  "evals/real-catalog-01/tested-version/inventory.txt": "5fe9c749753f88358e8afb0eec7da17dce33bdf856411e59df96c65cebe07d7f",
+  "evals/real-catalog-01/tested-version/formats.txt": "345c3d41d20689776d9aa13b772b2aad696f2ee2f68ce09a314f7919c2df747d",
+  "evals/real-catalog-01/results.json": "15e831a27e33a56a22b9b35535130eda2c8221df87fa12b26395d50370db5110",
+  "evals/real-catalog-01/reproduce.py": "510a3e0c066268d01fc37757c90ce4859575deeb94cf7dc94ff5fd6d386a40dd"
+}

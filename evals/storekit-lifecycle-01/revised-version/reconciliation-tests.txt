@@ -1,0 +1,35 @@
+# Reconciliation and local tests
+
+## Preserve the distinction between absent and untrusted
+
+`Transaction.currentEntitlements` produces verification results. A loop that inserts only verified IDs and silently ignores unverified values can finish with an empty set even though it encountered a transaction it could not trust. That is not the same evidence as a completed sequence containing no entitlements.
+
+Track applicable verified transactions, verification failures, completion/cancellation, and the account or reconciliation generation. Never grant from an unverified payload. Decide how existing access behaves during uncertainty using the app's authority and offline policy; do not invent either permanent access or automatic revocation as a universal rule. Do not publish a partially accumulated set as a complete replacement after cancellation or an obsolete refresh.
+
+Use distinct regressions:
+
+| Input transition | What the test must distinguish |
+| --- | --- |
+| Verified non-consumable → completed empty snapshot after refund | Access can be removed; an insert-only reducer fails |
+| Verified transaction → unverified result | Verification failure is explicit; no new trusted grant and no claim of a healthy empty snapshot |
+| Enumeration interrupted or account changes before commit | Incomplete/obsolete results do not replace current account state |
+| Non-consumable finished after successful delivery | Finishing is not itself a refund or revocation |
+| Consumable before and after finish | Unfinished delivery state differs from a consumable balance and from current entitlements |
+
+Consult the current [entitlement sequence contract](https://developer.apple.com/documentation/storekit/transaction/currententitlements) for supported product types. A test of non-consumables does not establish subscription grace-period, upgrade, or non-renewing expiration policy.
+
+## Isolate and control local tests
+
+Use a dedicated local configuration and test target. [SKTestSession](https://developer.apple.com/documentation/storekittest/sktestsession) instances control shared test settings, so tests changing products, transactions, failure injection, or time rates must run serially within that environment. Swift actor isolation alone does not isolate independent test sessions.
+
+Reset settings and clear transactions deliberately: these are separate operations. Apply overrides such as disabled dialogs after resetting defaults. Retain the exact configuration, SDK/runtime, test runner, and relevant observed transactions. Consult installed declarations when SDK signatures differ from examples.
+
+Use an actual simulated refund to test refund behavior. Clearing test transactions is setup/cleanup, not proof that a refund update was delivered. If the app relies on `Transaction.updates`, observe the relevant verified event and revocation properties; a later current-entitlements snapshot tests reconciliation but does not prove listener behavior. Wait for an identifiable event or state with a bounded deadline instead of assuming an arbitrary delay proves delivery.
+
+Require the pre-transition state: observe verified access before refunding, and observe an unfinished consumable before testing its removal. Empty → empty is not evidence of successful revocation or finishing. Confirm test products loaded and record the returned transaction's environment; a successfully constructed test-session object alone does not prove the purchase path used the intended local environment.
+
+Failure injection must reach the path under test. Record an actual unverified result before claiming verification-failure handling or subsequent recovery. Setting a simulated verification error after a transaction was already cached may leave that entitlement verified in the observed run; a successful injection call alone proves neither failure handling nor recovery. Keep that unsuccessful control and investigate a fresh verification path separately.
+
+Include a known faulty control where useful: feed a successful purchase snapshot followed by a verified refund's empty snapshot to an insert-only reducer. It should incorrectly retain the product, while the intended reconciliation removes it. This checks that the fixture can expose stale access; it does not validate all access policy or durable fulfillment.
+
+A test that cannot initialize its local environment has not exercised the purchase path. Keep setup/build failures separate from product assertions, and do not silently switch to sandbox or real purchases to get a passing result. Local simulated transactions do not establish App Store Server Notification delivery, account linking, reinstall recovery, or actual customer billing behavior.

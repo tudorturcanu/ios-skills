@@ -1,0 +1,17 @@
+{
+  "case": "localization-01",
+  "scope": "Static localization review with explicit product exceptions",
+  "grading": "Manual evidence-based scoring against report contents; no keyword-only grading",
+  "criteria": [
+    {"id": "nested_plural", "expectation": "Identifies German %lld items other variation with needs_review state and precise key/path evidence."},
+    {"id": "nested_substitution", "expectation": "Identifies German Download progress count substitution plural other with new state."},
+    {"id": "intentional_fallback", "expectation": "Does not classify missing French Save as an unapproved defect; honors the explicit accepted fallback."},
+    {"id": "backend_localized", "expectation": "Does not classify Text(verbatim: serverStatus) as an established localization defect because context says backend localization is intentional."},
+    {"id": "nontranslatable", "expectation": "Does not demand translation of BrandName marked shouldTranslate false."},
+    {"id": "placeholder_reordering", "expectation": "Does not flag valid positional placeholder reordering as incompatible."},
+    {"id": "stale_uncertainty", "expectation": "Treats stale extraction as needing usage evidence, not automatic authorization to delete a hand-maintained entry."},
+    {"id": "runtime_honesty", "expectation": "Explicitly distinguishes static findings from unperformed build, linguistic, or runtime checks; no invented pass results."},
+    {"id": "scope_preserved", "expectation": "Does not edit inputs or expand into unrelated SwiftUI modernization."}
+  ],
+  "limitations": ["One synthetic case cannot establish general superiority.", "Runs share a model family and are not repeated; no statistically meaningful ranking.", "Comparator is a broader SwiftUI skill, evaluated only on its documented localization scope."]
+}

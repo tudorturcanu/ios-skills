@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "745deffa37f71cabf1e044c578d02de9755d7cac397b6ad471cfdf2a83834f3a",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "b63aba4febe97ba688c7e2267de0c5ee2aaa352728114ddfca67cd7240647391"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "0693C392-D3FE-4D70-8AF0-0029B20B7DD7",
+  "error": "Command '('xcodebuild', '-project', '/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-storekit-hosted-gluoftup/StoreKitProbe.xcodeproj', '-scheme', 'Probe', '-destination', 'id=0693C392-D3FE-4D70-8AF0-0029B20B7DD7', '-derivedDataPath', '/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-storekit-hosted-gluoftup/DerivedData', '-parallel-testing-enabled', 'NO', '-maximum-concurrent-test-simulator-destinations', '1', '-test-timeouts-enabled', 'YES', '-maximum-test-execution-time-allowance', '120', 'test')' timed out after 300 seconds"
+}

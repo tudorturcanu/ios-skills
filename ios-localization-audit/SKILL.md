@@ -1,0 +1,56 @@
+---
+name: ios-localization-audit
+description: "Audit or fix iOS localization extraction, String Catalog coverage, pluralization, formatting, RTL behavior, and text expansion. Use for localization defects or readiness checks, not unsolicited translation of an entire app."
+---
+
+# iOS Localization Audit
+
+Separate text extraction, translation completeness, linguistic quality, and rendered layout; passing one does not prove the others.
+
+## Inventory
+
+Determine source language, supported locales, target membership, String Catalog tables, legacy strings/stringsdict resources, localized assets, and app/extension bundles. Build with the relevant configuration when available to refresh extraction; inspect the resulting diff before accepting removed or stale keys. SwiftUI string literals in localizable APIs are not automatically hardcoded defects. Trace dynamic String values and verbatim APIs to determine whether localization is actually bypassed.
+
+If the installed Xcode exposes String Catalog tools to coding agents, use them for supported catalog edits within scope and inspect the semantic diff. Xcode 27.3 beta 2 documents a catalog key-order fix for command-line sync and external MCP tools when run on macOS 27.3 beta 2. Key-order churn by itself does not establish a change in extraction or translation state. [Xcode release notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_3-release-notes)
+
+## Inspect content
+
+Find concatenated sentences, manual plural branches, locale-insensitive dates/numbers/currencies, and ambiguous translator comments. Preserve interpolation types and positional arguments; compare placeholders semantically, allowing reordering. Evaluate plural categories for the target language, not just English singular/other. Inspect nested catalog variations and substitutions instead of only top-level stringUnit values.
+
+Respect entries intentionally marked nontranslatable, source-language fallback, and explicit locale fallback policy. Do not mark draft machine translations reviewed or translated merely to satisfy a completion metric. Use the requested terminology and retain product names where appropriate.
+
+Inspect localization at the bundle and table used by call sites, including packages and extensions. Ensure InfoPlist strings and permission explanations reach the correct target. Treat missing entries, untranslated entries, and stale extraction state as different findings.
+
+When the catalog entry exists but the screen shows fallback text, trace the exact key, table, and bundle passed at runtime. Check the built bundle for that localization, including a package resource bundle when applicable. For formatting defects, record both the app language and the formatting locale or region, then vary them independently to locate the failure.
+
+## Verify rendering
+
+Select representative supported locales: expansion-prone text, RTL if supported or requested, non-Latin scripts, and differing number/date conventions. Test largest supported accessibility sizes, buttons, tab labels, alerts, input, and errors. Use semantic leading/trailing layout while checking directional icons and content that must not mirror, such as media or identifiers. Do not reverse strings manually to implement RTL.
+
+Run plural boundaries, zero, negative values where relevant, long names, and mixed-direction content. Confirm currency formatting reflects the intended currency rather than silently changing monetary meaning with locale. Separate translation accuracy requiring a fluent reviewer from technical checks.
+
+Return file/key-specific findings, scoped fixes, and locale/device checks performed or pending. Avoid replacing catalogs wholesale and preserve comments and unrelated translations.
+
+## Diagnostic tool
+
+When a String Catalog is supplied, use the bundled [catalog inventory](scripts/catalog_inventory.py) to enumerate requested locale gaps and nested translation states before manual review:
+
+```sh
+python3 /absolute/path/to/ios-localization-audit/scripts/catalog_inventory.py Localizable.xcstrings --locale de --locale fr
+```
+
+Resolve the script path from this installed skill directory. It uses Python 3's standard library, reads one file, makes no network calls, and emits JSON. Exit 0 means the inventory completed, including when review findings exist; exit 2 means invalid or unreadable input. Source-language fallback and `shouldTranslate: false` are handled deliberately. Missing locales whose source fallback is exactly empty are recorded separately in `empty_source_fallbacks`; meaningful source text and source variations are not suppressed. A missing locale is a review item, not automatically a defect. The tool does not establish placeholder compatibility, required plural categories, extraction completeness, translation quality, or UI correctness. Examine those separately.
+
+## Format argument inspection
+
+For keys confirmed from call sites to be format strings, use the separate [format argument checker](scripts/check_format_arguments.py). Read [supported syntax and interpretation](references/format-arguments.md) first. Select keys explicitly:
+
+```sh
+python3 /absolute/path/to/ios-localization-audit/scripts/check_format_arguments.py Localizable.xcstrings --key 'message.key' --locale de
+```
+
+It compares declared argument positions/types for supported flat entries, permits valid reordering/repetition, and leaves complex substitutions for manual review. It never executes format strings. Treat an unsupported entry as unverified; do not convert it into a passing result or a guessed fix. A percent sign in ordinary text is insufficient reason to invoke this checker.
+
+## Reference
+
+Consult [Apple String Catalog guidance](https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog) for extraction, variants, and current editor behavior.

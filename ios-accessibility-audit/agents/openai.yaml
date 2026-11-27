@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Accessibility Audit"
+  short_description: "Find VoiceOver and Dynamic Type barriers in iOS flows"
+  default_prompt: "Use $ios-accessibility-audit to review the sign-in flow for VoiceOver and large text barriers."

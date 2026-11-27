@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Localization Audit"
+  short_description: "iOS Localization Audit workflows"
+  default_prompt: "Use $ios-localization-audit to investigate my app and report evidence, targeted fixes, and verification gaps."

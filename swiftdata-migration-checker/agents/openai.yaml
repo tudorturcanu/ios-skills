@@ -1,0 +1,4 @@
+interface:
+  display_name: "SwiftData Migration Checker"
+  short_description: "Verify SwiftData upgrades preserve existing data"
+  default_prompt: "Use $swiftdata-migration-checker to investigate my app and report evidence, targeted fixes, and verification gaps."

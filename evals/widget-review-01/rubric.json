@@ -1,0 +1,14 @@
+{
+  "scope": "Source-derived criteria for the pinned LatestPosts data path; prepared during independent reviews before final reports",
+  "criteria": [
+    {"id":"optional-image-failure","expectation":"Identifies that an avatar task failure can discard already-fetched statuses, with the relevant catch boundary."},
+    {"id":"status-error-collapse","expectation":"Distinguishes successful empty results from status fetch errors currently converted into an empty list."},
+    {"id":"existing-image-fallback","expectation":"Recognizes that the view already supports missing image data and proposes preserving primary post content."},
+    {"id":"configured-account-semantics","expectation":"Does not misclassify a widget remaining on its explicitly configured account after foreground account switching as a defect."},
+    {"id":"account-freshness-boundary","expectation":"Traces entity queries to process-local account state and qualifies the runtime-dependent effect of deletion/change rather than asserting a demonstrated leak."},
+    {"id":"scheduler-honesty","expectation":"Does not promise exact refresh deadlines or immediate rendered removal from a reload request."},
+    {"id":"scoped-corrections","expectation":"Suggests corrections addressing failure boundaries without requiring unrelated architecture or styling changes."},
+    {"id":"evidence-honesty","expectation":"Uses source locations and distinguishes static evidence from unperformed device/build/network verification."}
+  ],
+  "grading_limits": ["One pinned real app; two runs, no repeats or no-skill control.","Equal per-criterion scores do not prove equal usefulness across all tasks.","Reports will be label-blinded for grading, but source-derived criteria are authored by the parent."]
+}

@@ -1,0 +1,60 @@
+{
+  "scope": "Synthetic app; simulator-assigned permissions, not user prompt testing",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+  "observations": [
+    {
+      "add_only": 0,
+      "os": "26.3.1",
+      "picker_presented": true,
+      "pid": 67335,
+      "read_write": 0,
+      "case": "fresh_picker"
+    },
+    {
+      "add_only": 0,
+      "os": "26.3.1",
+      "picker_presented": true,
+      "pid": 67433,
+      "read_write": 2,
+      "case": "denied_picker"
+    },
+    {
+      "add_only": 3,
+      "os": "26.3.1",
+      "picker_presented": false,
+      "pid": 67521,
+      "read_write": 0,
+      "case": "add_only"
+    },
+    {
+      "add_only": 0,
+      "os": "26.3.1",
+      "picker_presented": false,
+      "pid": 67563,
+      "read_write": 0,
+      "case": "full_access"
+    },
+    {
+      "add_only": 2,
+      "os": "26.3.1",
+      "picker_presented": false,
+      "pid": 67629,
+      "read_write": 2,
+      "case": "denied_both"
+    }
+  ],
+  "cleanup_deleted": true,
+  "passed": false,
+  "source_sha256": "6111af6676bab9e50f8eba770ae344bd3a000223cda7372ac39158c1298497e1",
+  "runner_sha256": "423d0f4c2d99dbe529ff3c2233562aabfc075bd12fddb64a5c260edbdd190011",
+  "swift_version": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "created_device": "44490706-684C-4EF4-9E63-09056255B967",
+  "checks": {
+    "fresh_picker_does_not_authorize_library": true,
+    "denied_library_does_not_block_picker_presentation": true,
+    "add_only_does_not_grant_read_write": true,
+    "full_access_is_reported": false,
+    "denied_scopes_are_reported": true
+  }
+}

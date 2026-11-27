@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+"""Run PhotoKit status and system-picker observations on a newly created simulator only."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import plistlib
+import subprocess
+import tempfile
+import time
+
+HERE = Path(__file__).resolve().parent
+BUNDLE = 'org.example.iosskills.photoprobe'
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--runtime', required=True, help='Installed CoreSimulator runtime identifier')
+    parser.add_argument('--device-type', required=True, help='Compatible CoreSimulator device-type identifier')
+    parser.add_argument('--output', type=Path, required=True, help='New output directory')
+    parser.add_argument('--usage-descriptions', action='store_true', help='Include PhotoKit read/write and add-only purpose strings')
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=False)
+    commands = []
+    result = {'scope': 'Synthetic app; simulator-assigned permissions, not user prompt testing',
+              'usage_descriptions': args.usage_descriptions,
+              'runtime': args.runtime, 'device_type': args.device_type, 'observations': [],
+              'cleanup_deleted': False, 'passed': False,
+              'source_sha256': hashlib.sha256((HERE / 'Probe.swift').read_bytes()).hexdigest(),
+              'runner_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+
+    def run(*command, check=True, timeout=60):
+        process = subprocess.run(command, text=True, capture_output=True, timeout=timeout)
+        commands.append({'argv': list(command), 'returncode': process.returncode,
+                         'stdout': process.stdout, 'stderr': process.stderr})
+        if check and process.returncode:
+            raise RuntimeError(f'{command[0]} failed: {process.stderr}')
+        return process.stdout.strip()
+
+    device = None
+    try:
+        with tempfile.TemporaryDirectory(prefix='ios-photo-probe-') as directory:
+            app = Path(directory) / 'PhotoProbe.app'
+            app.mkdir()
+            sdk = run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-path')
+            result['swift_version'] = run('xcrun', 'swiftc', '--version')
+            # The probe never requests PhotoKit access. Simulator grants are not evidence
+            # that a real access request is valid, even when purpose strings are present.
+            info = {'CFBundleIdentifier': BUNDLE, 'CFBundleExecutable': 'PhotoProbe',
+                    'CFBundleName': 'PhotoProbe', 'CFBundlePackageType': 'APPL',
+                    'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0',
+                    'MinimumOSVersion': '18.0', 'UIDeviceFamily': [1],
+                    'UILaunchScreen': {}, 'UIApplicationSceneManifest': {
+                        'UIApplicationSupportsMultipleScenes': False,
+                        'UISceneConfigurations': {'UIWindowSceneSessionRoleApplication': [
+                            {'UISceneConfigurationName': 'Probe'}]}}}
+            if args.usage_descriptions:
+                info['NSPhotoLibraryUsageDescription'] = 'Inspect test photo access in this disposable simulator.'
+                info['NSPhotoLibraryAddUsageDescription'] = 'Inspect add-only test authorization in this disposable simulator.'
+            (app / 'Info.plist').write_bytes(plistlib.dumps(info))
+            run('xcrun', 'swiftc', '-sdk', sdk, '-target', 'arm64-apple-ios18.0-simulator',
+                '-swift-version', '6', '-warnings-as-errors', '-parse-as-library',
+                str(HERE / 'Probe.swift'), '-o', str(app / 'PhotoProbe'), timeout=120)
+            run('codesign', '--force', '--sign', '-', str(app))
+            device = run('xcrun', 'simctl', 'create', 'iOS Skills disposable photo probe',
+                         args.device_type, args.runtime)
+            result['created_device'] = device
+            (args.output / 'device.json').write_text(json.dumps({'created_device': device}) + '\n')
+            print(f'Created disposable simulator {device}; booting.', flush=True)
+            run('xcrun', 'simctl', 'boot', device)
+            run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=240)
+            run('xcrun', 'simctl', 'install', device, str(app))
+            container = Path(run('xcrun', 'simctl', 'get_app_container', device, BUNDLE, 'data'))
+            observation = container / 'Documents/observation.json'
+            cases = [
+                ('fresh_picker', [], True),
+                ('denied_picker', [('revoke', 'photos')], True),
+                ('add_only', [('grant', 'photos-add')], False),
+                ('full_access', [('grant', 'photos')], False),
+                ('both_scopes_granted', [('grant', 'photos'), ('grant', 'photos-add')], False),
+                ('denied_both', [('revoke', 'photos'), ('revoke', 'photos-add')], False)
+            ]
+            for name, actions, picker in cases:
+                run('xcrun', 'simctl', 'terminate', device, BUNDLE, check=False)
+                run('xcrun', 'simctl', 'privacy', device, 'reset', 'all', BUNDLE)
+                for action, service in actions:
+                    run('xcrun', 'simctl', 'privacy', device, action, service, BUNDLE)
+                observation.unlink(missing_ok=True)
+                launch_args = ['--picker'] if picker else []
+                run('xcrun', 'simctl', 'launch', device, BUNDLE, *launch_args)
+                deadline = time.monotonic() + 30
+                while not observation.exists():
+                    if time.monotonic() > deadline:
+                        raise RuntimeError(f'No completion observation for {name}')
+                    time.sleep(0.2)
+                value = json.loads(observation.read_text())
+                value['case'] = name
+                result['observations'].append(value)
+                if picker:
+                    run('xcrun', 'simctl', 'io', device, 'screenshot', str(args.output / f'{name}.png'))
+                print(f'{name}: {json.dumps(value, sort_keys=True)}', flush=True)
+            by_name = {v['case']: v for v in result['observations']}
+            checks = {
+                'fresh_picker_does_not_authorize_library': by_name['fresh_picker']['read_write'] == 0
+                    and by_name['fresh_picker']['picker_presented'],
+                'denied_library_does_not_block_picker_presentation': by_name['denied_picker']['read_write'] == 2
+                    and by_name['denied_picker']['picker_presented'],
+                'add_only_does_not_grant_read_write': by_name['add_only']['add_only'] == 3
+                    and by_name['add_only']['read_write'] not in (3, 4),
+                'full_access_is_reported': by_name['full_access']['read_write'] == 3,
+                'both_scopes_granted_are_reported': by_name['both_scopes_granted']['read_write'] == 3
+                    and by_name['both_scopes_granted']['add_only'] == 3,
+                'denied_scopes_are_reported': by_name['denied_both']['read_write'] == 2
+                    and by_name['denied_both']['add_only'] == 2
+            }
+            result['checks'] = checks
+            result['passed'] = all(checks.values())
+    except Exception as error:
+        result['error'] = str(error)
+    finally:
+        if device:
+            run('xcrun', 'simctl', 'shutdown', device, check=False)
+            run('xcrun', 'simctl', 'delete', device, check=False)
+            devices = json.loads(run('xcrun', 'simctl', 'list', 'devices', '--json'))['devices']
+            result['cleanup_deleted'] = not any(d['udid'] == device for group in devices.values() for d in group)
+        (args.output / 'commands.json').write_text(json.dumps(commands, indent=2) + '\n')
+        (args.output / 'results.json').write_text(json.dumps(result, indent=2) + '\n')
+    print(f"Checks passed: {result['passed']}; disposable simulator deleted: {result['cleanup_deleted']}")
+    return 0 if result['passed'] and result['cleanup_deleted'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

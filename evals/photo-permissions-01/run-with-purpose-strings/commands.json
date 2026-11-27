@@ -1,0 +1,438 @@
+[
+  {
+    "argv": [
+      "xcrun",
+      "--sdk",
+      "iphonesimulator",
+      "--show-sdk-path"
+    ],
+    "returncode": 0,
+    "stdout": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\n",
+    "stderr": "swift-driver version: 1.168.6 "
+  },
+  {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk",
+      "-target",
+      "arm64-apple-ios18.0-simulator",
+      "-swift-version",
+      "6",
+      "-warnings-as-errors",
+      "-parse-as-library",
+      "/Users/tudorturcanu/Documents/ChatGPT/New project/evals/photo-permissions-01/Probe.swift",
+      "-o",
+      "/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-photo-probe-9rw1blje/PhotoProbe.app/PhotoProbe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "clang: warning: using sysroot for 'macOS 27.0' but targeting 'arm64-apple-ios18.0.0-simulator' [-Wincompatible-sysroot]\n"
+  },
+  {
+    "argv": [
+      "codesign",
+      "--force",
+      "--sign",
+      "-",
+      "/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-photo-probe-9rw1blje/PhotoProbe.app"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-photo-probe-9rw1blje/PhotoProbe.app: replacing existing signature\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "create",
+      "iOS Skills disposable photo probe",
+      "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+      "com.apple.CoreSimulator.SimRuntime.iOS-26-3"
+    ],
+    "returncode": 0,
+    "stdout": "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "boot",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "bootstatus",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "-b"
+    ],
+    "returncode": 0,
+    "stdout": "Monitoring boot status for iOS Skills disposable photo probe (CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8).\n[2026-11-05 19:00:22 +0000] Status=2, isTerminal=NO, Elapsed=00:01.\n\tWaiting on Data Migration\n\t\tReason:(null)\n\t\tMigration Elapsed:00:00 seconds\n\n[2026-11-05 19:00:23 +0000] Status=2, isTerminal=NO, Elapsed=00:02.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:01 seconds\n\n[2026-11-05 19:00:24 +0000] Status=2, isTerminal=NO, Elapsed=00:03.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:02 seconds\n\n[2026-11-05 19:00:25 +0000] Status=2, isTerminal=NO, Elapsed=00:04.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:03 seconds\n\n[2026-11-05 19:00:26 +0000] Status=2, isTerminal=NO, Elapsed=00:05.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:04 seconds\n\n[2026-11-05 19:00:27 +0000] Status=2, isTerminal=NO, Elapsed=00:06.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:05 seconds\n\n[2026-11-05 19:00:28 +0000] Status=2, isTerminal=NO, Elapsed=00:07.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:06 seconds\n\n[2026-11-05 19:00:29 +0000] Status=2, isTerminal=NO, Elapsed=00:08.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:07 seconds\n\n[2026-11-05 19:00:30 +0000] Status=2, isTerminal=NO, Elapsed=00:09.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:08 seconds\n\n[2026-11-05 19:00:31 +0000] Status=2, isTerminal=NO, Elapsed=00:10.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:09 seconds\n\n[2026-11-05 19:00:32 +0000] Status=2, isTerminal=NO, Elapsed=00:11.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:10 seconds\n\n[2026-11-05 19:00:33 +0000] Status=2, isTerminal=NO, Elapsed=00:12.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:11 seconds\n\n[2026-11-05 19:00:34 +0000] Status=2, isTerminal=NO, Elapsed=00:13.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:12 seconds\n\n[2026-11-05 19:00:35 +0000] Status=2, isTerminal=NO, Elapsed=00:14.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:13 seconds\n\n[2026-11-05 19:00:36 +0000] Status=2, isTerminal=NO, Elapsed=00:15.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:14 seconds\n\n[2026-11-05 19:00:37 +0000] Status=2, isTerminal=NO, Elapsed=00:16.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)\n\t\tMigration Elapsed:00:15 seconds\n\n[2026-11-05 19:00:38 +0000] Status=2, isTerminal=NO, Elapsed=00:17.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.managedconfiguration.migrator (MCProfile.migrator, user-agnostic)\n\t\tMigration Elapsed:00:16 seconds\n\n[2026-11-05 19:00:39 +0000] Status=2, isTerminal=NO, Elapsed=00:18.\n\tWaiting on Data Migration\n\t\tReason:Running plugin com.apple.WebBookmarks.migrator (WebBookmarks.migrator)\n\t\tMigration Elapsed:00:17 seconds\n\n[2026-11-05 19:00:40 +0000] Status=4, isTerminal=NO, Elapsed=00:19.\n\tWaiting on System App\n\n[2026-11-05 19:00:41 +0000] Status=4, isTerminal=NO, Elapsed=00:20.\n\tWaiting on System App\n\n[2026-11-05 19:00:42 +0000] Status=4, isTerminal=NO, Elapsed=00:21.\n\tWaiting on System App\n\n[2026-11-05 19:00:43 +0000] Status=4, isTerminal=NO, Elapsed=00:22.\n\tWaiting on System App\n\n[2026-11-05 19:00:44 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:23.\n\tFinished\n\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "install",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-photo-probe-9rw1blje/PhotoProbe.app"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe",
+      "data"
+    ],
+    "returncode": 0,
+    "stdout": "/Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8/data/Containers/Data/Application/FE3CD8BF-D159-45A8-A273-BA12A3C3AEAA\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 3,
+    "stdout": "",
+    "stderr": "An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):\nSimulator device failed to terminate org.example.iosskills.photoprobe.\nfound nothing to terminate\nUnderlying error (domain=NSPOSIXErrorDomain, code=3):\n\tThe request to terminate \"org.example.iosskills.photoprobe\" failed. found nothing to terminate\n\tfound nothing to terminate\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "reset",
+      "all",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe",
+      "--picker"
+    ],
+    "returncode": 0,
+    "stdout": "org.example.iosskills.photoprobe: 68196\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "io",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "screenshot",
+      "evals/photo-permissions-01/run-with-purpose-strings/fresh_picker.png"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Detected file type from extension: PNG\nNote: No display specified. Defaulting to display: F799410F-CB47-435B-9675-C26BCDB4BCFC (screenID: 1, name: LCD)\nWrote screenshot to: /Users/tudorturcanu/Documents/ChatGPT/New project/evals/photo-permissions-01/run-with-purpose-strings/fresh_picker.png\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "reset",
+      "all",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "revoke",
+      "photos",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe",
+      "--picker"
+    ],
+    "returncode": 0,
+    "stdout": "org.example.iosskills.photoprobe: 68319\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "io",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "screenshot",
+      "evals/photo-permissions-01/run-with-purpose-strings/denied_picker.png"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "Detected file type from extension: PNG\nNote: No display specified. Defaulting to display: F799410F-CB47-435B-9675-C26BCDB4BCFC (screenID: 1, name: LCD)\nWrote screenshot to: /Users/tudorturcanu/Documents/ChatGPT/New project/evals/photo-permissions-01/run-with-purpose-strings/denied_picker.png\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "reset",
+      "all",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "grant",
+      "photos-add",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "org.example.iosskills.photoprobe: 68393\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "reset",
+      "all",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "grant",
+      "photos",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "org.example.iosskills.photoprobe: 68437\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "terminate",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "reset",
+      "all",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "revoke",
+      "photos",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "privacy",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "revoke",
+      "photos-add",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "launch",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8",
+      "org.example.iosskills.photoprobe"
+    ],
+    "returncode": 0,
+    "stdout": "org.example.iosskills.photoprobe: 68490\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "shutdown",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "delete",
+      "CA7B02E4-2EE4-4CCC-84BC-01FFAB97F2F8"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "--json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"devices\" : {\n    \"com.apple.CoreSimulator.SimRuntime.iOS-27-0\" : [\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/D8927128-F831-4A2B-8D00-E52C7806F28A\\/data\",\n        \"dataPathSize\" : 5091102720,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/D8927128-F831-4A2B-8D00-E52C7806F28A\",\n        \"udid\" : \"D8927128-F831-4A2B-8D00-E52C7806F28A\",\n        \"lastUsedAt\" : \"2026-11-05T06:45:22Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 741376,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-18-Pro\",\n        \"state\" : \"Booted\",\n        \"name\" : \"iPhone 18 Pro\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/CD6763F4-5167-4509-BCCF-8D93AF9F81E3\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/CD6763F4-5167-4509-BCCF-8D93AF9F81E3\",\n        \"udid\" : \"CD6763F4-5167-4509-BCCF-8D93AF9F81E3\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-18-Pro-Max\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 18 Pro Max\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/D744F6D8-13F7-488F-BAC2-B569C014E342\\/data\",\n        \"dataPathSize\" : 4018216960,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/D744F6D8-13F7-488F-BAC2-B569C014E342\",\n        \"udid\" : \"D744F6D8-13F7-488F-BAC2-B569C014E342\",\n        \"lastUsedAt\" : \"2026-10-06T07:29:39Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 544768,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17 Pro\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/90D4C582-9B28-40F0-BB4C-C71E018133B2\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/90D4C582-9B28-40F0-BB4C-C71E018133B2\",\n        \"udid\" : \"90D4C582-9B28-40F0-BB4C-C71E018133B2\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17 Pro Max\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/5F4829AC-10F7-48BB-9099-F60961E0B8FD\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/5F4829AC-10F7-48BB-9099-F60961E0B8FD\",\n        \"udid\" : \"5F4829AC-10F7-48BB-9099-F60961E0B8FD\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17e\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17e\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/139182B0-E9EA-47AD-A841-8CD271BEC740\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/139182B0-E9EA-47AD-A841-8CD271BEC740\",\n        \"udid\" : \"139182B0-E9EA-47AD-A841-8CD271BEC740\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-Air\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone Air\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/8EDCF384-9ED6-42E6-BE51-78B03EBD650B\\/data\",\n        \"dataPathSize\" : 5791703040,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/8EDCF384-9ED6-42E6-BE51-78B03EBD650B\",\n        \"udid\" : \"8EDCF384-9ED6-42E6-BE51-78B03EBD650B\",\n        \"lastUsedAt\" : \"2026-10-07T10:49:40Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 757760,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/B65CEBAB-9A02-4C0B-8501-EA88A09AF961\\/data\",\n        \"dataPathSize\" : 4732874752,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/B65CEBAB-9A02-4C0B-8501-EA88A09AF961\",\n        \"udid\" : \"B65CEBAB-9A02-4C0B-8501-EA88A09AF961\",\n        \"lastUsedAt\" : \"2026-10-07T10:56:40Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 569344,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Pro 13-inch (M5)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/58869F67-AA07-4AFB-AEFD-4EC1AB70CF2B\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/58869F67-AA07-4AFB-AEFD-4EC1AB70CF2B\",\n        \"udid\" : \"58869F67-AA07-4AFB-AEFD-4EC1AB70CF2B\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Pro 11-inch (M5)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/C00AC623-DD8E-4684-8C91-A25CEF019F0B\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/C00AC623-DD8E-4684-8C91-A25CEF019F0B\",\n        \"udid\" : \"C00AC623-DD8E-4684-8C91-A25CEF019F0B\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad mini (A17 Pro)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/5108C82E-DFD7-43ED-85F9-4BD8ECC6BA64\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/5108C82E-DFD7-43ED-85F9-4BD8ECC6BA64\",\n        \"udid\" : \"5108C82E-DFD7-43ED-85F9-4BD8ECC6BA64\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M4\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 13-inch (M4)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/EE799109-9034-4A57-B0EF-F79D0A3A6AD3\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/EE799109-9034-4A57-B0EF-F79D0A3A6AD3\",\n        \"udid\" : \"EE799109-9034-4A57-B0EF-F79D0A3A6AD3\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M4\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 11-inch (M4)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/9AE58730-94F4-40EE-9C8C-428DAE4F6BFC\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/9AE58730-94F4-40EE-9C8C-428DAE4F6BFC\",\n        \"udid\" : \"9AE58730-94F4-40EE-9C8C-428DAE4F6BFC\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-A16\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad (A16)\"\n      }\n    ],\n    \"com.apple.CoreSimulator.SimRuntime.iOS-27-1\" : [\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/3D857282-0760-4CCC-A234-60C10C2CAF7A\\/data\",\n        \"dataPathSize\" : 4086771712,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/3D857282-0760-4CCC-A234-60C10C2CAF7A\",\n        \"udid\" : \"3D857282-0760-4CCC-A234-60C10C2CAF7A\",\n        \"lastUsedAt\" : \"2026-10-28T21:43:51Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 421888,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-Duo\",\n        \"state\" : \"Booted\",\n        \"name\" : \"Duo Skill Verification\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/12C35477-8B36-455D-9FC9-DE925F7F52FB\\/data\",\n        \"dataPathSize\" : 4412669952,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/12C35477-8B36-455D-9FC9-DE925F7F52FB\",\n        \"udid\" : \"12C35477-8B36-455D-9FC9-DE925F7F52FB\",\n        \"lastUsedAt\" : \"2026-10-27T19:50:10Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 598016,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-Duo\",\n        \"state\" : \"Booted\",\n        \"name\" : \"iPhone Duo\"\n      }\n    ],\n    \"com.apple.CoreSimulator.SimRuntime.iOS-26-3\" : [\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/309039EF-53B0-4D51-A4E1-DDDAEFB651D1\\/data\",\n        \"dataPathSize\" : 6577729536,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/309039EF-53B0-4D51-A4E1-DDDAEFB651D1\",\n        \"udid\" : \"309039EF-53B0-4D51-A4E1-DDDAEFB651D1\",\n        \"lastUsedAt\" : \"2026-10-29T22:05:28Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 815104,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17 Pro\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/2E7264C3-F81C-4339-93C6-C1C8651FC472\\/data\",\n        \"dataPathSize\" : 2639060992,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/2E7264C3-F81C-4339-93C6-C1C8651FC472\",\n        \"udid\" : \"2E7264C3-F81C-4339-93C6-C1C8651FC472\",\n        \"lastUsedAt\" : \"2026-04-29T20:47:16Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 561152,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17 Pro Max\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/0ED2E737-E65E-4823-80F1-5859F8B22AE8\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/0ED2E737-E65E-4823-80F1-5859F8B22AE8\",\n        \"udid\" : \"0ED2E737-E65E-4823-80F1-5859F8B22AE8\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17e\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17e\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/EB6F6D06-52BA-4EFF-8FC4-BEDC3F2BB1EF\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/EB6F6D06-52BA-4EFF-8FC4-BEDC3F2BB1EF\",\n        \"udid\" : \"EB6F6D06-52BA-4EFF-8FC4-BEDC3F2BB1EF\",\n        \"lastUsedAt\" : \"2026-10-15T07:27:52Z\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-Air\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone Air\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/48AAD5CD-4F34-4FB1-AEF8-ADE6889BE35B\\/data\",\n        \"dataPathSize\" : 10163277824,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/48AAD5CD-4F34-4FB1-AEF8-ADE6889BE35B\",\n        \"udid\" : \"48AAD5CD-4F34-4FB1-AEF8-ADE6889BE35B\",\n        \"lastUsedAt\" : \"2026-09-30T07:14:57Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 1474560,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-17\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 17\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/F1EDDB16-7E18-4FDB-BC39-AAC301BDC34F\\/data\",\n        \"dataPathSize\" : 3836096512,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/F1EDDB16-7E18-4FDB-BC39-AAC301BDC34F\",\n        \"udid\" : \"F1EDDB16-7E18-4FDB-BC39-AAC301BDC34F\",\n        \"lastUsedAt\" : \"2026-09-14T11:05:28Z\",\n        \"isAvailable\" : true,\n        \"logPathSize\" : 610304,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPhone-16e\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPhone 16e\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/B20E3F98-DCD0-45E8-883D-453B5F53CBF6\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/B20E3F98-DCD0-45E8-883D-453B5F53CBF6\",\n        \"udid\" : \"B20E3F98-DCD0-45E8-883D-453B5F53CBF6\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Pro 13-inch (M5)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/194C9161-5A13-4442-88A3-6887DE256B01\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/194C9161-5A13-4442-88A3-6887DE256B01\",\n        \"udid\" : \"194C9161-5A13-4442-88A3-6887DE256B01\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Pro 11-inch (M5)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/6737CF00-BBA2-4127-87B1-B37249507E3D\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/6737CF00-BBA2-4127-87B1-B37249507E3D\",\n        \"udid\" : \"6737CF00-BBA2-4127-87B1-B37249507E3D\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad mini (A17 Pro)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/CE62FEEE-B7AC-45AA-8EF1-98332DC45A33\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/CE62FEEE-B7AC-45AA-8EF1-98332DC45A33\",\n        \"udid\" : \"CE62FEEE-B7AC-45AA-8EF1-98332DC45A33\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M4\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 13-inch (M4)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/108CE8EB-D305-4A75-B62F-8C5745BCD1FE\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/108CE8EB-D305-4A75-B62F-8C5745BCD1FE\",\n        \"udid\" : \"108CE8EB-D305-4A75-B62F-8C5745BCD1FE\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M4\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 11-inch (M4)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/87176A71-722B-4203-8BF9-4D795FFED22F\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/87176A71-722B-4203-8BF9-4D795FFED22F\",\n        \"udid\" : \"87176A71-722B-4203-8BF9-4D795FFED22F\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-A16\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad (A16)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/A1699A92-AF7E-47C3-B1DB-EB970A1C2321\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/A1699A92-AF7E-47C3-B1DB-EB970A1C2321\",\n        \"udid\" : \"A1699A92-AF7E-47C3-B1DB-EB970A1C2321\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 13-inch (M3)\"\n      },\n      {\n        \"dataPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Developer\\/CoreSimulator\\/Devices\\/00A2D987-BBBC-4F40-8058-D772F5494492\\/data\",\n        \"dataPathSize\" : 18337792,\n        \"logPath\" : \"\\/Users\\/tudorturcanu\\/Library\\/Logs\\/CoreSimulator\\/00A2D987-BBBC-4F40-8058-D772F5494492\",\n        \"udid\" : \"00A2D987-BBBC-4F40-8058-D772F5494492\",\n        \"isAvailable\" : true,\n        \"deviceTypeIdentifier\" : \"com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3\",\n        \"state\" : \"Shutdown\",\n        \"name\" : \"iPad Air 11-inch (M3)\"\n      }\n    ]\n  }\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Deep Link Doctor"
+  short_description: "Trace and fix iOS deep-link delivery and routing"
+  default_prompt: "Use $ios-deeplink-doctor to investigate my app and report evidence, targeted fixes, and verification gaps."

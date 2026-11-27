@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "745deffa37f71cabf1e044c578d02de9755d7cac397b6ad471cfdf2a83834f3a",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "8aa04f1523646804f42687ff3e1e91e6cc151c43824d354a929b8f4992e55c00"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "EB0A9213-4251-4979-B84B-B98F20816780",
+  "xcodebuild_returncode": 65,
+  "error": "An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=2):\nThe operation couldn\u2019t be completed. No such file or directory\nNo such file or directory\n"
+}

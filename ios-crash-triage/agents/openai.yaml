@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Crash Triage"
+  short_description: "Trace iOS crash reports to actionable source evidence"
+  default_prompt: "Use $ios-crash-triage to diagnose this TestFlight crash and identify how to verify the cause."

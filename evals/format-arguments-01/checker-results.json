@@ -1,0 +1,69 @@
+{
+  "compared": [
+    {
+      "key": "mismatch",
+      "locale": "de",
+      "source_signature": {
+        "1": "object"
+      },
+      "target_signature": {
+        "1": "signed:ll"
+      }
+    },
+    {
+      "key": "reordered",
+      "locale": "de",
+      "source_signature": {
+        "1": "object",
+        "2": "signed:ll"
+      },
+      "target_signature": {
+        "1": "object",
+        "2": "signed:ll"
+      }
+    },
+    {
+      "key": "repeat",
+      "locale": "de",
+      "source_signature": {
+        "1": "object"
+      },
+      "target_signature": {
+        "1": "object"
+      }
+    },
+    {
+      "key": "percent",
+      "locale": "de",
+      "source_signature": {
+        "1": "signed:ll"
+      },
+      "target_signature": {
+        "1": "signed:ll"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "key": "mismatch",
+      "locale": "de",
+      "argument": 1,
+      "kind": "argument-type-change",
+      "source_type": "object",
+      "target_type": "signed:ll"
+    },
+    {
+      "key": "plural",
+      "locale": "de",
+      "kind": "manual-review",
+      "reason": "Target uses variations/substitutions"
+    }
+  ],
+  "limitations": [
+    "Only selected keys known from call sites to be format strings should be checked.",
+    "Restricted flat-string grammar; variations, substitutions, dynamic widths, and unsupported syntax need manual review.",
+    "Signatures describe declared format types, not the actual arguments supplied by application code.",
+    "Added/omitted arguments and missing locales need product/call-site review; they are not automatic runtime defects.",
+    "Equal signatures do not prove correct wording, argument meaning, rendering, or localization readiness."
+  ]
+}

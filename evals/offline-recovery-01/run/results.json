@@ -1,0 +1,101 @@
+{
+  "scope": "Two extracted methods with fake posting and draft insertion; no app or server runtime",
+  "observations_match": true,
+  "app_correctness_passed": false,
+  "source_unchanged": true,
+  "source_sha256": "29642105c1e81d4f2e828356263c4cc965d1bf70f8baf505ed4efcb1ed2f69a6",
+  "commit": "98098b9c4b5928f89f338203193c2bf40ab7f38c",
+  "swift_version": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "harness_sha256": "6029b8aa6ca93660eabbfa5574f2fcb108d5c28a563021db40e7aa69413133d0",
+  "runner_sha256": "cc407a1fdb0035dab0f705395cee6f768e51eb772b55b66b5b060eafc1b7f256",
+  "observations": [
+    {
+      "acknowledged": [
+        "root",
+        "reply1",
+        "reply2"
+      ],
+      "attempted": [
+        "root",
+        "reply1",
+        "reply2"
+      ],
+      "draft_insertions": [],
+      "name": "all_success",
+      "reply_parents": [
+        "root",
+        "reply1"
+      ],
+      "returned_status": "reply2"
+    },
+    {
+      "acknowledged": [],
+      "attempted": [
+        "root"
+      ],
+      "draft_insertions": [
+        "Root text"
+      ],
+      "name": "root_failure",
+      "reply_parents": [],
+      "returned_status": null
+    },
+    {
+      "acknowledged": [
+        "root"
+      ],
+      "attempted": [
+        "root",
+        "reply1"
+      ],
+      "draft_insertions": [
+        "Root text"
+      ],
+      "name": "first_reply_failure",
+      "reply_parents": [
+        "root"
+      ],
+      "returned_status": null
+    },
+    {
+      "acknowledged": [
+        "root",
+        "reply1"
+      ],
+      "attempted": [
+        "root",
+        "reply1",
+        "reply2"
+      ],
+      "draft_insertions": [
+        "Root text"
+      ],
+      "name": "second_reply_failure",
+      "reply_parents": [
+        "root",
+        "reply1"
+      ],
+      "returned_status": null
+    },
+    {
+      "acknowledged": [],
+      "attempted": [
+        "root"
+      ],
+      "draft_insertions": [],
+      "name": "blank_root_failure",
+      "reply_parents": [],
+      "returned_status": null
+    }
+  ],
+  "known_defects_observed": [
+    "Partial thread failure loses acknowledged-prefix information in the aggregate result.",
+    "Failure recovery inserts root text, omitting failed and unattempted follow-up text."
+  ],
+  "limits": [
+    "No live requests, actual SwiftData saves, process restarts, UI, or full-app build.",
+    "No duplicate server effect is executed; resubmission consequences require server behavior.",
+    "Nil-result recovery dispatch is modeled from the caller; the UI handler is not compiled.",
+    "The blank-text case proves the guard skips insertion; no media-only request is executed."
+  ]
+}

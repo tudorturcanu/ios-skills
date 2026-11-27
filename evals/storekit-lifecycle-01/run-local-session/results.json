@@ -1,0 +1,15 @@
+{
+  "scope": "Local StoreKitTest only; no sandbox, server, or real purchases",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+  "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+  "passed": false,
+  "cleanup_deleted": true,
+  "inputs": {
+    "Probe.swift": "80bbfdca7d8c10d55eeba4cae2b51ebe97c27e8d18729f4f6704cc49d21b5c93",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce.py": "dae47a88a1851fdc6fb2cae0390d6bb35e255e6d6a05771ca9bdf210c0a97493"
+  },
+  "swift_version": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "created_device": "CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA",
+  "error": "StoreKit probe did not complete within 120 seconds."
+}

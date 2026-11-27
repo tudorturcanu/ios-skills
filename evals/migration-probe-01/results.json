@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "source_sha256": "587d7aa161f218093e7d7277aba65234d20f56e93c424c21da47a52459b4aa82",
+  "runner_sha256": "e124531f4c525ea4c3ea2539e4c9a26432820bff9599719e59b20c929e95ad2c",
+  "host": "macOS-27.0.1-arm64-arm-64bit",
+  "cases": [
+    {
+      "name": "v1-open3-records",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "1.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "v1-open3-empty",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "1.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "v1-open2-open3-records",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "1.0.0",
+          "to": "2.0.0"
+        },
+        {
+          "from": "2.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "v1-open2-open3-empty",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "1.0.0",
+          "to": "2.0.0"
+        },
+        {
+          "from": "2.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "v2-open3-records",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "2.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "v2-open3-empty",
+      "passed": true,
+      "reopened": true,
+      "source_unchanged": true,
+      "snapshot_matches_intended_seed": true,
+      "transitions": [
+        {
+          "from": "2.0.0",
+          "to": "3.0.0"
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Synthetic schemas created using this SDK, not historical shipped application stores.",
+    "macOS SwiftData execution does not establish behavior on every supported iOS release.",
+    "No CloudKit, custom migration, uniqueness-conflict, or production-data verification."
+  ],
+  "toolchain": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+  "negative_control": {
+    "detected": true,
+    "migration_opened_successfully": true,
+    "record_count_preserved": true,
+    "names_lost": true,
+    "snapshot": {
+      "priorVersions": [
+        "1.0.0"
+      ],
+      "records": [
+        {
+          "childrenIDs": [
+            "22222222-2222-2222-2222-222222222222"
+          ],
+          "id": "11111111-1111-1111-1111-111111111111",
+          "name": ""
+        },
+        {
+          "childrenIDs": [],
+          "id": "22222222-2222-2222-2222-222222222222",
+          "name": "",
+          "parentID": "11111111-1111-1111-1111-111111111111"
+        }
+      ],
+      "storeVersions": [
+        "3.0.0"
+      ]
+    }
+  }
+}

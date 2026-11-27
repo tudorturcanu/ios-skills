@@ -1,0 +1,863 @@
+Timestamp               Ty Process[PID:TID]
+2026-11-05 20:11:03.282 Df storekitd[70745:1310e87] [com.apple.storekit:Default] Jan 17 2026 13:42:10 StoreKit Service will start listening
+2026-11-05 20:11:03.295 Df storekitd[70745:1310e87] [com.apple.AppleMediaServices:accounts] AMSMappedBundleInfo: _accountMediaTypeForClientName:bundleID: -> com.apple.storekitd (com.apple.storekitd) = com.apple.AppleMediaServices.accountmediatype.production
+2026-11-05 20:11:03.296 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104e045c0] activating connection: mach=true listener=false peer=false name=com.apple.distributed_notifications@1v3
+2026-11-05 20:11:03.296 A  storekitd[70745:1310e87] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:03.297 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x102d046c0] activating connection: mach=true listener=false peer=false name=com.apple.accountsd.accountmanager
+2026-11-05 20:11:03.300 A  storekitd[70745:1310e87] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:03.304 Df storekitd[70745:1310e87] [com.apple.storekit:General] [ActiveAccountObserver] Intialized with account: (null)
+2026-11-05 20:11:03.307 Df storekitd[70745:1310e87] [com.apple.storekit:Default] [Default] Initializing StorefrontManager
+2026-11-05 20:11:03.307 Df storekitd[70745:1310e87] [com.apple.storekit:XcodeTest] Starting Xcode Test Service
+2026-11-05 20:11:03.307 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104b04af0] activating connection: mach=true listener=true peer=false name=com.apple.storekit.configuration.xpc
+2026-11-05 20:11:03.308 Df storekitd[70745:1310e87] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-05 20:11:03.309 A  storekitd[70745:1310edc] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:03.309 A  storekitd[70745:1310edc] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-05 20:11:03.309 Df storekitd[70745:1310edc] [com.apple.containermanager:xpc] Requesting app group container lookup; identifier = group.com.apple.storekit, euid = 501, uid = 501, platform = 7
+2026-11-05 20:11:03.309 A  storekitd[70745:1310edb] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:03.310 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104a047b0] activating connection: mach=true listener=true peer=false name=(anonymous)
+2026-11-05 20:11:03.311 Df storekitd[70745:1310edb] [com.apple.storekit:Default] [AccountNotificationObserver] Initialized with account: nil
+2026-11-05 20:11:03.311 A  storekitd[70745:1310edb] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:03.312 Df storekitd[70745:1310edb] [com.apple.xpc:connection] [0x104e04f30] activating connection: mach=true listener=false peer=false name=com.apple.accountsd.accountmanager
+2026-11-05 20:11:03.312 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104b048c0] activating connection: mach=true listener=false peer=false name=com.apple.itunesstored.xpc
+2026-11-05 20:11:03.315 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:03.316 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104a047b0] Connection returned listener port: 0x2303
+2026-11-05 20:11:03.316 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x104b048c0] invalidated after the last release of the connection object
+2026-11-05 20:11:03.316 Df storekitd[70745:1310e87] [com.apple.storekit:General] Registering StoreKit IAP push consumer
+2026-11-05 20:11:03.316 Df storekitd[70745:1310e87] [com.apple.storekit:General] Registering StoreKit Messages push consumer
+2026-11-05 20:11:03.318 Df storekitd[70745:1310edc] [com.apple.containermanager:sandbox] Consumed sandbox extension; path = [/Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/Containers/Shared/AppGroup/FCC49C1B-2EFF-4AB9-9D81-7397899B4A48], handle = 0
+2026-11-05 20:11:03.318 Df storekitd[70745:1310edc] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-11-05 20:11:03.318 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x102b042a0] activating connection: mach=true listener=true peer=false name=com.apple.biome.compute.publisher
+2026-11-05 20:11:03.319 Df storekitd[70745:1310edc] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/Containers/Shared/AppGroup/FCC49C1B-2EFF-4AB9-9D81-7397899B4A48/Documents
+2026-11-05 20:11:03.319 Df storekitd[70745:1310ede] [com.apple.xpc:connection] [0x104e04f30] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:03.319 Df storekitd[70745:1310ede] [com.apple.storekit:Default] [AccountNotificationObserver] Initialized with sandbox account: nil
+2026-11-05 20:11:03.319 A  storekitd[70745:1310ede] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:03.319 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:03.319 Df storekitd[70745:1310edf] [com.apple.accounts:core] "The connection to ACDAccountStore was invalidated."
+2026-11-05 20:11:03.319 Df storekitd[70745:1310edc] [com.apple.storekit:SQL] [SQLiteConnection]: Opening database at path: /Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/Containers/Shared/AppGroup/FCC49C1B-2EFF-4AB9-9D81-7397899B4A48/Library/Caches/storeUser.db
+2026-11-05 20:11:03.321 Df storekitd[70745:1310edc] [com.apple.libcoreservices:] _dirhelper_update_tmpdir: old=/Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/tmp/, new=/Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/tmp/com.apple.storekit/
+2026-11-05 20:11:03.321 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x102f04750] activating connection: mach=true listener=true peer=false name=com.apple.distnoted.matching
+2026-11-05 20:11:03.321 A  storekitd[70745:1310ede] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:03.321 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:03.321 Df storekitd[70745:1310edb] [com.apple.storekit:Default] [AccountNotificationObserver] Initialized with testflight account: nil
+2026-11-05 20:11:03.322 Df storekitd[70745:1310e87] [com.apple.storekit:Default] Registered handler for distributed events
+2026-11-05 20:11:03.322 Df storekitd[70745:1310edf] [com.apple.xpc:connection] [0x102b043b0] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x104a047b0.peer[70643].0x102b043b0
+2026-11-05 20:11:03.322 Df storekitd[70745:1310edb] [com.apple.xpc:connection] [0x102a04e70] activating connection: mach=false listener=false peer=true name=com.apple.distnoted.matching.peer[70419].0x102a04e70
+2026-11-05 20:11:03.322 Df storekitd[70745:1310e87] Starting StoreKit Service
+2026-11-05 20:11:03.322 Df storekitd[70745:1310e87] [com.apple.xpc:connection] [0x102f04860] activating connection: mach=true listener=true peer=false name=com.apple.storekitd
+2026-11-05 20:11:03.754 A  storekitd[70745:1310ede] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:03.754 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:03.791 A  storekitd[70745:1310edb] StoreKit/AppInstall
+2026-11-05 20:11:03.822 Df StoreKitProbe[70773:1310eed] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-05 20:11:03.822 Df StoreKitProbe[70773:1310f27] [com.apple.xpc:connection] [0x102d06f00] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-05 20:11:03.822 Df StoreKitProbe[70773:1310f2b] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-05 20:11:03.823 Df StoreKitProbe[70773:1310f2b] [com.apple.xpc:connection] [0x106804080] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310eed] [com.apple.runningboard:connection] Initializing connection
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310eed] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310f2f] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310eed] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-05 20:11:03.825 A  StoreKitProbe[70773:1310f28] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310f27] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310f2f] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310eed] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310f27] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-05 20:11:03.825 Df StoreKitProbe[70773:1310f2f] [com.apple.xpc:connection] [0x102e04b90] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-05 20:11:03.826 Df StoreKitProbe[70773:1310f27] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x6000021181e0>
+2026-11-05 20:11:03.826 Df StoreKitProbe[70773:1310eed] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-05 20:11:03.827 A  StoreKitProbe[70773:1310f28] (RunningBoardServices) didChangeInheritances
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310f2f] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310f2f] [com.apple.runningboard:connection] Identity resolved as app<org.example.iosskills.storekitprobe((null))>
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310f27] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x6000021181e0>
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310eed] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x60000020a4c0; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310f27] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x600001708c80>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 874054 (elapsed = 0).
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310eed] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030042d0 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-05 20:11:03.827 Df StoreKitProbe[70773:1310eed] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030042d0 com.apple.frontboard.systemappservices> sent handshake
+2026-11-05 20:11:03.828 Df StoreKitProbe[70773:1310eed] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x600000219dc0>
+2026-11-05 20:11:03.828 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-05 20:11:03.828 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-05 20:11:03.829 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x102c057c0> for initial
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x102c057c0> for CADisplay KVO
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-05 20:11:03.830 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-05 20:11:03.831 Df storekitd[70745:1310edb] [com.apple.xpc:connection] [0x102f04610] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310eed] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310eed] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-05 20:11:03.831 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-05 20:11:03.832 Df StoreKitProbe[70773:1310f27] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-05 20:11:03.832 Df StoreKitProbe[70773:1310f2b] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-05 20:11:03.833 Df StoreKitProbe[70773:1310f2b] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-05 20:11:03.836 Df StoreKitProbe[70773:1310eed] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-05 20:11:03.836 Df StoreKitProbe[70773:1310eed] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-05 20:11:03.836 Df StoreKitProbe[70773:1310eed] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-05 20:11:03.836 Df StoreKitProbe[70773:1310eed] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1024 -> 3072; animating application lifecycle event: 0
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3072 -> 2048; animating application lifecycle event: 0
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310f2b] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310f2b] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-05 20:11:03.837 Df StoreKitProbe[70773:1310f2b] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-05 20:11:03.838 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-05 20:11:03.838 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-05 20:11:03.839 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x1e6b788b0>
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x6000021181e0>
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x6000021181e0>
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x6000017233c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 874054 (elapsed = 0).
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 2048 -> 2080; animating application lifecycle event: 1
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.840 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x6000029101c0>; with scene: <UIWindowScene: 0x106b079f0>
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.BacklightServices:scenes] 0x600000c015c0 setDelegate:<0x600000c02610 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:org.example.iosskills.storekitprobe-default
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventDeferring] [0x600002911110] Initialized with scene: <UIWindowScene: 0x106b079f0>; behavior: <_UIEventDeferringBehavior_iOS: 0x6000002036a0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-05 20:11:03.841 Df StoreKitProbe[70773:1310eed] [com.apple.xpc:connection] [0x106b081f0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310f2f] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260cea0; process scope; status: target> was:none
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x106b079f0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Aorg.example.iosskills.storekitprobe-default
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventDeferring] [0x600002911110] Scene target of event deferring environments did update: scene: 0x106b079f0; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x106b079f0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Aorg.example.iosskills.storekitprobe-default
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c26d00: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x106b079f0; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x106b079f0: Window scene became target of keyboard environment
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.842 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.843 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.855 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Orientation] <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED) Scene updated orientation preferences: none -> ( Pu Ll Lr )
+2026-11-05 20:11:03.856 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x106b079f0: Window became key in scene: UIWindow: 0x106e06bc0; contextId: 0xC2EEC95: reason: UIWindowScene: 0x106b079f0: Window requested to become key in scene: 0x106e06bc0
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x106b079f0; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x106e06bc0; reason: UIWindowScene: 0x106b079f0: Window requested to become key in scene: 0x106e06bc0
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x106e06bc0; contextId: 0xC2EEC95; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Aorg.example.iosskills.storekitprobe-default
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventDeferring] [0x600002911110] Begin local event deferring requested for token: 0x600002604fc0; environments: 1; reason: UIWindowScene: 0x106b079f0: Begin event deferring in keyboardFocus for window: 0x106e06bc0
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310f2f] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-05 20:11:03.857 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:org.example.iosskills.storekitprobe-default  persistentID: A65E2A2E-AED1-49E4-8243-94E6427342ED
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 2080
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310f27] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.858 Df StoreKitProbe[70773:1310f27] [com.apple.xpc:session] [0x6000021032f0] Session created.
+2026-11-05 20:11:03.859 Df StoreKitProbe[70773:1310f27] [com.apple.xpc:session] [0x6000021032f0] Session created from connection [0x102c06bd0]
+2026-11-05 20:11:03.859 Df StoreKitProbe[70773:1310f27] [com.apple.xpc:connection] [0x102c06bd0] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-05 20:11:03.859 Df StoreKitProbe[70773:1310f30] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260cea0; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Aorg.example.iosskills.storekitprobe-default; status: ancestor> was:target
+2026-11-05 20:11:03.859 Df StoreKitProbe[70773:1310f27] [com.apple.xpc:session] [0x6000021032f0] Session activated
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310f30] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-05 20:11:03.860 E  StoreKitProbe[70773:1310f30] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [6763BC28-0C0D-4477-BF72-45B9B7BFBD15] (reporting strategy default)>
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [724DCC9D-5FC5-4A66-A85C-0032BACFBA11] (reporting strategy default)>
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.network:activity] Set activity <nw_activity 50:1 [6763BC28-0C0D-4477-BF72-45B9B7BFBD15] (reporting strategy default)> as the global parent
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x600001708c80>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 874054 (elapsed = 0), _expireHandler: (null)
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x6000021181e0> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x600001708c80>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 874054 (elapsed = 0))
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:EventDeferring] [0x600002911110] Scene target of event deferring environments did update: scene: 0x106b079f0; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x106b079f0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Aorg.example.iosskills.storekitprobe-default
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:org.example.iosskills.storekitprobe-default  persistentID: A65E2A2E-AED1-49E4-8243-94E6427342ED
+2026-11-05 20:11:03.860 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x106b079f0> (A65E2A2E-AED1-49E4-8243-94E6427342ED)
+2026-11-05 20:11:03.861 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-05 20:11:03.861 Df StoreKitProbe[70773:1310eed] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:org.example.iosskills.storekitprobe-default  persistentID: A65E2A2E-AED1-49E4-8243-94E6427342ED
+2026-11-05 20:11:03.863 Df StoreKitProbe[70773:1310eed] [com.apple.xpc:connection] [0x102c06930] activating connection: mach=true listener=false peer=false name=com.apple.storekit.configuration.xpc
+2026-11-05 20:11:03.864 Df StoreKitProbe[70773:1310eed] [com.apple.xpc:connection] [0x102b05bf0] activating connection: mach=true listener=false peer=false name=com.apple.storekitd
+2026-11-05 20:11:03.866 A  StoreKitProbe[70773:1310f2f] (RunningBoardServices) didChangeInheritances
+2026-11-05 20:11:03.867 Df storekitd[70745:1310edb] [com.apple.storekit:Receipts] [ReceiptManager] Handling app install for (
+    "org.example.iosskills.storekitprobe"
+)
+2026-11-05 20:11:03.868 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x104a04dc0] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-05 20:11:03.869 A  StoreKitProbe[70773:1310f30] (RunningBoardServices) didChangeInheritances
+2026-11-05 20:11:03.869 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x104905a80] activating connection: mach=true listener=false peer=false name=com.apple.lsd.advertisingidentifiers
+2026-11-05 20:11:03.870 A  storekitd[70745:1310ee0] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-05 20:11:03.870 Df storekitd[70745:1310ee0] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-11-05 20:11:03.871 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [Client] (StoreKitProbe) Initialized with server Sandbox bundle ID org.example.iosskills.storekitprobe and request bundle ID org.example.iosskills.storekitprobe]
+2026-11-05 20:11:03.871 A  storekitd[70745:1310ee0] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-05 20:11:03.871 Df storekitd[70745:1310ee0] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-11-05 20:11:03.871 A  storekitd[70745:1310ee0] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-05 20:11:03.871 Df storekitd[70745:1310ee0] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-11-05 20:11:03.871 A  storekitd[70745:1310ee1] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-05 20:11:03.871 Df storekitd[70745:1310ee1] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2026-11-05 20:11:03.871 Df storekitd[70745:1310ee0] Accepting new connection StoreKitProbe[70773]
+2026-11-05 20:11:03.872 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x104905c80] activating connection: mach=false listener=false peer=true name=com.apple.storekitd.peer[70773].0x104905c80
+2026-11-05 20:11:03.872 Df storekitd[70745:1310ee0] [com.apple.storekit:General] [StoreKitServiceConnection(70773)]: -[StoreKitServiceConnection xcodeTestServerPortWithReplyBlock:]
+2026-11-05 20:11:03.872 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x104a059f0] activating connection: mach=false listener=false peer=false name=com.apple.ASOctaneSupportXPCService
+2026-11-05 20:11:03.873 Df storekitd[70745:1310edb] [com.apple.storekit:General] [InAppReceiptDatabaseStore]: Transaction database migration from 0 => 16200 SUCCESS
+2026-11-05 20:11:03.873 Df storekitd[70745:1310edb] [com.apple.storekit:General] [InAppReceiptDatabaseStore]: Transaction database migration from 16200 => 18000 SUCCESS
+2026-11-05 20:11:03.873 Df storekitd[70745:1310edb] [com.apple.storekit:General] [InAppReceiptDatabaseStore]: Transaction database migration from 18000 => 18401 SUCCESS
+2026-11-05 20:11:03.874 Df storekitd[70745:1310edb] [com.apple.storekit:General] [InAppReceiptDatabaseStore]: Transaction database migration from 18401 => 18402 SUCCESS
+2026-11-05 20:11:03.874 Df storekitd[70745:1310edb] [com.apple.storekit:Receipts] [ReceiptManager] Clearing app receipt for org.example.iosskills.storekitprobe
+2026-11-05 20:11:03.875 Df storekitd[70745:1310edd] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [5675F2D1] Loading bag from the network. <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:03.876 Df storekitd[70745:1310edd] [com.apple.network:activity] Create activity <nw_activity 51:1>
+2026-11-05 20:11:03.877 Df storekitd[70745:1310edc] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [(null)] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:03.880 Df storekitd[70745:1310ee1] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-05 20:11:03.898 Df storekitd[70745:1310ee1] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-05 20:11:03.912 Df storekitd[70745:1310ee1] [com.apple.network:activity] Activated <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default)>
+2026-11-05 20:11:03.975 A  StoreKitProbe[70773:1310f2f] (RunningBoardServices) didChangeInheritances
+2026-11-05 20:11:03.980 A  storekitd[70745:1310ede] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:03.989 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [5675F2D1] === Starting ===
+2026-11-05 20:11:03.995 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:03.995 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:04.064 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:04.066 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:04.066 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:04.066 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:04.066 A  storekitd[70745:1310ede] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:06.242 Df storekitd[70745:1310edf] [com.apple.xpc:connection] [0x104905c80] invalidated because the client process (pid 70773) either cancelled the connection or exited
+2026-11-05 20:11:06.242 Df storekitd[70745:1310edf] Connection to StoreKitProbe[70773] invalidated
+2026-11-05 20:11:06.244 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:06.245 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:16.247 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] ACAccount: [5675F2D1] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e1c400 type = iTunesStore | backingID = E6944C69-B2BB-4702-9197-ACCDF1A122A1 | username = local | storefront = H:79f72cca4b>
+2026-11-05 20:11:16.248 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] ACAccount: [5675F2D1] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e1c400 type = iTunesStore | backingID = E6944C69-B2BB-4702-9197-ACCDF1A122A1 | username = local | storefront = H:79f72cca4b>
+2026-11-05 20:11:16.248 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] ACAccount: [5675F2D1] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e1c400 type = iTunesStore | backingID = E6944C69-B2BB-4702-9197-ACCDF1A122A1 | username = local | storefront = H:79f72cca4b>
+2026-11-05 20:11:16.321 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] ACAccount: [5675F2D1] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e1c400 type = iTunesStore | backingID = E6944C69-B2BB-4702-9197-ACCDF1A122A1 | username = local | storefront = H:79f72cca4b>
+2026-11-05 20:11:17.819 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:17.820 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:17.860 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:17.893 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:17.946 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [5675F2D1] Encoding request for URL: https://bag.itunes.apple.com/bag.xml?REDACTED { 
+	account = <ACAccount: 0x600003e0c600 type = iTunesStore | backingID = E6944C69-B2BB-4702-9197-ACCDF1A122A1 | username = local | storefront = H:79f72cca4b> 
+	mediaType = com.apple.AppleMediaServices.accountmediatype.production 
+}
+2026-11-05 20:11:17.947 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [5675F2D1] Request cookies are disabled. No cookie header will be added.
+2026-11-05 20:11:17.983 E  storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] AMSURLRequestDecoration: [5675F2D1] Skipping GUID parameter addition as bag was not provided.
+2026-11-05 20:11:17.983 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [5675F2D1] Failed to add GUID parameters. error = { Error domain=AMSErrorDomain, code=2
+2026-11-05 20:11:18.709 A  storekitd[70745:1310ee1] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-05 20:11:18.731 A  storekitd[70745:1310ee1] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-05 20:11:18.737 A  storekitd[70745:1310ee1] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-05 20:11:18.741 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [5675F2D1] Preparing request: <AMSURLRequest: 0x6000002199c0> { URL: https://bag.itunes.apple.com/bag.xml?REDACTED }
+2026-11-05 20:11:18.742 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [5675F2D1] Task created: LocalDataTask <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> Session: <__NSURLSessionLocal: 0x104804a90>
+2026-11-05 20:11:18.742 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> resuming, timeouts(60.0, 30.0) qos(0x11) voucher(<OS_voucher: 0x600002111900>) activity(5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2)
+2026-11-05 20:11:18.898 A  storekitd[70745:1310ee1] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-05 20:11:19.201 Df storekitd[70745:1310ee1] [com.apple.runningboard:connection] Initializing connection
+2026-11-05 20:11:19.202 Df storekitd[70745:1310ee1] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-05 20:11:19.202 Df storekitd[70745:1310ee1] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-05 20:11:19.202 Df storekitd[70745:1310ee1] [com.apple.xpc:connection] [0x102a05110] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-05 20:11:19.331 Df storekitd[70745:1310ee0] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-05 20:11:19.431 Df storekitd[70745:1310ee0] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-05 20:11:19.432 Df storekitd[70745:1310ee0] [com.apple.runningboard:connection] Identity resolved as osservice<com.apple.storekitd>
+2026-11-05 20:11:21.076 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Initializing AlternativeServices Storage singleton
+2026-11-05 20:11:21.076 Df storekitd[70745:1310ee1] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/Library/HTTPStorages/com.apple.storekitd
+2026-11-05 20:11:21.453 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-11-05 20:11:21.458 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Garbage collection for alternative services
+2026-11-05 20:11:21.648 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Connection 1: enabling TLS
+2026-11-05 20:11:21.648 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Connection 1: starting, TC(0x0)
+2026-11-05 20:11:21.671 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1 E4FF9AFA-DAC6-4978-8923-670135659DF5 Hostname#bb8b97a6:443 quic-connection, url: https://bag.itunes.apple.com/bag.xml, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{E8DC5EC2-5979-456C-9691-B097D8E83FC9}{AMP}{Y}{2}{0x0} (private), proc: 2811A096-46AE-32BD-B9A1-3487826F7618, delegated upid: 0] start
+2026-11-05 20:11:21.684 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1 Hostname#bb8b97a6:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-11-05 20:11:21.703 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1 Hostname#bb8b97a6:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.018s, uuid: A030159C-6587-4824-B68F-CB725AC984FA
+2026-11-05 20:11:21.722 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1 Hostname#bb8b97a6:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.037s
+2026-11-05 20:11:21.722 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C1] reporting state preparing
+2026-11-05 20:11:21.914 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1 Hostname#bb8b97a6:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_child @0.229s
+2026-11-05 20:11:21.914 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1 Hostname#bb8b97a6:443 initial path ((null))] event: path:start @0.230s
+2026-11-05 20:11:21.914 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1 Hostname#bb8b97a6:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.230s, uuid: A030159C-6587-4824-B68F-CB725AC984FA
+2026-11-05 20:11:21.914 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1 Hostname#bb8b97a6:443 in_progress transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: transform:start @0.230s
+2026-11-05 20:11:21.915 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1 Hostname#bb8b97a6:443 initial path ((null))] event: path:start @0.231s
+2026-11-05 20:11:21.916 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1 Hostname#bb8b97a6:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.231s, uuid: B4240A51-B8C5-4D68-B5ED-6F1671941047
+2026-11-05 20:11:22.003 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:start_dns @0.319s
+2026-11-05 20:11:22.033 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> setting up Connection 1
+2026-11-05 20:11:22.033 Df storekitd[70745:1310ee1] [com.apple.network:activity] [C1] event: client:start_activity @0.348s, activity <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default)>
+2026-11-05 20:11:22.036 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#251c7bb5:443
+2026-11-05 20:11:22.036 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#5666e682:443
+2026-11-05 20:11:22.036 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#d14e28a5:443
+2026-11-05 20:11:22.036 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#7579640b:443
+2026-11-05 20:11:22.037 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#5edafd07:443
+2026-11-05 20:11:22.037 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#eda5619c:443
+2026-11-05 20:11:22.037 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#97f3d562:443
+2026-11-05 20:11:22.037 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#9ed50bab:443
+2026-11-05 20:11:22.112 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1 Hostname#bb8b97a6:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:receive_dns @0.427s
+2026-11-05 20:11:22.113 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1.1 IPv4#251c7bb5:443 initial path ((null))] event: path:start @0.429s
+2026-11-05 20:11:22.189 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1.1 IPv4#251c7bb5:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.504s, uuid: B006659E-BAD7-409B-82DF-071EFB6C673E
+2026-11-05 20:11:22.221 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1.1 IPv4#251c7bb5:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.537s
+2026-11-05 20:11:22.251 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_socket_handle_socket_event [C1.1.1.1:3] Socket received CONNECTED event
+2026-11-05 20:11:22.251 Df storekitd[70745:1310ee1] [com.apple.network:connection] nw_flow_connected [C1.1.1.1 IPv4#251c7bb5:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Transport protocol connected (socket)
+2026-11-05 20:11:22.251 Df storekitd[70745:1310ee1] [com.apple.network:connection] [C1.1.1.1 IPv4#251c7bb5:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_transport @0.567s
+2026-11-05 20:11:22.648 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2324) [C1.1.1.1:2][0x104e07b10] TLS configured [min_version(0x0303) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) ech(false) pqtls(true), pake(false)]
+2026-11-05 20:11:22.648 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2449) [C1.1.1.1:2][0x104e07b10] Client handshake started
+2026-11-05 20:11:22.649 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS client enter_early_data
+2026-11-05 20:11:22.649 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS client read_server_hello
+2026-11-05 20:11:22.708 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-11-05 20:11:22.709 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_server_hello
+2026-11-05 20:11:22.709 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-11-05 20:11:22.709 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_certificate_request
+2026-11-05 20:11:22.709 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_server_certificate
+2026-11-05 20:11:22.709 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-11-05 20:11:22.710 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(1892) [C1.1.1.1:2][0x104e07b10] Performing external trust evaluation
+2026-11-05 20:11:22.710 A  storekitd[70745:1310ee1] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:22.710 A  storekitd[70745:1310ee1] (Security) SecKeyCopyAttributes
+2026-11-05 20:11:22.710 A  storekitd[70745:1310ee1] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:22.710 Df storekitd[70745:1310ee1] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(1877) [C1.1.1.1:2][0x104e07b10] Asyncing for external verify block
+2026-11-05 20:11:22.710 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Connection 1: asked to evaluate TLS Trust
+2026-11-05 20:11:22.800 A  storekitd[70745:1310ee1] (libsystem_containermanager.dylib) container_system_group_path_for_identifier
+2026-11-05 20:11:22.841 Df storekitd[70745:1310ee1] [com.apple.containermanager:xpc] Requesting container lookup; class = 13, identifier = com.apple.nsurlsessiond, group_identifier = systemgroup.com.apple.nsurlstoragedresources, create = 1, temp = 0, euid = 501, uid = 501
+2026-11-05 20:11:22.842 A  storekitd[70745:1310ee1] (libsystem_containermanager.dylib) container_query_t
+2026-11-05 20:11:22.853 Df storekitd[70745:1310ee1] [com.apple.containermanager:xpc] Query; euid = 501, uid = 501, class = 13, identifier = [com.apple.nsurlsessiond](1), flags = 900000003
+2026-11-05 20:11:23.144 Df storekitd[70745:1310ee1] [com.apple.containermanager:unspecified] _container_query_get_result_at_index: success
+2026-11-05 20:11:23.144 A  storekitd[70745:1310ee1] (libsystem_containermanager.dylib) container_copy_object
+2026-11-05 20:11:23.144 Df storekitd[70745:1310ee1] [com.apple.containermanager:unspecified] container_system_group_path_for_identifier: success
+2026-11-05 20:11:23.145 Df storekitd[70745:1310ee1] [com.apple.securityd:trust] (Trust 0x6000035204d0) No pending evals, starting
+2026-11-05 20:11:23.145 A  storekitd[70745:1310ee1] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-11-05 20:11:23.146 Df storekitd[70745:1310ee1] [com.apple.securityd:keychain] System Keychain Always Supported set via feature flag to disabled
+2026-11-05 20:11:23.146 Df storekitd[70745:1310ee1] [com.apple.xpc:connection] [0x102f09160] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-05 20:11:23.325 Df storekitd[70745:1310ee1] [com.apple.xpc:connection] [0x102d084c0] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-05 20:11:23.332 Df storekitd[70745:1310ee1] [com.apple.securityd:trust] (Trust 0x6000035204d0) Completed async eval kickoff
+2026-11-05 20:11:23.354 Df storekitd[70745:1310ee0] [com.apple.securityd:trust] (Trust 0x6000035204d0) trustd returned 4
+2026-11-05 20:11:23.354 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 1: TLS Trust result 0
+2026-11-05 20:11:23.354 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(1819) [C1.1.1.1:2][0x104e07b10] Returning from external verify block with result: true
+2026-11-05 20:11:23.354 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2073) [C1.1.1.1:2][0x104e07b10] Certificate verification result: OK
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client read_server_finished
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client send_client_certificate
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client complete_second_flight
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS 1.3 client done
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS client finish_client_handshake
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C1.1.1.1:2][0x104e07b10] Client handshake state: TLS client done
+2026-11-05 20:11:23.355 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2455) [C1.1.1.1:2][0x104e07b10] Client handshake done
+2026-11-05 20:11:23.356 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.356 A  storekitd[70745:1310ee0] (Security) SecKeyCopyAttributes
+2026-11-05 20:11:23.356 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.356 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C1.1.1.1:2][0x104e07b10] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_256_GCM_SHA384) group(0x11ec) signature_alg(0x0403) alpn(h2) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(1) sct_received(0) connect_time(708ms) flight_time(60ms) rtt(59ms) write_stalls(0) read_stalls(2) pake(0x0000)]
+2026-11-05 20:11:23.356 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_flow_connected [C1.1.1.1 IPv4#251c7bb5:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (CFNetworkConnection-3373592591)
+2026-11-05 20:11:23.434 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1.1.1.1 IPv4#251c7bb5:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @1.749s
+2026-11-05 20:11:23.437 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1.1.1 Hostname#bb8b97a6:443 ready resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @1.753s
+2026-11-05 20:11:23.437 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1.1 Hostname#bb8b97a6:443 ready transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @1.753s
+2026-11-05 20:11:23.438 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_flow_connected [C1 IPv4#251c7bb5:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (endpoint_flow)
+2026-11-05 20:11:23.438 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1 IPv4#251c7bb5:443 ready parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_connect @1.754s
+2026-11-05 20:11:23.438 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C1] reporting state ready
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyAttributes
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyAttributes
+2026-11-05 20:11:23.439 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:23.440 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102d084c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:23.440 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 1: connected successfully
+2026-11-05 20:11:23.440 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 1: TLS handshake complete
+2026-11-05 20:11:23.440 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 1: ready C(N) E(N)
+2026-11-05 20:11:23.440 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C1] event: client:end_activity @1.756s, activity <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default)>
+2026-11-05 20:11:23.441 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1] event: client:connection_reused @1.757s
+2026-11-05 20:11:23.441 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-11-05 20:11:23.442 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> now using Connection 1
+2026-11-05 20:11:23.442 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C1] event: client:start_activity @1.757s, activity <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default)>
+2026-11-05 20:11:23.615 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> sent request, body N 0
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> received response, status 200 content K
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> done using Connection 1
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C1] event: client:end_activity @1.932s, activity <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default)>
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C1] event: client:connection_idle @1.932s
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-11-05 20:11:23.616 A  storekitd[70745:1310ee0] (Security) SecTrustEvaluateIfNecessary
+2026-11-05 20:11:23.616 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102a08d30] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-05 20:11:23.619 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102a08d30] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:23.619 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> response ended
+2026-11-05 20:11:23.620 Df storekitd[70745:13113b1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [5675F2D1] Task received response
+2026-11-05 20:11:23.620 Df storekitd[70745:13113b1] [com.apple.AppleMediaServices:url-loading] AMSURLProtocolHandler: [5675F2D1] StatusCode: 200; <private>; Environment: AS00
+2026-11-05 20:11:23.620 A  storekitd[70745:13113b1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.620 A  storekitd[70745:13113b1] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.688 Df storekitd[70745:13113b1] [com.apple.CFNetwork:Summary] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> summary for task success {transaction_duration_ms=4565, response_status=200, connection=1, protocol="h2", domain_lookup_duration_ms=108, connect_duration_ms=1217, secure_connection_duration_ms=708, private_relay=false, request_start_ms=4319, request_duration_ms=173, response_start_ms=4493, response_duration_ms=3, request_bytes=328, request_throughput_kbps=15, response_bytes=17990, response_throughput_kbps=37973, cache_hit=false}
+2026-11-05 20:11:23.688 Df storekitd[70745:13113b1] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-05 20:11:23.694 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Task <4360B5DB-B9AD-48DF-8FDE-4F2C6F18FC36>.<1> finished successfully
+2026-11-05 20:11:23.694 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [5675F2D1] Task finished loading for URL request <AMSURLRequest: 0x60000021a2c0> { URL: https://bag.itunes.apple.com/bag.xml?REDACTED }
+2026-11-05 20:11:23.695 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] AMSMescal: [5675F2D1] Mescal verification will be skipped as bag was not provided.
+2026-11-05 20:11:23.705 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] AMSNetworkQualityInquiry: The network quality inquiry is not available.
+2026-11-05 20:11:23.705 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] AMSNetworkQualityInquiry: The network quality inquiry failed to initialize.
+2026-11-05 20:11:23.705 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [5675F2D1] Task completed successfully
+2026-11-05 20:11:23.711 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:bag] AMSBagNetworkTask: [BE966DA2] Successfully loaded the bag data.
+2026-11-05 20:11:23.711 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [BE966DA2] === Finished ===
+2026-11-05 20:11:23.712 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [5675F2D1] Bag data was initially loaded. dataSourceChangedHandler will be called.
+2026-11-05 20:11:23.712 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:bag] AMSBag: [5675F2D1] The bag changed. Posting a notification.
+2026-11-05 20:11:23.713 Df storekitd[70745:1310ee1] [com.apple.network:activity] <nw_activity 51:1 [5606BBA7-B91E-48BC-B0F2-FA7D76E4D2B2] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 19833ms
+2026-11-05 20:11:23.721 Df storekitd[70745:1311504] [com.apple.AppleMediaServices:bag] AMSBag: [3E522A58] Successfully created the snapshot.
+2026-11-05 20:11:23.731 A  storekitd[70745:1311504] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.731 A  storekitd[70745:1311504] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.731 Df storekitd[70745:1310ee1] [com.apple.storekit:Default] [80b03a39] BagNotificationListener: Received notification "AMSBagChangedNotification"
+2026-11-05 20:11:23.732 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.732 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:23.737 Df storekitd[70745:1310edd] [com.apple.apsd:connection] Initializing APSConnection <APSConnection: 0x600003d1c3c0>: env=production port=com.apple.aps.storekitservice queue=<OS_dispatch_queue_serial: com.apple.storekit.StorePushService>
+2026-11-05 20:11:23.741 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.741 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.763 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: Starting bag update-handler calling.  observationCount =  0  |  changedKeys =  [private]
+2026-11-05 20:11:23.764 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: Finished bag update-handler calling.
+2026-11-05 20:11:23.777 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> creating an xpc connection {syncXPC: YES}
+2026-11-05 20:11:23.777 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102c087f0] activating connection: mach=true listener=false peer=false name=com.apple.apsd
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setEnabledTopics (
+) ignoredTopics (
+) opportunisticTopics (
+) nonWakingTopics (
+) sendToDaemon: NO completion: (null)
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> got all nil topics, considering this as a change to flush any cached topics in apsd for named ports.
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] APS <APSConnection: 0x600003d1c3c0> _connection is NULL in _sendEnabledTopics:ignoredTopics:opportunisticTopics:!
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setEnableCriticalReliability NO sendToDaemon NO
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> _setTrackActivityPresence NO sendToDaemon NO
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> _setEnableStatusNotifications NO sendToDaemon NO
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setMessageSize: 5120
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setLargeMessageSize: 51200
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Delivering did reconnect apsd
+2026-11-05 20:11:23.791 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> queuing call to delegate to tolerate setDelegate race
+2026-11-05 20:11:23.792 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Delivering publicToken from apsd: {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.792 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> queuing call to delegate to tolerate setDelegate race
+2026-11-05 20:11:23.792 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Delivering connectionStatusChange from apsd: YES
+2026-11-05 20:11:23.792 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> asked for publicToken, got {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.792 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setting delegate production/43c10646 {asyncSetDelegate: NO}
+2026-11-05 20:11:23.792 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Delivering queued delegate calls: 2
+2026-11-05 20:11:23.792 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> _setEnableStatusNotifications NO sendToDaemon YES
+2026-11-05 20:11:23.792 Df storekitd[70745:1311504] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> setEnabledTopics (
+    "com.apple.storekit"
+) ignoredTopics (
+) opportunisticTopics (
+) nonWakingTopics (
+) sendToDaemon: YES completion: (null)
+2026-11-05 20:11:23.792 Df storekitd[70745:1311504] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> got all nil topics, considering this as a change to flush any cached topics in apsd for named ports.
+2026-11-05 20:11:23.792 Df storekitd[70745:131153f] [com.apple.storekit:Default] [Default] Storefront for production changed to 143459-2,29(CHE)
+2026-11-05 20:11:23.792 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Async Delivering publicToken from apsd: {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.792 Df storekitd[70745:1310ee0] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Delivering publicToken from apsd: {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.800 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> asked for publicToken, got {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.801 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> calling production/43c10646 didReceivePublicToken:
+2026-11-05 20:11:23.801 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> asked for publicToken, got {length = 80, bytes = 0x8083eb47 ac9e05cf 56fa92d4 cd4ff242 ... fa9e1774 6d9fd497 }
+2026-11-05 20:11:23.801 Df storekitd[70745:1310edd] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> returned from production/43c10646 didReceivePublicToken:
+2026-11-05 20:11:23.822 Df storekitd[70745:131153f] [com.apple.storekit:Default] [Default] Sending storefront changed notification for production
+2026-11-05 20:11:23.823 Df storekitd[70745:131153f] [com.apple.storekit:Default] Posting storefrontchanged notification
+2026-11-05 20:11:23.824 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] Loading bag from the network. <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:23.824 Df storekitd[70745:131153f] [com.apple.network:activity] Create activity <nw_activity 51:1>
+2026-11-05 20:11:23.824 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [4BB112E5] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:23.824 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:accounts] AMSAccountStoreCache: [4BB112E5] Creating a new ACAccountStore for a media type. mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox
+2026-11-05 20:11:23.825 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.825 Df storekitd[70745:131153f] [com.apple.xpc:connection] [0x104808a70] activating connection: mach=true listener=false peer=false name=com.apple.accountsd.accountmanager
+2026-11-05 20:11:23.832 Df storekitd[70745:1310ee0] [com.apple.network:activity] Activated <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:23.836 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [4BB112E5] === Starting ===
+2026-11-05 20:11:23.837 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.839 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.844 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.844 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.844 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.852 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] performCreateLocalAccountWithIdentifier:error: Local account requested with identifier: com.apple.account.iTunesStore.sandbox
+2026-11-05 20:11:23.852 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:accounts.daemon] AMSDaemonConnection: [4BB112E5] Initializing XPC connection
+2026-11-05 20:11:23.855 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.855 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.855 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.857 Df storekitd[70745:131153f] [com.apple.xpc:connection] [0x102a05220] activating connection: mach=true listener=false peer=false name=com.apple.xpc.amsaccountsd
+2026-11-05 20:11:23.858 A  storekitd[70745:1310edd] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.858 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.859 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.859 Df storekitd[70745:1310edd] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] performCreateLocalAccountWithIdentifier: Local account requested with identifier: com.apple.account.iTunesStore.sandbox
+2026-11-05 20:11:23.859 Df storekitd[70745:1310edd] [com.apple.AppleMediaServices:accounts.daemon] AMSDaemonConnection: [4BB112E5] Initializing XPC connection
+2026-11-05 20:11:23.859 Df storekitd[70745:1310edd] [com.apple.xpc:connection] [0x104809080] activating connection: mach=true listener=false peer=false name=com.apple.xpc.amsaccountsd
+2026-11-05 20:11:23.866 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] performCreateLocalAccountWithIdentifier: Local account requested with identifier: com.apple.account.iTunesStore.sandbox
+2026-11-05 20:11:23.867 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:accounts.daemon] AMSDaemonConnection: [4BB112E5] Initializing XPC connection
+2026-11-05 20:11:23.867 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102c04280] activating connection: mach=true listener=false peer=false name=com.apple.xpc.amsaccountsd
+2026-11-05 20:11:23.968 A  storekitd[70745:1310e87] (Accounts) accounts/account-with-identifier
+2026-11-05 20:11:23.969 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.969 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.971 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.971 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.971 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] Local account creation finished with success: true
+2026-11-05 20:11:23.971 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.972 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102e05060] activating connection: mach=false listener=false peer=true name=com.apple.distnoted.matching.peer[70419].0x102e05060
+2026-11-05 20:11:23.972 Df storekitd[70745:1310ee0] [com.apple.storekit:General] [ActiveAccountObserver] Received sandbox account changed notification
+2026-11-05 20:11:23.972 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] [AccountNotificationObserver] handleSandboxAccountDidChange
+2026-11-05 20:11:23.972 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] No notification payload for sandbox account change
+2026-11-05 20:11:23.972 E  storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagActiveAccountProvider: [4BB112E5] The local account doesn’t have a storefront. localAccount = <ACAccount: 0x600003e0cc00 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> | mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox
+2026-11-05 20:11:23.973 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] Checking sandbox account for changes
+2026-11-05 20:11:23.973 E  storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] Could not fetch initial cached storefront. error = (null)
+2026-11-05 20:11:23.974 Df storekitd[70745:131153f] [com.apple.xpc:connection] [0x102a05220] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:23.974 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.974 Df storekitd[70745:1311504] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] Local account creation finished with success: true
+2026-11-05 20:11:23.974 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.974 Df storekitd[70745:1311504] [com.apple.xpc:connection] [0x104809080] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:23.975 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] sandbox account has no changes
+2026-11-05 20:11:23.975 Df storekitd[70745:1310edd] [com.apple.AppleMediaServices:accounts] AMSAccountManagementService: [4BB112E5] Local account creation finished with success: true
+2026-11-05 20:11:23.975 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.975 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] Checking testflight account for changes
+2026-11-05 20:11:23.975 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.975 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:accounts] AMSAccountStoreCache: [4BB112E5] Creating a new ACAccountStore for a media type. mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.beta
+2026-11-05 20:11:23.975 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.975 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:23.975 Df storekitd[70745:1310edd] [com.apple.xpc:connection] [0x102c04280] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:23.975 A  storekitd[70745:1311504] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.975 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.975 A  storekitd[70745:1310edd] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.976 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:23.976 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [603966f3] testflight account has no changes
+2026-11-05 20:11:23.976 E  storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] AMSBagActiveAccountProvider: [4BB112E5] The local account doesn’t have a storefront. localAccount = <ACAccount: 0x600003e08100 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> | mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox
+2026-11-05 20:11:23.976 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:23.976 E  storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagActiveAccountProvider: [4BB112E5] The local account doesn’t have a storefront. localAccount = <ACAccount: 0x600003e28d00 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> | mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox
+2026-11-05 20:11:23.976 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:23.976 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:23.986 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:23.987 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.987 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.993 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:23.993 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:23.994 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Encoding request for URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED { 
+	account = <ACAccount: 0x600003e01600 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> 
+	mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox 
+}
+2026-11-05 20:11:23.995 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Request cookies are disabled. No cookie header will be added.
+2026-11-05 20:11:23.996 E  storekitd[70745:1311503] [com.apple.AppleMediaServices:general] AMSURLRequestDecoration: [4BB112E5] Skipping GUID parameter addition as bag was not provided.
+2026-11-05 20:11:23.996 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Failed to add GUID parameters. error = { Error domain=AMSErrorDomain, code=2
+2026-11-05 20:11:23.997 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Preparing request: <AMSURLRequest: 0x60000021eb60> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:23.997 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task created: LocalDataTask <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> Session: <__NSURLSessionLocal: 0x104804a90>
+2026-11-05 20:11:23.997 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> resuming, timeouts(60.0, 30.0) qos(0x15) voucher(<OS_voucher: 0x600002121f90>) activity(A5D33B2D-6284-40D2-969C-CF72467F6DF6)
+2026-11-05 20:11:24.052 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: enabling TLS
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: starting, TC(0x0)
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 370785F4-438D-4D0A-B9C5-D87EB3950354 Hostname#4dea86a5:443 quic-connection, url: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{E8DC5EC2-5979-456C-9691-B097D8E83FC9}{AMP}{Y}{2}{0x0} (private), proc: 2811A096-46AE-32BD-B9A1-3487826F7618, delegated upid: 0] start
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 Hostname#4dea86a5:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 Hostname#4dea86a5:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.000s, uuid: 33DA2629-0A22-4F5F-BE4B-6DEB56DA483B
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 Hostname#4dea86a5:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.000s
+2026-11-05 20:11:24.053 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state preparing
+2026-11-05 20:11:24.056 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 Hostname#4dea86a5:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_child @0.002s
+2026-11-05 20:11:24.056 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1 Hostname#4dea86a5:443 initial path ((null))] event: path:start @0.003s
+2026-11-05 20:11:24.056 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1 Hostname#4dea86a5:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.003s, uuid: 33DA2629-0A22-4F5F-BE4B-6DEB56DA483B
+2026-11-05 20:11:24.056 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1 Hostname#4dea86a5:443 in_progress transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: transform:start @0.003s
+2026-11-05 20:11:24.056 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1 Hostname#4dea86a5:443 initial path ((null))] event: path:start @0.003s
+2026-11-05 20:11:24.057 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1 Hostname#4dea86a5:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.003s, uuid: 4A1D59BB-951B-4333-8C1B-F4465B00C432
+2026-11-05 20:11:24.058 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1 Hostname#4dea86a5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:start_dns @0.004s
+2026-11-05 20:11:24.061 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> setting up Connection 2
+2026-11-05 20:11:24.061 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C2] event: client:start_activity @0.007s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:24.074 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#4dea86a5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#0d8afdac:443
+2026-11-05 20:11:24.074 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#4dea86a5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#ee8a840f:443
+2026-11-05 20:11:24.074 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1 Hostname#4dea86a5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:receive_dns @0.021s
+2026-11-05 20:11:24.074 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1.1 IPv4#0d8afdac:443 initial path ((null))] event: path:start @0.021s
+2026-11-05 20:11:24.075 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1.1 IPv4#0d8afdac:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.022s, uuid: 473EE9F6-F226-42D3-9CD3-6FF7C22DD6D5
+2026-11-05 20:11:24.078 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1.1 IPv4#0d8afdac:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.025s
+2026-11-05 20:11:24.089 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_socket_handle_socket_event [C2.1.1.1:3] Socket received CONNECTED event
+2026-11-05 20:11:24.091 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#0d8afdac:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Transport protocol connected (socket)
+2026-11-05 20:11:24.092 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1.1 IPv4#0d8afdac:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_transport @0.038s
+2026-11-05 20:11:24.092 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2324) [C2.1.1.1:2][0x102f09cc0] TLS configured [min_version(0x0303) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) ech(false) pqtls(true), pake(false)]
+2026-11-05 20:11:24.093 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2449) [C2.1.1.1:2][0x102f09cc0] Client handshake started
+2026-11-05 20:11:24.093 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS client enter_early_data
+2026-11-05 20:11:24.094 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS client read_server_hello
+2026-11-05 20:11:24.126 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-11-05 20:11:24.126 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_server_hello
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_certificate_request
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_server_certificate
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(1892) [C2.1.1.1:2][0x102f09cc0] Performing external trust evaluation
+2026-11-05 20:11:24.127 A  storekitd[70745:1311503] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(1877) [C2.1.1.1:2][0x102f09cc0] Asyncing for external verify block
+2026-11-05 20:11:24.127 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Connection 2: asked to evaluate TLS Trust
+2026-11-05 20:11:24.128 Df storekitd[70745:1311503] [com.apple.securityd:trust] (Trust 0x600003514580) No pending evals, starting
+2026-11-05 20:11:24.128 A  storekitd[70745:1311503] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-11-05 20:11:24.136 Df storekitd[70745:1311503] [com.apple.xpc:connection] [0x102d06d20] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-05 20:11:24.144 Df storekitd[70745:1311503] [com.apple.securityd:trust] (Trust 0x600003514580) Completed async eval kickoff
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.securityd:trust] (Trust 0x600003514580) trustd returned 4
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: TLS Trust result 0
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(1819) [C2.1.1.1:2][0x102f09cc0] Returning from external verify block with result: true
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2073) [C2.1.1.1:2][0x102f09cc0] Certificate verification result: OK
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client read_server_finished
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client send_client_certificate
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client complete_second_flight
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS 1.3 client done
+2026-11-05 20:11:24.151 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS client finish_client_handshake
+2026-11-05 20:11:24.152 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2466) [C2.1.1.1:2][0x102f09cc0] Client handshake state: TLS client done
+2026-11-05 20:11:24.152 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] boringssl_context_info_handler(2455) [C2.1.1.1:2][0x102f09cc0] Client handshake done
+2026-11-05 20:11:24.152 A  storekitd[70745:1310ee0] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:24.152 Df storekitd[70745:1310ee0] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C2.1.1.1:2][0x102f09cc0] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_256_GCM_SHA384) group(0x11ec) signature_alg(0x0804) alpn(h2) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(1) sct_received(0) connect_time(60ms) flight_time(34ms) rtt(33ms) write_stalls(0) read_stalls(2) pake(0x0000)]
+2026-11-05 20:11:24.153 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#0d8afdac:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (CFNetworkConnection-3373592591)
+2026-11-05 20:11:24.153 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1.1 IPv4#0d8afdac:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.099s
+2026-11-05 20:11:24.153 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1.1 Hostname#4dea86a5:443 ready resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.099s
+2026-11-05 20:11:24.153 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2.1 Hostname#4dea86a5:443 ready transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.099s
+2026-11-05 20:11:24.153 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_flow_connected [C2 IPv4#0d8afdac:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (endpoint_flow)
+2026-11-05 20:11:24.154 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2 IPv4#0d8afdac:443 ready parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_connect @0.100s
+2026-11-05 20:11:24.154 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state ready
+2026-11-05 20:11:24.154 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102d06d20] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:24.154 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: connected successfully
+2026-11-05 20:11:24.154 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: TLS handshake complete
+2026-11-05 20:11:24.162 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Connection 2: ready C(N) E(N)
+2026-11-05 20:11:24.162 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C2] event: client:end_activity @0.109s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:24.163 Df storekitd[70745:1310ee0] [com.apple.network:connection] [C2] event: client:connection_reused @0.110s
+2026-11-05 20:11:24.163 Df storekitd[70745:1310ee0] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-11-05 20:11:24.163 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> now using Connection 2
+2026-11-05 20:11:24.163 Df storekitd[70745:1310ee0] [com.apple.network:activity] [C2] event: client:start_activity @0.110s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:24.171 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> sent request, body N 0
+2026-11-05 20:11:24.181 A  storekitd[70745:131153f] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:24.181 A  storekitd[70745:131153f] (Security) SecKeyCopyPublicBytes
+2026-11-05 20:11:24.655 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> received response, status 200 content K
+2026-11-05 20:11:24.656 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task received response
+2026-11-05 20:11:24.656 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:url-loading] AMSURLProtocolHandler: [4BB112E5] StatusCode: 200; <private>; Environment: SB-AS00
+2026-11-05 20:11:24.656 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:24.656 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:24.661 A  storekitd[70745:1310ee0] (Accounts) accounts/account-with-identifier-sync
+2026-11-05 20:11:24.696 A  storekitd[70745:1310ee0] (Accounts) accounts/save-account
+2026-11-05 20:11:24.696 Df storekitd[70745:1310ee0] [com.apple.accounts:core] "Starting save for account H:c607d47a73 (59524D41-E1DA-4851-A889-0EF6D44BA9FE)."
+2026-11-05 20:11:24.697 Df storekitd[70745:1310ee0] [com.apple.xpc:connection] [0x102a0d680] activating connection: mach=true listener=false peer=false name=com.apple.accountsd.accountmanager
+2026-11-05 20:11:24.921 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> done using Connection 2
+2026-11-05 20:11:24.935 Df storekitd[70745:1311503] [com.apple.network:activity] [C2] event: client:end_activity @0.882s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:24.936 Df storekitd[70745:1311503] [com.apple.network:connection] [C2] event: client:connection_idle @0.883s
+2026-11-05 20:11:24.953 Df storekitd[70745:1311503] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-11-05 20:11:25.010 Df storekitd[70745:1311503] [com.apple.accounts:core] "Completed account save: YES - (null)."
+2026-11-05 20:11:25.037 A  storekitd[70745:1310e87] (Accounts) accounts/account-with-identifier
+2026-11-05 20:11:25.043 A  storekitd[70745:1310edd] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.043 A  storekitd[70745:1310edd] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.044 Df storekitd[70745:1310ee0] [com.apple.storekit:General] [ActiveAccountObserver] Received sandbox account changed notification
+2026-11-05 20:11:25.044 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] [AccountNotificationObserver] handleSandboxAccountDidChange
+2026-11-05 20:11:25.044 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] No notification payload for sandbox account change
+2026-11-05 20:11:25.044 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] Checking sandbox account for changes
+2026-11-05 20:11:25.045 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.045 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.046 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.048 A  storekitd[70745:1310edd] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.048 A  storekitd[70745:1310edd] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.048 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.055 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> response ended
+2026-11-05 20:11:25.057 Df storekitd[70745:1311503] [com.apple.CFNetwork:Summary] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> summary for task success {transaction_duration_ms=1024, response_status=200, connection=2, protocol="h2", domain_lookup_duration_ms=17, connect_duration_ms=75, secure_connection_duration_ms=60, private_relay=false, request_start_ms=130, request_duration_ms=7, response_start_ms=622, response_duration_ms=400, request_bytes=313, request_throughput_kbps=329, response_bytes=17224, response_throughput_kbps=344, cache_hit=false}
+2026-11-05 20:11:25.058 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <9551E0C5-EA0C-46AB-844E-B98732BB58A7>.<2> finished successfully
+2026-11-05 20:11:25.059 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task finished loading for URL request <AMSURLRequest: 0x60000021ec00> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.059 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] AMSMescal: [4BB112E5] Mescal verification will be skipped as bag was not provided.
+2026-11-05 20:11:25.062 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task completed successfully
+2026-11-05 20:11:25.063 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.064 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] AMSBagNetworkTask: [BB8C9344] Attempting to load the bag again because the response had a x-set-apple-store-front header. originalStorefront = (null) | newStorefront = H:444fdb1505
+2026-11-05 20:11:25.065 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] AMSBagNetworkTask: [BB8C9344] Retrying bag load. originalStorefront = (null) | newStorefront = H:444fdb1505
+2026-11-05 20:11:25.065 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.065 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] sandbox account has no changes
+2026-11-05 20:11:25.065 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] Checking testflight account for changes
+2026-11-05 20:11:25.066 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] The storefront changed. Clearing the bag from the in-memory cache. oldStorefront = (null) | newStorefront = H:444fdb1505
+2026-11-05 20:11:25.066 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.066 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [4BB112E5] The bag was invalidated. Posting a notification.
+2026-11-05 20:11:25.066 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.067 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [BB8C9344] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.067 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [BB8C9344] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.067 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [BB8C9344] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.067 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] ACAccount: [BB8C9344] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e08500 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.067 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [6dc0d8ca] testflight account has no changes
+2026-11-05 20:11:25.068 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.068 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.068 A  storekitd[70745:1310ee1] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.068 A  storekitd[70745:1310ee1] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.068 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [BB8C9344] Encoding request for URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED { 
+	account = <ACAccount: 0x600003e08100 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> 
+	mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.sandbox 
+}
+2026-11-05 20:11:25.068 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [BB8C9344] Request cookies are disabled. No cookie header will be added.
+2026-11-05 20:11:25.069 E  storekitd[70745:1310ee1] [com.apple.AppleMediaServices:general] AMSURLRequestDecoration: [BB8C9344] Skipping GUID parameter addition as bag was not provided.
+2026-11-05 20:11:25.069 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [BB8C9344] Failed to add GUID parameters. error = { Error domain=AMSErrorDomain, code=2
+2026-11-05 20:11:25.069 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Preparing request: <AMSURLRequest: 0x600000208780> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.069 Df storekitd[70745:1310ee1] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task created: LocalDataTask <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> Session: <__NSURLSessionLocal: 0x104804a90>
+2026-11-05 20:11:25.069 Df storekitd[70745:1310ee1] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> resuming, timeouts(60.0, 30.0) qos(0x15) voucher(<OS_voucher: 0x600002118af0>) activity(A5D33B2D-6284-40D2-969C-CF72467F6DF6)
+2026-11-05 20:11:25.069 Df storekitd[70745:131153f] [com.apple.storekit:Default] [0cb8d4f1] BagNotificationListener: Received notification "AMSBagInvalidatedNotification"
+2026-11-05 20:11:25.281 Df storekitd[70745:1311503] [com.apple.network:connection] [C2] event: client:connection_reused @1.228s
+2026-11-05 20:11:25.314 Df storekitd[70745:1311503] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-11-05 20:11:25.323 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> now using Connection 2
+2026-11-05 20:11:25.323 Df storekitd[70745:1311503] [com.apple.network:activity] [C2] event: client:start_activity @1.270s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:25.345 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> sent request, body N 0
+2026-11-05 20:11:25.355 Df storekitd[70745:1310ee0] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> received response, status 200 content K
+2026-11-05 20:11:25.374 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> done using Connection 2
+2026-11-05 20:11:25.375 Df storekitd[70745:1311503] [com.apple.network:activity] [C2] event: client:end_activity @1.321s, activity <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default)>
+2026-11-05 20:11:25.377 Df storekitd[70745:1311503] [com.apple.network:connection] [C2] event: client:connection_idle @1.324s
+2026-11-05 20:11:25.378 Df storekitd[70745:1311503] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-11-05 20:11:25.381 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> response ended
+2026-11-05 20:11:25.381 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task received response
+2026-11-05 20:11:25.382 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLProtocolHandler: [4BB112E5] StatusCode: 200; <private>; Environment: SB-AS00
+2026-11-05 20:11:25.389 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.389 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.393 Df storekitd[70745:1311503] [com.apple.CFNetwork:Summary] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> summary for task success {transaction_duration_ms=274, response_status=200, connection=2, reused=1, reused_after_ms=361, request_start_ms=216, request_duration_ms=10, response_start_ms=236, response_duration_ms=26, request_bytes=192, request_throughput_kbps=141, response_bytes=16863, response_throughput_kbps=5120, cache_hit=false}
+2026-11-05 20:11:25.393 Df storekitd[70745:1311503] [com.apple.CFNetwork:Default] Task <2DDCD817-FAAF-4093-BD11-A47C1970764E>.<3> finished successfully
+2026-11-05 20:11:25.396 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task finished loading for URL request <AMSURLRequest: 0x600000208a40> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.396 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:general] AMSMescal: [4BB112E5] Mescal verification will be skipped as bag was not provided.
+2026-11-05 20:11:25.398 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLMetricsLoadURLHandler: [4BB112E5] Recording LoadURL Metrics for URL request: <AMSURLRequest: 0x600000208a40> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.409 Df storekitd[70745:1311503] [com.apple.xpc:connection] [0x10480ad30] activating connection: mach=true listener=false peer=false name=com.apple.SystemConfiguration.DNSConfiguration_sim
+2026-11-05 20:11:25.416 Df storekitd[70745:1311503] [com.apple.xpc:connection] [0x10480ad30] invalidated after the last release of the connection object
+2026-11-05 20:11:25.423 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:metrics] AMSMetrics: [com.apple.AppleMediaServices] Cannot schedule flush with style 2 because the style is currently not allowed.
+2026-11-05 20:11:25.423 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:metrics] AMSMetrics: [4BB112E5] Enqueueing 1 events to container com.apple.AppleMediaServices with options 0
+2026-11-05 20:11:25.423 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.423 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.424 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task completed successfully
+2026-11-05 20:11:25.424 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:engagement] AMSEngagementConnection: [4BB112E5] Creating new connection.
+2026-11-05 20:11:25.425 Df storekitd[70745:1311503] [com.apple.xpc:connection] [0x102d06d20] activating connection: mach=true listener=false peer=false name=com.apple.xpc.amsengagementd
+2026-11-05 20:11:25.430 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagNetworkTask: [77DF160C] Successfully loaded the bag data.
+2026-11-05 20:11:25.436 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [4BB112E5] === Finished ===
+2026-11-05 20:11:25.438 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] Bag data was initially loaded. dataSourceChangedHandler will be called.
+2026-11-05 20:11:25.438 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [4BB112E5] The bag changed. Posting a notification.
+2026-11-05 20:11:25.446 Df storekitd[70745:131153f] [com.apple.network:activity] <nw_activity 51:1 [A5D33B2D-6284-40D2-969C-CF72467F6DF6] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 1613ms
+2026-11-05 20:11:25.447 Df storekitd[70745:1311503] [com.apple.storekit:Default] [e60e573a] BagNotificationListener: Received notification "AMSBagChangedNotification"
+2026-11-05 20:11:25.447 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] AMSBag: [4BB112E5] Successfully created the snapshot.
+2026-11-05 20:11:25.448 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: [4BB112E5] Starting bag update-handler calling.  observationCount =  0  |  changedKeys =  [private]
+2026-11-05 20:11:25.448 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: [4BB112E5] Finished bag update-handler calling.
+2026-11-05 20:11:25.448 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.448 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.448 E  storekitd[70745:1310ee0] [com.apple.AppleMediaServices:metrics] AMSMetrics: [com.apple.AppleMediaServices] Not scheduling flush because we failed to get Figaro bag configuration: { Error domain=AMSErrorDomain, code=12
+2026-11-05 20:11:25.451 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.451 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.455 Df storekitd[70745:1311503] [com.apple.storekit:Default] [Default] Storefront for sandbox changed to 143441,29(USA)
+2026-11-05 20:11:25.456 Df storekitd[70745:1311503] [com.apple.storekit:Default] [Default] Sending storefront changed notification for sandbox
+2026-11-05 20:11:25.456 Df storekitd[70745:1311503] [com.apple.storekit:Default] Posting storefrontchanged notification
+2026-11-05 20:11:25.456 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] Loading bag from the network. <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.456 Df storekitd[70745:1311503] [com.apple.network:activity] Create activity <nw_activity 51:1>
+2026-11-05 20:11:25.457 Df storekitd[70745:1311503] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [4BB112E5] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.457 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.457 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.457 Df storekitd[70745:1311504] [com.apple.network:activity] Activated <nw_activity 51:1 [BF12E0A8-28C1-4181-BC78-C3B55DA80AAF] (reporting strategy default)>
+2026-11-05 20:11:25.457 Df storekitd[70745:1311504] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [4BB112E5] === Starting ===
+2026-11-05 20:11:25.457 A  storekitd[70745:1311504] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.457 A  storekitd[70745:1311504] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.458 E  storekitd[70745:1311503] [com.apple.AppleMediaServices:accounts] ACAccount: [4BB112E5] ams_isActiveForMediaType: does not support AMSAccountMediaTypeAppStoreBeta.
+2026-11-05 20:11:25.458 A  storekitd[70745:1311503] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.458 A  storekitd[70745:1311503] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.459 Df storekitd[70745:1310ee0] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/tudorturcanu/Library/Developer/CoreSimulator/Devices/CA1FA76A-4040-43D0-9FBB-66AE5AB6D2EA/data/Library/Caches/com.apple.AppleMediaServices/Metrics/com.apple.AppleMediaServices
+2026-11-05 20:11:25.462 E  storekitd[70745:1311504] [com.apple.AppleMediaServices:accounts] ACAccount: [4BB112E5] ams_isActiveForMediaType: does not support AMSAccountMediaTypeAppStoreBeta.
+2026-11-05 20:11:25.462 A  storekitd[70745:1311504] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.463 A  storekitd[70745:1311504] (Accounts) accounts/account-type-with-identifier-sync
+2026-11-05 20:11:25.463 A  storekitd[70745:1311504] (Accounts) accounts/accounts-with-type-with-options-sync
+2026-11-05 20:11:25.465 A  storekitd[70745:1311540] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.465 E  storekitd[70745:1311504] [com.apple.AppleMediaServices:accounts] ACAccount: [4BB112E5] ams_isActiveForMediaType: does not support AMSAccountMediaTypeAppStoreBeta.
+2026-11-05 20:11:25.465 A  storekitd[70745:1311504] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.466 A  storekitd[70745:1311504] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.468 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:engagement] AMSEngagement: [88A417DC] Scheduling initial sync
+2026-11-05 20:11:25.468 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:engagement] AMSEngagement: [339AF60B] Starting sync. (prev: 88A417DC)
+2026-11-05 20:11:25.471 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e0c400 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.472 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e0c400 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.472 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetching cookies from cookie storage for account: <ACAccount: 0x600003e0c400 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.472 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:general] ACAccount: [4BB112E5] ams_cookies Fetched 0 cookies from cookie storage for account: <ACAccount: 0x600003e0c400 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)>
+2026-11-05 20:11:25.472 E  storekitd[70745:1310ee1] [com.apple.AppleMediaServices:engagement] AMSEngagement: [88A417DC] Sync finished with error (0.005) Error Domain=AMSErrorDomain Code=11 "Sync Failed Currently in backoff period" UserInfo={NSDebugDescription=Sync Failed Currently in backoff period, AMSDescription=Sync Failed, AMSFailureReason=Currently in backoff period}
+2026-11-05 20:11:25.473 A  storekitd[70745:1311540] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.474 A  storekitd[70745:1311540] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.474 A  storekitd[70745:1311540] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.474 A  storekitd[70745:1311540] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.474 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Encoding request for URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED { 
+	account = <ACAccount: 0x600003e10000 type = iTunesStore.sandbox | backingID = 59524D41-E1DA-4851-A889-0EF6D44BA9FE | username = local | storefront = (null)> 
+	mediaType = com.apple.AppleMediaServices.accountmediatype.appstore.beta 
+}
+2026-11-05 20:11:25.475 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Request cookies are disabled. No cookie header will be added.
+2026-11-05 20:11:25.475 E  storekitd[70745:1311540] [com.apple.AppleMediaServices:general] AMSURLRequestDecoration: [4BB112E5] Skipping GUID parameter addition as bag was not provided.
+2026-11-05 20:11:25.475 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLRequestEncoder: [4BB112E5] Failed to add GUID parameters. error = { Error domain=AMSErrorDomain, code=2
+2026-11-05 20:11:25.475 E  storekitd[70745:1310ee0] [com.apple.AppleMediaServices:general] AMSSQLiteConnection: [4BB112E5] Execution error: { Error domain=AMSSQLiteErrorDomain, code=-7708
+2026-11-05 20:11:25.476 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Preparing request: <AMSURLRequest: 0x60000023cbc0> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.476 E  storekitd[70745:1310ee0] [com.apple.AppleMediaServices:general] AMSSQLiteConnection: [4BB112E5] Execution error: { Error domain=AMSSQLiteErrorDomain, code=-7708
+2026-11-05 20:11:25.477 E  storekitd[70745:1310ee0] [com.apple.AppleMediaServices:general] AMSSQLiteConnection: [4BB112E5] Execution error: { Error domain=AMSSQLiteErrorDomain, code=-7708
+2026-11-05 20:11:25.477 E  storekitd[70745:1310ee0] [com.apple.AppleMediaServices:general] AMSSQLiteConnection: [4BB112E5] Execution error: { Error domain=AMSSQLiteErrorDomain, code=-7708
+2026-11-05 20:11:25.477 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task created: LocalDataTask <2703EA12-72C5-41B1-A37A-0A191C7F59E4>.<4> Session: <__NSURLSessionLocal: 0x104804a90>
+2026-11-05 20:11:25.477 Df storekitd[70745:1311540] [com.apple.CFNetwork:Default] Task <2703EA12-72C5-41B1-A37A-0A191C7F59E4>.<4> resuming, timeouts(60.0, 30.0) qos(0x15) voucher(<OS_voucher: 0x600002105c20>) activity(BF12E0A8-28C1-4181-BC78-C3B55DA80AAF)
+2026-11-05 20:11:25.479 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task received response
+2026-11-05 20:11:25.479 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLProtocolHandler: [4BB112E5] StatusCode: 200; <private>; Environment: SB-AS00
+2026-11-05 20:11:25.480 A  storekitd[70745:1311540] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.480 A  storekitd[70745:1311540] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.482 Df storekitd[70745:1311540] [com.apple.CFNetwork:Summary] Task <2703EA12-72C5-41B1-A37A-0A191C7F59E4>.<4> summary for task success {transaction_duration_ms=3, response_status=200, cache_hit=true}
+2026-11-05 20:11:25.482 Df storekitd[70745:1311540] [com.apple.CFNetwork:Default] Task <2703EA12-72C5-41B1-A37A-0A191C7F59E4>.<4> finished successfully
+2026-11-05 20:11:25.482 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task finished loading for URL request <AMSURLRequest: 0x600000239bc0> { URL: https://sandbox.itunes.apple.com/WebObjects/MZInit.woa/wa/initiateSession?REDACTED }
+2026-11-05 20:11:25.482 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:general] AMSMescal: [4BB112E5] Mescal verification will be skipped as bag was not provided.
+2026-11-05 20:11:25.485 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:url-loading] AMSURLSession: [4BB112E5] Task completed successfully
+2026-11-05 20:11:25.487 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] AMSBagNetworkTask: [F2846A8E] Successfully loaded the bag data.
+2026-11-05 20:11:25.488 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:action] AMSBagNetworkTask: [F2846A8E] === Finished ===
+2026-11-05 20:11:25.489 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] AMSBagNetworkDataSource: [4BB112E5] Bag data was initially loaded. dataSourceChangedHandler will be called.
+2026-11-05 20:11:25.489 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] AMSBag: [4BB112E5] The bag changed. Posting a notification.
+2026-11-05 20:11:25.489 Df storekitd[70745:1311540] [com.apple.network:activity] <nw_activity 51:1 [BF12E0A8-28C1-4181-BC78-C3B55DA80AAF] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 32ms
+2026-11-05 20:11:25.490 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: [4BB112E5] Starting bag update-handler calling.  observationCount =  0  |  changedKeys =  [private]
+2026-11-05 20:11:25.490 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] BagCachedValueUpdateHandlers: [4BB112E5] Finished bag update-handler calling.
+2026-11-05 20:11:25.490 Df storekitd[70745:1311540] [com.apple.AppleMediaServices:bag] AMSBag: [4BB112E5] Successfully created the snapshot.
+2026-11-05 20:11:25.490 A  storekitd[70745:1311540] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.490 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.490 Df storekitd[70745:1311540] [com.apple.storekit:Default] [0ae76693] BagNotificationListener: Received notification "AMSBagChangedNotification"
+2026-11-05 20:11:25.491 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.491 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.493 Df storekitd[70745:131153f] [com.apple.storekit:Default] [Default] Storefront for testflight changed to 143441,29(USA)
+2026-11-05 20:11:25.494 Df storekitd[70745:131153f] [com.apple.storekit:Default] [Default] Sending storefront changed notification for testflight
+2026-11-05 20:11:25.494 Df storekitd[70745:131153f] [com.apple.storekit:Default] Posting storefrontchanged notification
+2026-11-05 20:11:25.495 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.495 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.496 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.496 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.499 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.499 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.500 Df storekitd[70745:131153f] [com.apple.storekit:Default] [80b03a39] Storefront update not needed for production
+2026-11-05 20:11:25.501 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:25.501 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.501 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.501 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.504 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.504 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.506 Df storekitd[70745:131153f] [com.apple.storekit:Default] [80b03a39] Storefront update not needed for sandbox
+2026-11-05 20:11:25.507 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.508 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.508 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.508 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.509 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.509 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.510 Df storekitd[70745:131153f] [com.apple.storekit:Default] [80b03a39] Storefront update not needed for testflight
+2026-11-05 20:11:25.510 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.511 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.511 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.511 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.512 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.513 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.537 Df storekitd[70745:131153f] [com.apple.storekit:Default] [0cb8d4f1] Storefront update not needed for production
+2026-11-05 20:11:25.537 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:25.537 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.538 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.538 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.541 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.541 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.542 Df storekitd[70745:131153f] [com.apple.storekit:Default] [0cb8d4f1] Storefront update not needed for sandbox
+2026-11-05 20:11:25.543 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.544 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.544 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.544 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.545 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.545 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.551 Df storekitd[70745:131153f] [com.apple.storekit:Default] [0cb8d4f1] Storefront update not needed for testflight
+2026-11-05 20:11:25.565 Df storekitd[70745:131153f] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.565 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.566 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.566 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.623 A  storekitd[70745:131153f] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.623 A  storekitd[70745:131153f] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.654 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [e60e573a] Storefront update not needed for production
+2026-11-05 20:11:25.654 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:25.654 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.654 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.654 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.654 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.654 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.654 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [e60e573a] Storefront update not needed for sandbox
+2026-11-05 20:11:25.655 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.655 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.655 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.655 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.656 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [e60e573a] Storefront update not needed for testflight
+2026-11-05 20:11:25.656 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c04100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.656 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.656 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [0ae76693] Storefront update not needed for production
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c16780; profile: appstored; version: 1; sandbox: 1>
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.657 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.657 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.657 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.657 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [0ae76693] Storefront update not needed for sandbox
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:ams.oversize] AMSBag: [88A417DC] Attempting to create a snapshot. originalBag = <AMSBagNetworkDataSource: 0x600002c28100; profile: appstored; version: 1; sandbox: 0>
+2026-11-05 20:11:25.657 Df storekitd[70745:1310ee0] [com.apple.AppleMediaServices:bag] AMSBag: [88A417DC] Successfully created the snapshot.
+2026-11-05 20:11:25.658 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.658 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type
+2026-11-05 20:11:25.658 A  storekitd[70745:1310ee0] (Accounts) accounts/account-type-with-identifier
+2026-11-05 20:11:25.658 A  storekitd[70745:1310ee0] (Accounts) accounts/accounts-with-type-with-options
+2026-11-05 20:11:25.658 Df storekitd[70745:1310ee0] [com.apple.storekit:Default] [0ae76693] Storefront update not needed for testflight
+2026-11-05 20:11:29.097 Df storekitd[70745:131153f] [com.apple.apsd:connection] <APSConnection: 0x600003d1c3c0> Flushing any queuedDelegateBlocks 0
+2026-11-05 20:11:57.479 Df storekitd[70745:1311e07] [com.apple.xpc:connection] [0x102a0d680] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:57.479 Df storekitd[70745:13113b1] [com.apple.xpc:connection] [0x102d046c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:57.479 Df storekitd[70745:1311e08] [com.apple.xpc:connection] [0x104808a70] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-05 20:11:57.480 Df storekitd[70745:1311e06] [com.apple.accounts:core] "The connection to ACDAccountStore was invalidated."
+2026-11-05 20:11:57.480 Df storekitd[70745:1311e09] [com.apple.accounts:core] "The connection to ACDAccountStore was invalidated."
+2026-11-05 20:11:57.481 Df storekitd[70745:1311e0a] [com.apple.accounts:core] "The connection to ACDAccountStore was invalidated."

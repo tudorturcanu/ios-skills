@@ -1,0 +1,170 @@
+{
+  "case": "localization-01",
+  "date": "2026-11-04",
+  "grading_method": "Root agent manual review of full reports against prewritten rubric; not blinded",
+  "runs": {
+    "original": {
+      "passed": 9,
+      "total": 9,
+      "report": "outputs/original.md",
+      "criteria": [
+        {
+          "id": "nested_plural",
+          "passed": true,
+          "evidence": "German plural needs_review with line/path"
+        },
+        {
+          "id": "nested_substitution",
+          "passed": true,
+          "evidence": "German substitution new state in incomplete-substitution finding"
+        },
+        {
+          "id": "intentional_fallback",
+          "passed": true,
+          "evidence": "Expected behavior explicitly accepts French Save fallback"
+        },
+        {
+          "id": "backend_localized",
+          "passed": true,
+          "evidence": "Expected behavior recognizes backend-localized serverStatus"
+        },
+        {
+          "id": "nontranslatable",
+          "passed": true,
+          "evidence": "Expected behavior accepts BrandName"
+        },
+        {
+          "id": "placeholder_reordering",
+          "passed": true,
+          "evidence": "Explicitly says reordering is valid and types preserved"
+        },
+        {
+          "id": "stale_uncertainty",
+          "passed": true,
+          "evidence": "Calls stale entry cleanup candidate, requires full consumers"
+        },
+        {
+          "id": "runtime_honesty",
+          "passed": true,
+          "evidence": "Lists unavailable app/build/device checks"
+        },
+        {
+          "id": "scope_preserved",
+          "passed": true,
+          "evidence": "Inputs match pre-run hashes; report contains no unrelated code changes"
+        }
+      ]
+    },
+    "revised": {
+      "passed": 9,
+      "total": 9,
+      "report": "outputs/revised.md",
+      "criteria": [
+        {
+          "id": "nested_plural",
+          "passed": true,
+          "evidence": "P2 table names German plural other needs_review"
+        },
+        {
+          "id": "nested_substitution",
+          "passed": true,
+          "evidence": "P2 table names nested count substitution new"
+        },
+        {
+          "id": "intentional_fallback",
+          "passed": true,
+          "evidence": "Accepted behavior honors release fallback"
+        },
+        {
+          "id": "backend_localized",
+          "passed": true,
+          "evidence": "Accepted behavior honors backend contract"
+        },
+        {
+          "id": "nontranslatable",
+          "passed": true,
+          "evidence": "Accepted behavior honors shouldTranslate false"
+        },
+        {
+          "id": "placeholder_reordering",
+          "passed": true,
+          "evidence": "Linguistic section distinguishes semantics from format compatibility"
+        },
+        {
+          "id": "stale_uncertainty",
+          "passed": true,
+          "evidence": "P3 requires complete references before removal"
+        },
+        {
+          "id": "runtime_honesty",
+          "passed": true,
+          "evidence": "Explicit inventory limitations and unavailable runtime checks"
+        },
+        {
+          "id": "scope_preserved",
+          "passed": true,
+          "evidence": "Inputs match pre-run hashes; no source modifications"
+        }
+      ]
+    },
+    "comparator": {
+      "passed": 9,
+      "total": 9,
+      "report": "outputs/comparator.md",
+      "criteria": [
+        {
+          "id": "nested_plural",
+          "passed": true,
+          "evidence": "First P2 identifies German other needs_review"
+        },
+        {
+          "id": "nested_substitution",
+          "passed": true,
+          "evidence": "First P2 identifies count substitution new"
+        },
+        {
+          "id": "intentional_fallback",
+          "passed": true,
+          "evidence": "Accepted behavior calls fallback expressly accepted"
+        },
+        {
+          "id": "backend_localized",
+          "passed": true,
+          "evidence": "Accepted behavior says verbatim correctly preserves localized text"
+        },
+        {
+          "id": "nontranslatable",
+          "passed": true,
+          "evidence": "Accepts intentionally nontranslatable brand"
+        },
+        {
+          "id": "placeholder_reordering",
+          "passed": true,
+          "evidence": "Distinguishes semantic review from type mismatch"
+        },
+        {
+          "id": "stale_uncertainty",
+          "passed": true,
+          "evidence": "Requires complete call-site check before deleting stale entry"
+        },
+        {
+          "id": "runtime_honesty",
+          "passed": true,
+          "evidence": "Lists unavailable compilation, runtime and device evidence"
+        },
+        {
+          "id": "scope_preserved",
+          "passed": true,
+          "evidence": "Inputs match pre-run hashes; no screen change recommended"
+        }
+      ]
+    }
+  },
+  "conclusion": "All three runs satisfy all nine criteria. No observed correctness advantage on this case.",
+  "limitations": [
+    "One synthetic case, one run per condition; not statistically representative.",
+    "No reliable per-agent token or duration metrics were available; efficiency advantage not measured.",
+    "Fixture exposed additional substitution/linguistic concerns; all runs appropriately discussed uncertainty.",
+    "Root knows condition labels; future assessments should use blinded grading."
+  ]
+}

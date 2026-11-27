@@ -1,0 +1,56 @@
+{
+  "repository": "https://github.com/Dimillian/IceCubesApp",
+  "commit": "98098b9c4b5928f89f338203193c2bf40ab7f38c",
+  "source_files": {
+    "IceCubesApp/Resources/Localization/Localizable.xcstrings": "b41a4a10e019db6415a01f3c66790dc8af2eedadcafe2d17f93cc9de013b4d77",
+    "IceCubesApp.xcodeproj/project.pbxproj": "5dd2f4137cd4a8b20149a55a2de50c29b871c57a286a7c46e5da7033f1875182",
+    "Packages/StatusKit/Sources/StatusKit/Row/StatusRowAccessibilityLabel.swift": "8b2d45aeee6ec2621d001e6ed2e6265855e771cf7b6dcc6b1a2066b6aa4efa0f",
+    "Packages/StatusKit/Sources/StatusKit/Poll/StatusPollView.swift": "c20070cd8100fb91601397e3a92bd2cbed511643ca14b3c479b42528ef624e61",
+    "Packages/Account/Sources/Account/Detail/Components/AccountDetailToolbar.swift": "4ed794d0b2b7efceb65bdff230d6cbee5c08a1d2d29286637bd10d5c0848bd49",
+    "Packages/Account/Sources/Account/AccountsList/AccountsListRow.swift": "c91a0f26e869f3ac816fc98aef20ac82d4e580d329fa20ee6ebebe865e251c9d"
+  },
+  "catalog_bytes": 2219826,
+  "catalog_entries": 741,
+  "catalog_locales": 19,
+  "requested_locales": [
+    "de",
+    "fr"
+  ],
+  "before_count": 42,
+  "after_count": 41,
+  "after_kinds": {
+    "missing-locale": 31,
+    "translation-state": 5,
+    "stale-extraction": 5
+  },
+  "removed_findings": [
+    {
+      "key": "",
+      "locale": "de",
+      "kind": "missing-locale",
+      "severity": "review"
+    }
+  ],
+  "added_findings": [],
+  "empty_source_fallbacks": [
+    {
+      "key": "",
+      "locale": "de"
+    }
+  ],
+  "format_compared_count": 6,
+  "format_findings": [
+    {
+      "key": "account.label.followers %lld %@",
+      "kind": "manual-review",
+      "reason": "Source uses variations/substitutions"
+    }
+  ],
+  "format_keys": [
+    "accessibility.status.a-boosted-b-%@-%@",
+    "accessibility.status.poll.option-prefix-%lld-of-%lld",
+    "account.action.block-user-%@",
+    "account.label.followers %lld %@"
+  ],
+  "repository_unmodified": true
+}

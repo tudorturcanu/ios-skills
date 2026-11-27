@@ -1,0 +1,13 @@
+{
+  "priorVersions" : [
+    "2.0.0"
+  ],
+  "records" : [
+
+  ],
+  "storeVersions" : [
+    "3.0.0"
+  ]
+}
+
+--- stderr ---

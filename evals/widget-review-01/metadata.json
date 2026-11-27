@@ -1,0 +1,13 @@
+{
+  "app_repository": "https://github.com/Dimillian/IceCubesApp",
+  "app_commit": "98098b9c4b5928f89f338203193c2bf40ab7f38c",
+  "comparator_repository": "https://github.com/dpearson2699/swift-ios-skills",
+  "comparator_commit": "8d90fd121a263355a4fb44fd082af1416a5c1c2a",
+  "our_skill_sha256": "f25950aa0f4a7cba97ce07fd4509def9145c74df2ab5684b81af20d3e26728be",
+  "comparator_skill_sha256": "a54b72abfc85c7fc4e6f11ed32d53ae0658f50df736e1c7b827ed0755fc8cb87",
+  "conditions": [
+    "focused skill",
+    "specialized WidgetKit comparator"
+  ],
+  "evaluation_scope": "read-only source review; no runtime app claim"
+}

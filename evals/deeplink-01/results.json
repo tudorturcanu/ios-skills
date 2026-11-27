@@ -1,0 +1,39 @@
+{
+  "case": "deeplink-01",
+  "date": "2026-11-04",
+  "runs": [
+    {
+      "condition": "no-skill",
+      "compiled": true,
+      "passed": 32,
+      "total": 32,
+      "grade": "runs/no-skill/grade.json",
+      "report": "runs/no-skill/REPORT.md"
+    },
+    {
+      "condition": "revised",
+      "compiled": true,
+      "passed": 32,
+      "total": 32,
+      "grade": "runs/revised/grade.json",
+      "report": "runs/revised/REPORT.md"
+    },
+    {
+      "condition": "comparator",
+      "compiled": true,
+      "passed": 32,
+      "total": 32,
+      "grade": "runs/comparator/grade.json",
+      "report": "runs/comparator/REPORT.md"
+    }
+  ],
+  "conclusion": "Tie; no observed skill advantage over the no-skill control.",
+  "input_and_harness_unchanged": true,
+  "report_review": "All reports distinguish macOS Foundation verification from untested device delivery; no runtime-overclaim found.",
+  "limitations": [
+    "One task and one run per condition.",
+    "Explicit detailed contract may reduce need for specialist guidance.",
+    "Task tests synchronous extracted logic, not complete iOS app behavior.",
+    "No token-cost or run-duration comparison."
+  ]
+}

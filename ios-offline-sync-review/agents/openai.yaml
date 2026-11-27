@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Offline Sync Review"
+  short_description: "iOS Offline Sync Review workflows"
+  default_prompt: "Use $ios-offline-sync-review to investigate my app and report evidence, targeted fixes, and verification gaps."

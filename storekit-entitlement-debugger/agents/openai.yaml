@@ -1,0 +1,4 @@
+interface:
+  display_name: "StoreKit Entitlement Debugger"
+  short_description: "StoreKit Entitlement Debugger workflows"
+  default_prompt: "Use $storekit-entitlement-debugger to investigate my app and report evidence, targeted fixes, and verification gaps."

@@ -1,0 +1,12 @@
+# Locate staleness with versions
+
+Assign a non-sensitive version or generation to a shared snapshot when that fits the existing storage model. Compare versions at app commit, provider read, timeline entry, and observed rendering. A mismatch identifies where to investigate; it does not by itself identify why the system delayed a refresh.
+
+| Observation | Next boundary |
+| --- | --- |
+| App writes v8; provider reads v7 | Shared container, write atomicity, stale cache, file protection, or wrong account/configuration |
+| Provider reads v8; entry embeds v7 | Mapping or captured state in timeline construction |
+| Entry contains v8; rendered widget remains v7 | Timeline dates and system scheduling; inspect real device evidence |
+| Account changes; provider still loads old account | Snapshot ownership and invalidation |
+
+Request reload after the durable write. Test multiple configurations rather than assuming one widget kind has one data source. Do not use arbitrary sleeps to imply write ordering, and do not promise that a reload removes already-rendered private content immediately.

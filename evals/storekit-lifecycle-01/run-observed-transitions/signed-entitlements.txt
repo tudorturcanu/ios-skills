@@ -1,0 +1,2 @@
+Executable=/private/var/folders/1j/zc6gngw91xzbb38rzmq7tgvr0000gn/T/ios-storekit-hosted-vl_an139/DerivedData/Build/Products/Debug-iphonesimulator/StoreKitProbe.app/StoreKitProbe
+warning: Specifying ':' in the path is deprecated and will not work in a future release

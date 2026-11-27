@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""Run a synthetic local StoreKitTest app on a newly created disposable simulator."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import plistlib
+import shutil
+import subprocess
+import tempfile
+import time
+
+HERE = Path(__file__).resolve().parent
+BUNDLE = 'org.example.iosskills.storekitprobe'
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--runtime', required=True)
+    parser.add_argument('--device-type', required=True)
+    parser.add_argument('--output', required=True, type=Path, help='New results directory')
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=False)
+    commands = []
+    report = {'scope': 'Local StoreKitTest only; no sandbox, server, or real purchases',
+              'runtime': args.runtime, 'device_type': args.device_type, 'passed': False,
+              'cleanup_deleted': False, 'inputs': {
+                  name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
+                  for name in ['Probe.swift', 'Products.storekit', 'reproduce.py']}}
+
+    def run(*command, check=True, timeout=60):
+        result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
+        commands.append({'argv': list(command), 'returncode': result.returncode,
+                         'stdout': result.stdout, 'stderr': result.stderr})
+        if check and result.returncode:
+            raise RuntimeError(result.stderr or result.stdout)
+        return result.stdout.strip()
+
+    device = None
+    try:
+        with tempfile.TemporaryDirectory(prefix='ios-storekit-probe-') as temp:
+            app = Path(temp) / 'StoreKitProbe.app'
+            app.mkdir()
+            sdk = Path(run('xcrun', '--sdk', 'iphonesimulator', '--show-sdk-path'))
+            report['swift_version'] = run('xcrun', 'swiftc', '--version')
+            info = {'CFBundleIdentifier': BUNDLE, 'CFBundleExecutable': 'StoreKitProbe',
+                    'CFBundleName': 'StoreKitProbe', 'CFBundlePackageType': 'APPL',
+                    'CFBundleVersion': '1', 'CFBundleShortVersionString': '1.0',
+                    'MinimumOSVersion': '18.0', 'UIDeviceFamily': [1], 'UILaunchScreen': {},
+                    'UIApplicationSceneManifest': {'UIApplicationSupportsMultipleScenes': False,
+                        'UISceneConfigurations': {'UIWindowSceneSessionRoleApplication': [
+                            {'UISceneConfigurationName': 'Probe'}]}}}
+            (app / 'Info.plist').write_bytes(plistlib.dumps(info))
+            shutil.copy2(HERE / 'Products.storekit', app / 'Products.storekit')
+            run('xcrun', 'swiftc', '-sdk', str(sdk), '-target', 'arm64-apple-ios18.0-simulator',
+                '-F', str(sdk / 'Developer/Library/Frameworks'), '-framework', 'StoreKitTest',
+                '-swift-version', '6', '-warnings-as-errors', '-parse-as-library',
+                str(HERE / 'Probe.swift'), '-o', str(app / 'StoreKitProbe'), timeout=120)
+            run('codesign', '--force', '--sign', '-', str(app))
+            device = run('xcrun', 'simctl', 'create', 'iOS Skills disposable StoreKit probe',
+                         args.device_type, args.runtime)
+            report['created_device'] = device
+            (args.output / 'device.json').write_text(json.dumps({'created_device': device}) + '\n')
+            print(f'Created disposable simulator {device}; booting.', flush=True)
+            run('xcrun', 'simctl', 'boot', device)
+            run('xcrun', 'simctl', 'bootstatus', device, '-b', timeout=240)
+            run('xcrun', 'simctl', 'install', device, str(app))
+            container = Path(run('xcrun', 'simctl', 'get_app_container', device, BUNDLE, 'data'))
+            run('xcrun', 'simctl', 'launch', device, BUNDLE)
+            result_file = container / 'Documents/results.json'
+            progress_file = container / 'Documents/progress.json'
+            deadline = time.monotonic() + 120
+            previous = None
+            while not result_file.exists():
+                if progress_file.exists():
+                    current = progress_file.read_text()
+                    if current != previous:
+                        print(current, flush=True)
+                        previous = current
+                if time.monotonic() > deadline:
+                    raise RuntimeError('StoreKit probe did not complete within 120 seconds.')
+                time.sleep(0.2)
+            probe = json.loads(result_file.read_text())
+            report['probe'] = probe
+            report['passed'] = probe['passed']
+            print(json.dumps(probe, indent=2), flush=True)
+    except Exception as error:
+        report['error'] = str(error)
+    finally:
+        if device:
+            run('xcrun', 'simctl', 'shutdown', device, check=False)
+            run('xcrun', 'simctl', 'delete', device, check=False)
+            devices = json.loads(run('xcrun', 'simctl', 'list', 'devices', '--json'))['devices']
+            report['cleanup_deleted'] = not any(d['udid'] == device for group in devices.values() for d in group)
+        (args.output / 'commands.json').write_text(json.dumps(commands, indent=2) + '\n')
+        (args.output / 'results.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(f"Passed: {report['passed']}; simulator deleted: {report['cleanup_deleted']}")
+    return 0 if report['passed'] and report['cleanup_deleted'] else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

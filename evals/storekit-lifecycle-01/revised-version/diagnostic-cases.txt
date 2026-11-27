@@ -1,0 +1,14 @@
+# Diagnose the failed transition
+
+| Symptom | Discriminating evidence | Candidate correction |
+| --- | --- | --- |
+| Access remains after refund | Reconciliation receives a verified snapshot without the product, but stored IDs only ever grow | Recompute applicable access from the authoritative snapshot; keep fetch failure separate from an empty successful snapshot |
+| Pending purchase unlocks | Purchase result handling treats every nonthrowing result as success | Handle pending/cancelled/verified success separately and await later updates |
+| Duplicate consumable credit | The same transaction ID is fulfilled twice across restart | Make durable fulfillment idempotent before finishing; currentEntitlements is not a consumable balance |
+| Account B sees A's access | Old refresh result writes after the active app account changes | Bind reconciliation to account identity/generation; reject obsolete results and apply the actual account-linking policy |
+| Verification failure appears as “no purchases” | Unverified sequence elements are discarded before an empty ID set replaces access | Report verification uncertainty separately from completed empty reconciliation |
+| Local tests interfere with one another | Concurrent tests change shared StoreKit session settings or clear transactions | Serialize mutations and restore the environment explicitly |
+
+A useful regression example is verified access to product P followed by a successful empty entitlement snapshot: P must disappear. A transport failure is a different input and must not be turned into that empty snapshot. If the app uses server authority, test against its contract rather than replacing it with a device-only model.
+
+For each report item, distinguish observed transition failure, source-supported risk, and missing evidence. Rank loss of purchased access, unauthorized access, or duplicate fulfillment ahead of code style. Local StoreKit testing cannot prove server notification delivery.

@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "e576660e0ad25449e6bba4f030041966e5b65e7b7a31e524067ee3a3044ec0d5",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "c815ddb040d5426fd64100c40cdd8dfb647c6ee45bc75dbc6c600e3283ab73e2",
+    "probe_process.py": "c9f8b48e0b3c1e8e246b676e24fd1f9695907fef91fc70f716a8ba5868628380"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "CE1DC51E-B827-4816-9D84-2067BB3757CD",
+  "xcodebuild_returncode": 124,
+  "xcodebuild_timed_out": true,
+  "error": "No probe result. Last progress: {\n  \"phase\" : \"fresh_purchase_verification\"\n}"
+}

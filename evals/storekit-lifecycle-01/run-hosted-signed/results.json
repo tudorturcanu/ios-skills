@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "cleanup_deleted": true,
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+  "scope": "App-hosted XCTest with local StoreKitTest; no production or sandbox transaction test",
+  "inputs": {
+    "Probe.swift": "745deffa37f71cabf1e044c578d02de9755d7cac397b6ad471cfdf2a83834f3a",
+    "ProbeTests.swift": "1b11f8a5a02b8803b86b1ab09bbf4447e93c14ac434091135deac15d5a315c87",
+    "Products.storekit": "ae4a4ca0e3ea413df31e056ad0ff9d18de46b9d6bd8750fc05da3adff859c195",
+    "reproduce_hosted.py": "4c068532e20097183be69dff09490cad46fc9720bcd293a28b95982088a2f7b8"
+  },
+  "xcode_version": "Xcode 27.1\nBuild version 27A9275",
+  "created_device": "8F497194-0953-4F39-97C4-3F3078802A3E",
+  "xcodebuild_returncode": 65,
+  "probe": {
+    "checks": {
+      "initial_empty": true,
+      "local_products_loaded": false
+    },
+    "environment": "local StoreKitTest",
+    "error": "notEntitled",
+    "observations": [
+      {
+        "phase": "initial",
+        "unverified": [],
+        "verified": []
+      }
+    ],
+    "passed": false
+  }
+}

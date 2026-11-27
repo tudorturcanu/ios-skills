@@ -1,0 +1,92 @@
+[
+  {
+    "acknowledged" : [
+      "root",
+      "reply1",
+      "reply2"
+    ],
+    "attempted" : [
+      "root",
+      "reply1",
+      "reply2"
+    ],
+    "draft_insertions" : [
+
+    ],
+    "name" : "all_success",
+    "reply_parents" : [
+      "root",
+      "reply1"
+    ],
+    "returned_status" : "reply2"
+  },
+  {
+    "acknowledged" : [
+
+    ],
+    "attempted" : [
+      "root"
+    ],
+    "draft_insertions" : [
+      "Root text"
+    ],
+    "name" : "root_failure",
+    "reply_parents" : [
+
+    ],
+    "returned_status" : null
+  },
+  {
+    "acknowledged" : [
+      "root"
+    ],
+    "attempted" : [
+      "root",
+      "reply1"
+    ],
+    "draft_insertions" : [
+      "Root text"
+    ],
+    "name" : "first_reply_failure",
+    "reply_parents" : [
+      "root"
+    ],
+    "returned_status" : null
+  },
+  {
+    "acknowledged" : [
+      "root",
+      "reply1"
+    ],
+    "attempted" : [
+      "root",
+      "reply1",
+      "reply2"
+    ],
+    "draft_insertions" : [
+      "Root text"
+    ],
+    "name" : "second_reply_failure",
+    "reply_parents" : [
+      "root",
+      "reply1"
+    ],
+    "returned_status" : null
+  },
+  {
+    "acknowledged" : [
+
+    ],
+    "attempted" : [
+      "root"
+    ],
+    "draft_insertions" : [
+
+    ],
+    "name" : "blank_root_failure",
+    "reply_parents" : [
+
+    ],
+    "returned_status" : null
+  }
+]
