@@ -8,27 +8,27 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.9'
+          python-version: '3.12'
       - run: python scripts/validate.py
       - run: python scripts/validate_evidence.py
       - run: python -m unittest discover -s tests -v
   migration-probe:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.9'
+          python-version: '3.12'
       - run: python swiftdata-migration-checker/scripts/run_migration_probe.py --output "$RUNNER_TEMP/migration-probe"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: migration-probe-results
           path: ${{ runner.temp }}/migration-probe/*.log
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: migration-probe-summary
@@ -36,8 +36,8 @@ jobs:
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --offline --include-fragments './**/*.md'
+          args: --no-progress --offline --include-fragments --exclude-path 'evals/.*/(outputs|blinded|blind-inputs|blind-grading-inputs)/' './**/*.md'
           fail: true
